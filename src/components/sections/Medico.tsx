@@ -5,7 +5,7 @@ export function Medico() {
   const { medico } = copy;
   const initials = "DB";
   return (
-    <section id="medico" className="section" aria-labelledby="medico-title">
+    <section id="medico" className="section overflow-clip" aria-labelledby="medico-title">
       <div className="wrap grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
         <Reveal className="lg:col-span-5">
           <div className="relative mx-auto aspect-square w-full max-w-sm">

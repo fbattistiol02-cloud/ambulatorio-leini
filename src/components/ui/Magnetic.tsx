@@ -51,7 +51,7 @@ export function Magnetic({
   );
 
   return (
-    <span ref={ref} className={`inline-block ${className ?? ""}`}>
+    <span ref={ref} className={className ?? "inline-block"}>
       {children}
     </span>
   );

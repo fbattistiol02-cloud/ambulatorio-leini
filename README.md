@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ambulatorio Veterinario Leinì · demo landing page
 
-## Getting Started
+Anteprima dimostrativa del sito per il Dott. Davide Boasso (Leinì, TO).
+Next.js (App Router) + TypeScript + Tailwind v4 + GSAP/ScrollTrigger + Lenis.
 
-First, run the development server:
+> **Stato:** demo. Dati, orari e testi sono da confermare con lo studio. Il sito è
+> `noindex` finché non diventa un sito vero. Piano e registro delle decisioni:
+> [IMPLEMENTATION_PLAN0.MD](IMPLEMENTATION_PLAN0.MD).
+
+## Avvio
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev -- -p 3100      # sviluppo
+npm run build && npm start  # produzione
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dove si cambia cosa
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Cosa | Dove |
+|---|---|
+| Dati dello studio (indirizzo, telefoni, orari, rating) e **tutta la copy** | `src/content/site.ts` |
+| Dati non confermati | flag `confirm: true` in `site.ts` (compaiono nel footer) |
+| Immagini (percorsi, testo alternativo, punto focale) | `src/content/images.ts` |
+| Colori, font, spaziature | `src/app/globals.css` (token in `:root`) |
+| Link telefono/WhatsApp/mappa | `src/lib/links.ts` |
+| Orari "Aperto ora / Chiuso" | `src/lib/openStatus.ts` (fuso Europe/Rome) |
+| Animazioni | `src/components/motion/*` e sezioni in `src/components/sections/*` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Cambiare una foto
 
-## Learn More
+1. Metti l'originale in `assets-raw/<nome>.jpg` (cartella non versionata).
+2. Regola il ritaglio in `scripts/optimize-images.mjs`.
+3. `node scripts/optimize-images.mjs assets-raw public/images`
+4. Aggiorna `CREDITS.md` e il testo alternativo in `images.ts`.
+5. Se cambia l'hero: `node scripts/make-og.mjs` rigenera l'anteprima di condivisione.
 
-To learn more about Next.js, take a look at the following resources:
+### Contrasti
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`node scripts/contrast.mjs` verifica le coppie di colori (WCAG).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Movimento e accessibilità
 
-## Deploy on Vercel
+- Scroll fluido (Lenis) e animazioni si spengono con `prefers-reduced-motion`
+  **o** con l'interruttore "Riduci le animazioni" (footer; salvato nel browser).
+  Con il movimento ridotto la pagina è completa: nessun blur, nessun pin.
+- Hero animato solo con CSS: il contenuto non dipende da JavaScript.
+- La scena "Dalla preoccupazione alla chiarezza" è la sezione pinnata
+  (`FocusScene.tsx`): durata dello scroll e ritmo sono nel timeline in cima al file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Misure (build di produzione, Lighthouse)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| | Performance | Accessibilità | Best practices | SEO |
+|---|---|---|---|---|
+| Desktop | 99 | 100 | 100 | 63* |
+| Mobile (simulato, CPU ×4) | 82 | 100 | 100 | 63* |
+| Mobile (throttling reale) | ~89 | — | — | — |
+
+\* Il SEO è basso solo per il `noindex` voluto sulla demo. In produzione vera:
+togliere `robots` da `src/app/layout.tsx`.
+
+## Note
+
+- Foto di repertorio Unsplash, vedi `CREDITS.md`. Non ritraggono animali o persone dello studio.
+- Il modulo di contatto è dimostrativo: non invia nulla.
+- Pubblicazione: Vercel (vedi gate G2 nel piano).

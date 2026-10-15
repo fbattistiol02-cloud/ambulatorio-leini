@@ -122,9 +122,9 @@ export function Hero() {
               <circle cx="100" cy="100" r="92" stroke="currentColor" strokeWidth="0.5" />
             </svg>
 
-            <div className="hero-iris absolute inset-0 overflow-hidden rounded-full bg-paper-2 shadow-[0_40px_80px_-30px_rgb(27_34_43/0.45)]">
+            <div className="absolute inset-0 overflow-hidden rounded-full bg-paper-2 shadow-[0_40px_80px_-30px_rgb(27_34_43/0.45)]">
               <div className="hero-focus absolute inset-0">
-                <Parallax amount={7}>
+                <Parallax amount={4}>
                   <div className="relative h-full w-full">
                     <Photo
                       img={images.hero}

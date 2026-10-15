@@ -1,31 +1,35 @@
+import blur from "./images.generated.json";
+
 /**
- * Registro delle immagini. `src: null` mostra un segnaposto elegante
- * finché le foto stock non sono state approvate (Gate G1).
- * Crediti in CREDITS.md.
+ * Registro delle immagini (foto stock, licenza Unsplash). Crediti in CREDITS.md.
+ * I placeholder sfocati sono generati da scripts/optimize-images.mjs.
  */
 export type ImageDef = {
   src: string | null;
   alt: string;
   /** object-position CSS per il punto focale */
   position?: string;
-  /** placeholder sfocato (data URL) generato da scripts/optimize-images */
+  /** placeholder sfocato (data URL) */
   blur?: string;
 };
 
 export const images = {
   hero: {
-    src: null,
-    alt: "Un cane dal pelo chiaro guarda l’obiettivo con occhi attenti, in una luce calda.",
-    position: "50% 35%",
+    src: "/images/hero.jpg",
+    alt: "Un golden retriever dal pelo dorato, in controluce al tramonto, guarda di lato con la bocca socchiusa.",
+    position: "50% 50%",
+    blur: blur.hero,
   },
   visita: {
-    src: null,
-    alt: "Un gatto tranquillo durante una visita veterinaria.",
-    position: "50% 40%",
+    src: "/images/visita.jpg",
+    alt: "Un gattino bianco viene ascoltato con lo stetoscopio durante una visita veterinaria, tenuto con delicatezza dalle mani del medico.",
+    position: "42% 50%",
+    blur: blur.visita,
   },
   closing: {
-    src: null,
-    alt: "Un cane che riposa serenamente su un morbido tappeto.",
+    src: "/images/closing.jpg",
+    alt: "Un cucciolo di golden retriever dorme sereno con il muso appoggiato al pavimento.",
     position: "50% 50%",
+    blur: blur.closing,
   },
 } satisfies Record<string, ImageDef>;

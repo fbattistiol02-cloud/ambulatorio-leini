@@ -62,13 +62,33 @@ export function MotionProvider({ children }: { children: ReactNode }) {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const stored = readStored();
     setReduced(stored ? stored === "reduced" : mq.matches);
-    setReady(true);
+
+    // L'hero si anima solo con CSS: il resto del movimento può partire quando
+    // il browser è a riposo, senza pesare su caricamento e primo input.
+    const start = () => setReady(true);
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    let idleId: number | undefined;
+    let timer: number | undefined;
+    const kickoff = () => {
+      if (w.requestIdleCallback) idleId = w.requestIdleCallback(start, { timeout: 1500 });
+      else timer = window.setTimeout(start, 300);
+    };
+    if (document.readyState === "complete") kickoff();
+    else window.addEventListener("load", kickoff, { once: true });
 
     const onChange = (e: MediaQueryListEvent) => {
       if (!readStored()) setReduced(e.matches);
     };
     mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
+    return () => {
+      mq.removeEventListener("change", onChange);
+      window.removeEventListener("load", kickoff);
+      if (idleId !== undefined) w.cancelIdleCallback?.(idleId);
+      if (timer !== undefined) window.clearTimeout(timer);
+    };
   }, []);
 
   // 2) attributo su <html> (usato dal CSS per spegnere le transizioni)

@@ -32,7 +32,16 @@ export const metadata: Metadata = {
     description,
     locale: "it_IT",
     type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ambulatorio Veterinario Leinì: quando il tuo animale non sta bene, meriti risposte chiare.",
+      },
+    ],
   },
+  twitter: { card: "summary_large_image", title, description, images: ["/og.jpg"] },
 };
 
 export const viewport: Viewport = {

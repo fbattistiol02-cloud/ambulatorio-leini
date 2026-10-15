@@ -23,7 +23,7 @@ export function Visita() {
       const steps = gsap.utils.toArray<HTMLElement>("[data-step]", root.current);
       const dots = gsap.utils.toArray<HTMLElement>("[data-dot]", root.current);
 
-      gsap.set(steps, { opacity: 0.3 });
+      gsap.set(steps, { autoAlpha: 0, y: 28 });
       gsap.set(dots, { scale: 0.6, backgroundColor: "transparent" });
 
       if (list && line) {
@@ -48,7 +48,7 @@ export function Visita() {
           trigger: step,
           start: "top 68%",
           onEnter: () => {
-            gsap.to(step, { opacity: 1, duration: 0.7 });
+            gsap.to(step, { autoAlpha: 1, y: 0, duration: 0.9, ease: "expo.out" });
             gsap.to(dots[i], {
               scale: 1,
               backgroundColor: "var(--hazel-deep)",
@@ -57,7 +57,7 @@ export function Visita() {
             });
           },
           onLeaveBack: () => {
-            gsap.to(step, { opacity: 0.3, duration: 0.5 });
+            gsap.to(step, { autoAlpha: 0, y: 28, duration: 0.5 });
             gsap.to(dots[i], {
               scale: 0.6,
               backgroundColor: "transparent",
@@ -84,7 +84,7 @@ export function Visita() {
             <span id="visita-title">{richTitle(visita.title)}</span>
           </SplitHeading>
 
-          <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-[2rem] lg:mt-14 lg:aspect-[4/5]">
+          <div className="relative mt-10 aspect-[5/4] overflow-hidden rounded-[2rem] lg:mt-14">
             <Parallax amount={6}>
               <div className="relative h-full w-full">
                 <Photo img={images.visita} sizes="(min-width: 1024px) 480px, 92vw" />

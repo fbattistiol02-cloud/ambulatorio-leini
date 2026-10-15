@@ -34,7 +34,7 @@ export function FocusScene() {
           // stato iniziale: tutto fuori fuoco
           gsap.set(q, { filter: "blur(22px)", opacity: 0.3 });
           gsap.set(a, { autoAlpha: 0, y: 18 });
-          gsap.set(n, { opacity: 0.35 });
+          gsap.set(n, { autoAlpha: 0 });
 
           const step = 1.5;
           const tl = gsap.timeline({
@@ -53,7 +53,7 @@ export function FocusScene() {
           q.forEach((el, i) => {
             const t = i * step;
             tl.to(el, { filter: "blur(0px)", opacity: 1, duration: 1 }, t)
-              .to(n[i], { opacity: 1, duration: 0.4 }, t)
+              .to(n[i], { autoAlpha: 1, duration: 0.4 }, t)
               .to(a[i], { autoAlpha: 1, y: 0, duration: 0.8 }, t + 0.55);
             if (i > 0) {
               tl.to([q[i - 1], a[i - 1]], { opacity: 0.5, duration: 0.8 }, t);

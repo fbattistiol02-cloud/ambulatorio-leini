@@ -29,6 +29,7 @@ export function Photo({ img, sizes, priority, className = "" }: PhotoProps) {
       fill
       sizes={sizes}
       priority={priority}
+      fetchPriority={priority ? "high" : undefined}
       placeholder={img.blur ? "blur" : "empty"}
       blurDataURL={img.blur}
       className={`object-cover ${className}`}

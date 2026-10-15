@@ -42,7 +42,11 @@ export function Parallax({
 
   return (
     <div ref={wrap} className={`absolute inset-0 overflow-hidden ${className ?? ""}`}>
-      <div ref={inner} className="absolute inset-[-12%]">
+      <div
+        ref={inner}
+        className="absolute"
+        style={{ inset: `${-(amount + 2)}%` }}
+      >
         {children}
       </div>
     </div>

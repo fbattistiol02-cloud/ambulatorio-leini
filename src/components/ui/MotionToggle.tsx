@@ -10,7 +10,7 @@ export function MotionToggle({ className }: { className?: string }) {
       type="button"
       onClick={toggle}
       aria-pressed={ready ? reduced : false}
-      className={`inline-flex items-center gap-2 text-sm underline-offset-4 hover:underline ${className ?? ""}`}
+      className={`items-center gap-2 text-sm underline-offset-4 hover:underline ${className ?? "inline-flex"}`}
     >
       <span
         aria-hidden

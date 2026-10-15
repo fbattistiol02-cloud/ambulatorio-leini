@@ -43,7 +43,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-paper/15 py-6 text-sm text-paper/60 sm:flex-row sm:items-center">
           <span>© {new Date().getFullYear()} {site.name} · {footer.demo}</span>
-          <MotionToggle className="text-paper/80" />
+          <MotionToggle className="inline-flex text-paper/80" />
         </div>
       </div>
     </footer>
