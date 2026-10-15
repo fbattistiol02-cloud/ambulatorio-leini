@@ -4,8 +4,7 @@ Anteprima dimostrativa del sito per il Dott. Davide Boasso (Leinì, TO).
 Next.js (App Router) + TypeScript + Tailwind v4 + GSAP/ScrollTrigger + Lenis.
 
 > **Stato:** demo. Dati, orari e testi sono da confermare con lo studio. Il sito è
-> `noindex` finché non diventa un sito vero. Piano e registro delle decisioni:
-> [IMPLEMENTATION_PLAN0.MD](IMPLEMENTATION_PLAN0.MD).
+> `noindex` finché non diventa un sito vero.
 
 ## Avvio
 

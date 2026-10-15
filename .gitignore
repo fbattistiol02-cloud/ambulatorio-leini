@@ -42,3 +42,7 @@ next-env.d.ts
 
 # originali delle foto (non versionati)
 assets-raw/
+
+# note interne di lavoro (non pubbliche)
+IMPLEMENTATION_PLAN0.MD
+.claude/
