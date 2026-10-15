@@ -1,54 +1,110 @@
-import { copy, site } from "@/content/site";
-import { addressLine, mailHref, mapsHref, telHref } from "@/lib/links";
-import { richTitle } from "@/lib/richTitle";
-import { Magnetic } from "../ui/Magnetic";
-import { Reveal } from "../motion/Reveal";
-import { SplitHeading } from "../motion/SplitHeading";
-import { IconArrowUpRight, IconMail, IconPhone, IconPin } from "../ui/Icons";
-import { OpeningHours } from "./OpeningHours";
-import { SchematicMap } from "./SchematicMap";
-
+import { site } from "@/content/site";
+import { Arrow } from "../ui/Sketch";
+import { CallLink } from "../ui/CallLink";
 export function Dove() {
-  const { dove } = copy;
   return (
-    <section id="dove" className="section bg-mist" aria-labelledby="dove-title">
-      <div className="wrap grid gap-14 lg:grid-cols-12 lg:gap-12">
-        <div className="lg:col-span-6">
-          <p className="eyebrow">{dove.eyebrow}</p>
-          <SplitHeading as="h2" className="display-lg mt-5">
-            <span id="dove-title">{richTitle(dove.title)}</span>
-          </SplitHeading>
-
-          <Reveal className="mt-10" stagger={0.1}>
-            <p className="flex items-start gap-3 text-lg">
-              <IconPin className="mt-1 shrink-0 text-hazel-deep" />
-              <span>{addressLine}</span>
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Magnetic>
-                <a href={mapsHref} target="_blank" rel="noopener" className="btn btn-primary w-full sm:w-auto">
-                  {dove.mapCta} <IconArrowUpRight />
-                </a>
-              </Magnetic>
-              <a href={telHref} className="btn btn-ghost w-full sm:w-auto">
-                <IconPhone /> {site.phone.display}
-              </a>
+    <section
+      id="dove"
+      className="section location-section"
+      aria-labelledby="location-title"
+      data-motion-scene
+    >
+      <div className="wrap location-grid">
+        <div>
+          <p className="eyebrow">06 — VICINO A TE</p>
+          <h2 id="location-title" data-reveal="title">
+            Ci trovi
+            <br />
+            <em>a Leinì.</em>
+          </h2>
+          <p className="location-address">
+            {site.address.street}
+            <br />
+            {site.address.postalCode} {site.address.city} · Torino
+          </p>
+          <p className="small-note">
+            Indirizzo e recapiti da confermare con lo studio.
+          </p>
+          <a
+            className="text-link"
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${site.address.street}, ${site.address.city}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Verifica l’indirizzo su Maps <Arrow diagonal />
+          </a>
+          <div className="contact-details">
+            <div>
+              <span>TELEFONO · DA CONFERMARE</span>
+              <p>
+                <CallLink className="phone-number">
+                  {site.phone.display}
+                </CallLink>
+              </p>
             </div>
-            <p className="mt-6 flex items-center gap-3 text-ink-soft">
-              <IconMail width={18} height={18} />
-              <a href={mailHref} className="link-u">
-                {site.email}
-              </a>
-            </p>
-            <div className="mt-12">
-              <OpeningHours />
+            <div>
+              <span>EMAIL · DA CONFERMARE</span>
+              <p>{site.email}</p>
             </div>
-          </Reveal>
+          </div>
+          <p className="small-note">
+            Il numero apre l’app per telefonare. Il modulo e l’email non inviano
+            richieste da questa anteprima.
+          </p>
         </div>
-
-        <Reveal className="lg:col-span-6 lg:pt-6">
-          <SchematicMap />
-        </Reveal>
+        <div className="location-card" data-reveal>
+          <div className="local-art" aria-hidden="true">
+            <svg viewBox="0 0 600 260" fill="none">
+              <path
+                className="map-road"
+                d="M-30 220L210 120L370 -20M150 300L260 130L620 50M-20 30L280 130L650 230M430 -20L420 310"
+              />
+              <path
+                className="map-lane"
+                d="M-30 220L210 120L370 -20M150 300L260 130L620 50M-20 30L280 130L650 230M430 -20L420 310"
+              />
+              <circle cx="275" cy="128" r="42" className="map-halo" />
+              <circle cx="275" cy="128" r="10" className="map-dot" />
+              <text x="303" y="135">
+                Leinì
+              </text>
+            </svg>
+            <span>Illustrazione del territorio · non è una mappa stradale</span>
+          </div>
+          <div className="hours">
+            <div className="hours-title">
+              <h3>Il tempo per incontrarsi.</h3>
+              <span className="demo-pill">Orari indicativi</span>
+            </div>
+            <table>
+              <caption className="sr-only">
+                Orari indicativi da confermare
+              </caption>
+              <tbody>
+                <tr>
+                  <th scope="row">Lunedì — Venerdì</th>
+                  <td>
+                    09:30 — 12:30
+                    <br />
+                    16:00 — 19:30
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Sabato</th>
+                  <td>09:30 — 12:30</td>
+                </tr>
+                <tr>
+                  <th scope="row">Domenica</th>
+                  <td>Chiuso</td>
+                </tr>
+              </tbody>
+            </table>
+            <p className="small-note">
+              Da verificare prima di recarsi allo studio. Questi orari non
+              indicano disponibilità di appuntamenti.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

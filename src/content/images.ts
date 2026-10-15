@@ -1,35 +1,24 @@
-import blur from "./images.generated.json";
-
-/**
- * Registro delle immagini (foto stock, licenza Unsplash). Crediti in CREDITS.md.
- * I placeholder sfocati sono generati da scripts/optimize-images.mjs.
- */
+/** Illustrative campaign generated with ImageGen. See docs/IMAGE_PROMPTS.md. */
 export type ImageDef = {
   src: string | null;
   alt: string;
-  /** object-position CSS per il punto focale */
   position?: string;
-  /** placeholder sfocato (data URL) */
   blur?: string;
 };
-
 export const images = {
   hero: {
-    src: "/images/hero.jpg",
-    alt: "Un golden retriever dal pelo dorato, in controluce al tramonto, guarda di lato con la bocca socchiusa.",
-    position: "50% 50%",
-    blur: blur.hero,
+    src: "/images/hero-v2.webp",
+    alt: "Ritratto illustrativo di un golden retriever, con una mano appoggiata delicatamente sotto il muso.",
+    position: "50% 45%",
   },
   visita: {
-    src: "/images/visita.jpg",
-    alt: "Un gattino bianco viene ascoltato con lo stetoscopio durante una visita veterinaria, tenuto con delicatezza dalle mani del medico.",
-    position: "42% 50%",
-    blur: blur.visita,
+    src: "/images/touch-v2.webp",
+    alt: "Un gatto si abbandona a una carezza, con gli occhi chiusi. Immagine illustrativa.",
+    position: "50% 50%",
   },
   closing: {
-    src: "/images/closing.jpg",
-    alt: "Un cucciolo di golden retriever dorme sereno con il muso appoggiato al pavimento.",
-    position: "50% 50%",
-    blur: blur.closing,
+    src: "/images/rest-v2.webp",
+    alt: "Un golden retriever riposa con il muso sulle zampe. Immagine illustrativa.",
+    position: "50% 55%",
   },
 } satisfies Record<string, ImageDef>;

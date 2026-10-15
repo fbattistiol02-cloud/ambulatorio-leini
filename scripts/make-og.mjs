@@ -1,39 +1,11 @@
-// Genera public/og.jpg (1200x630) per le anteprime di condivisione.
 import sharp from "sharp";
-
-const W = 1200, H = 630, D = 470;
-const circle = await sharp("public/images/hero.jpg")
-  .resize(D, D)
-  .composite([{
-    input: Buffer.from(`<svg width="${D}" height="${D}"><circle cx="${D / 2}" cy="${D / 2}" r="${D / 2}" fill="#fff"/></svg>`),
-    blend: "dest-in",
-  }])
-  .png()
+const portrait = await sharp("public/images/hero-v2.webp")
+  .resize(470, 630, { fit: "cover" })
   .toBuffer();
-
-const svg = `
-<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="g" cx="85%" cy="25%" r="60%">
-      <stop offset="0" stop-color="#d9a877" stop-opacity="0.45"/>
-      <stop offset="1" stop-color="#f3eee5" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="#f3eee5"/>
-  <rect width="100%" height="100%" fill="url(#g)"/>
-  <circle cx="${W - 70 - D / 2}" cy="${H / 2}" r="${D / 2 + 14}" fill="none" stroke="#1b222b" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="2 8"/>
-  <text x="80" y="120" font-family="Helvetica, Arial, sans-serif" font-size="20" letter-spacing="4" fill="#7a4b26" font-weight="700">AMBULATORIO VETERINARIO · LEINÌ</text>
-  <text font-family="Georgia, 'Times New Roman', serif" font-size="56" fill="#1b222b" letter-spacing="-1.5">
-    <tspan x="80" y="255">Quando il tuo animale</tspan>
-    <tspan x="80" y="325">non sta bene, meriti</tspan>
-    <tspan x="80" y="395" font-style="italic" fill="#7a4b26">risposte chiare.</tspan>
-  </text>
-  <text x="80" y="520" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#4a535c">Cani, gatti e piccoli animali · Via San Francesco al Campo 24</text>
-  <text x="80" y="560" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#4a535c" opacity="0.8">Anteprima dimostrativa</text>
-</svg>`;
-
-await sharp(Buffer.from(svg))
-  .composite([{ input: circle, left: W - 70 - D, top: Math.round((H - D) / 2) }])
-  .jpeg({ quality: 84, mozjpeg: true })
+const svg = Buffer.from(
+  `<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="630" fill="#f5f1e9"/><text x="65" y="90" fill="#535f48" font-family="Arial" font-size="15" letter-spacing="3">AMBULATORIO VETERINARIO · LEINÌ</text><text x="60" y="228" fill="#252b27" font-family="Georgia" font-size="76">Lui si fida di te.</text><text x="60" y="325" fill="#535f48" font-family="Georgia" font-style="italic" font-size="65">Tu meriti</text><text x="60" y="405" fill="#535f48" font-family="Georgia" font-style="italic" font-size="65">risposte chiare.</text><path d="M65 470C230 490 400 450 645 480" fill="none" stroke="#8d4f36"/><text x="65" y="552" fill="#5e645d" font-family="Arial" font-size="18">Il loro mondo, nelle tue mani.</text><text x="65" y="590" fill="#5e645d" font-family="Arial" font-size="13">CONCEPT DIMOSTRATIVO · IMMAGINE ILLUSTRATIVA</text></svg>`,
+);
+await sharp(svg)
+  .composite([{ input: portrait, left: 730, top: 0 }])
+  .jpeg({ quality: 88 })
   .toFile("public/og.jpg");
-console.log("public/og.jpg scritto");

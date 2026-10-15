@@ -1,70 +1,47 @@
-# Ambulatorio Veterinario Leinì · demo landing page
+# Ambulatorio Veterinario Leinì — concept v2
 
-Anteprima dimostrativa del sito per il Dott. Davide Boasso (Leinì, TO).
-Next.js (App Router) + TypeScript + Tailwind v4 + GSAP/ScrollTrigger + Lenis.
-
-> **Stato:** demo. Dati, orari e testi sono da confermare con lo studio. Il sito è
-> `noindex` finché non diventa un sito vero.
+Demo gratuita, non ufficiale. Identità editoriale, immagini illustrative coordinate e percorso locale per preparare un messaggio. La CTA principale apre l’app per telefonare tramite `tel:`; il modulo secondario non invia richieste; servizi, specie, indirizzo, recapiti e orari sono da confermare. La pagina mantiene `noindex, nofollow`.
 
 ## Avvio
 
-```bash
-npm install
-npm run dev -- -p 3100      # sviluppo
-npm run build && npm start  # produzione
+```sh
+npm ci
+npm run dev -- --port 3100
 ```
 
-## Dove si cambia cosa
+Per la build di produzione:
 
-| Cosa | Dove |
-|---|---|
-| Dati dello studio (indirizzo, telefoni, orari, rating) e **tutta la copy** | `src/content/site.ts` |
-| Dati non confermati | flag `confirm: true` in `site.ts` (compaiono nel footer) |
-| Immagini (percorsi, testo alternativo, punto focale) | `src/content/images.ts` |
-| Colori, font, spaziature | `src/app/globals.css` (token in `:root`) |
-| Link telefono/WhatsApp/mappa | `src/lib/links.ts` |
-| Orari "Aperto ora / Chiuso" | `src/lib/openStatus.ts` (fuso Europe/Rome) |
-| Animazioni | `src/components/motion/*` e sezioni in `src/components/sections/*` |
+```sh
+npm run lint
+node scripts/contrast.mjs
+npm run build
+npm run start -- --port 3101
+```
 
-### Cambiare una foto
+## Struttura
 
-1. Metti l'originale in `assets-raw/<nome>.jpg` (cartella non versionata).
-2. Regola il ritaglio in `scripts/optimize-images.mjs`.
-3. `node scripts/optimize-images.mjs assets-raw public/images`
-4. Aggiorna `CREDITS.md` e il testo alternativo in `images.ts`.
-5. Se cambia l'hero: `node scripts/make-og.mjs` rigenera l'anteprima di condivisione.
+- `IMPLEMENTATION_PLAN1.MD`: piano, avanzamento e verifiche aperte.
+- `docs/DESIGN_DIRECTION.md`: direzione creativa e trattamento delle informazioni.
+- `docs/IMAGE_PROMPTS.md`: prompt e provenienza delle immagini generate.
+- `docs/PRESENTAZIONE.md`: presentazione di circa 90 secondi.
+- `docs/QA_REPORT.md`: risultati misurati e limiti delle verifiche.
+- `src/content/experience.ts`: servizi illustrativi, visita e FAQ.
+- `src/content/site.ts`: dati della demo originale, da validare; le vecchie copy non sono usate dalle nuove sezioni.
+- `src/components/sections/ContactJourney.tsx`: selezioni, messaggio, modifica, copia e riavvio.
+- `src/app/globals.css`: palette e composizioni responsive.
+- `src/app/experience.css`: coreografia della hero, scena narrativa e transizioni.
+- `src/components/motion/MotionDirector.tsx`: ingressi e profondità durante lo scroll, con pulizia degli effetti.
+- `src/components/motion/PortraitScene.tsx`: profondità del ritratto al puntatore.
+- `src/app/fonts/`: font locali e licenze, per build indipendenti da Google Fonts.
 
-### Contrasti
+## Interazioni e accessibilità
 
-`node scripts/contrast.mjs` verifica le coppie di colori (WCAG).
+Servizi, FAQ, note del concept e menu usano elementi `details` nativi. Il contatto guidato richiede JavaScript, mentre i contenuti essenziali restano nell’HTML. Il messaggio vive soltanto nello stato React della pagina e non usa storage o endpoint. Solo la preferenza di movimento è salvata localmente.
 
-## Movimento e accessibilità
+La hero entra per righe e rivela il ritratto; il sigillo ruota e la cornice respira mentre la sezione è visibile. Il ritratto risponde al puntatore su desktop. Una fascia tipografica e la profondità delle foto seguono lo scroll nativo. Nel metodo una scultura di filo evolve in tre capitoli con una scena sticky, senza bloccare lo scorrimento; su finestre basse torna nel flusso normale. Servizi, visita e contatto hanno transizioni e disegni progressivi.
 
-- Scroll fluido (Lenis) e animazioni si spengono con `prefers-reduced-motion`
-  **o** con l'interruttore "Riduci le animazioni" (footer; salvato nel browser).
-  Con il movimento ridotto la pagina è completa: nessun blur, nessun pin.
-- Hero animato solo con CSS: il contenuto non dipende da JavaScript.
-- Per scrivere una nuova animazione usa l'hook `useMotionEffect` (`src/components/motion/useMotionEffect.ts`): riceve gsap, ScrollTrigger, SplitText e pulisce da solo.
-- La scena "Dalla preoccupazione alla chiarezza" è la sezione pinnata
-  (`FocusScene.tsx`): durata dello scroll e ritmo sono nel timeline in cima al file.
+Web Animations API, CSS e listener passivi limitano il lavoro alle scene visibili. La pagina non carica GSAP/Lenis/SplitText. Le animazioni sono presenti anche su mobile. La preferenza di sistema viene rispettata in assenza di una scelta locale; il pulsante nell’header e l’interruttore nel footer consentono di fermare o riattivare il movimento. La scelta viene conservata e sincronizzata tra le schede. Contenuti e azioni restano disponibili con movimento ridotto.
 
-## Misure (sito pubblico, Lighthouse)
+Le immagini v2 sono WebP locali. Per rigenerare la condivisione dopo aver cambiato la hero: `node scripts/make-og.mjs`. Per ottimizzare nuovi originali: `node scripts/prepare-campaign.mjs /path/hero.png /path/touch.png /path/rest.png`.
 
-| | Performance | Accessibilità | Best practices | SEO |
-|---|---|---|---|---|
-| Desktop | 100 | 100 | 100 | 63* |
-| Mobile (simulato, mediana di 5) | 95 | 100 | 100 | 63* |
-
-\* Il SEO è basso solo per il `noindex` voluto sulla demo. In produzione vera:
-togliere `robots` da `src/app/layout.tsx`.
-
-Cosa tiene il sito leggero: le librerie di animazione (GSAP, ScrollTrigger,
-SplitText, Lenis) si caricano a parte e a browser libero (`src/components/motion/loader.ts`);
-l'hero si anima solo con CSS; i font sono limitati agli assi che servono
-(Fraunces con la sola dimensione ottica `opsz`).
-
-## Note
-
-- Foto di repertorio Unsplash, vedi `CREDITS.md`. Non ritraggono animali o persone dello studio.
-- Il modulo di contatto è dimostrativo: non invia nulla.
-- Pubblicata su Vercel: https://ambulatorio-leini.vercel.app (`noindex`). Ripubblicare: `npx vercel deploy --prod --yes`.
+La versione pubblicata precedentemente su Vercel non viene aggiornata automaticamente da questi cambiamenti locali.

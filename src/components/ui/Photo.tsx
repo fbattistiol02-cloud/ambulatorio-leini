@@ -28,7 +28,7 @@ export function Photo({ img, sizes, priority, className = "" }: PhotoProps) {
       alt={img.alt}
       fill
       sizes={sizes}
-      priority={priority}
+      loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : undefined}
       placeholder={img.blur ? "blur" : "empty"}
       blurDataURL={img.blur}

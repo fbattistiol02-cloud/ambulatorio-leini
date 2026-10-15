@@ -1,59 +1,74 @@
-import { copy } from "@/content/site";
-import { richTitle } from "@/lib/richTitle";
-import { whatsappFor } from "@/lib/links";
-import { Reveal } from "../motion/Reveal";
-import { SplitHeading } from "../motion/SplitHeading";
-import { IconArrow, IconImaging, IconSurgery, IconVisit } from "../ui/Icons";
-
-const icons = {
-  visite: IconVisit,
-  chirurgia: IconSurgery,
-  diagnostica: IconImaging,
-} as const;
-
+"use client";
+import { services } from "@/content/experience";
+import { Sketch, Arrow } from "../ui/Sketch";
 export function Cure() {
-  const { cure } = copy;
   return (
-    <section id="cure" className="section" aria-labelledby="cure-title">
+    <section
+      className="section services-section"
+      id="cure"
+      aria-labelledby="services-title"
+      data-motion-scene
+    >
       <div className="wrap">
-        <p className="eyebrow">{cure.eyebrow}</p>
-        <SplitHeading as="h2" className="display-lg mt-5 max-w-3xl">
-          <span id="cure-title">{richTitle(cure.title)}</span>
-        </SplitHeading>
-
-        <Reveal stagger={0.14} className="mt-14 grid gap-5 md:grid-cols-3 lg:mt-20">
-          {cure.items.map((it, i) => {
-            const Icon = icons[it.key];
-            return (
-              <article
-                key={it.key}
-                className="group relative flex min-h-[24rem] flex-col justify-between overflow-hidden rounded-[2rem] bg-paper-2 p-8 transition-colors duration-500 hover:bg-ink hover:text-paper focus-within:bg-ink focus-within:text-paper lg:min-h-[30rem] lg:p-10"
-              >
-                <div className="flex items-start justify-between">
-                  <Icon className="text-hazel-deep transition-colors duration-500 group-hover:text-hazel-light group-focus-within:text-hazel-light" />
-                  <span className="font-display text-sm text-ink-soft transition-colors duration-500 group-hover:text-paper/60">
-                    0{i + 1}
-                  </span>
+        <div className="section-heading" data-reveal="title">
+          <div>
+            <p className="eyebrow">03 — LE CURE</p>
+            <h2 id="services-title">
+              Ogni cura comincia
+              <br />
+              <em>dal capire.</em>
+            </h2>
+          </div>
+          <p>
+            Esplora il percorso, trova le parole
+            <br className="desktop-break" /> per le tue domande.
+            <span className="small-note">
+              Servizi illustrativi, da confermare con lo studio.
+            </span>
+          </p>
+        </div>
+        <div className="service-explorer" data-reveal>
+          {services.map((service, i) => (
+            <details
+              className="service-item"
+              name="services"
+              key={service.id}
+              open={i === 0}
+            >
+              <summary>
+                <span className="service-index">0{i + 1}</span>
+                <span>{service.title}</span>
+                <span className="plus" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <div className="service-detail">
+                <div className="service-art">
+                  <span className="service-orbit" aria-hidden="true" />
+                  <Sketch kind={service.icon} />
+                  <span>CONOSCERE È IL PRIMO PASSO</span>
                 </div>
                 <div>
-                  <h3 className="display-md">{it.title}</h3>
-                  <p className="mt-4 max-w-sm text-ink-soft transition-colors duration-500 group-hover:text-paper/75 group-focus-within:text-paper/75">
-                    {it.text}
-                  </p>
+                  <p className="eyebrow">IL PERCORSO</p>
+                  <h3>{service.subtitle}</h3>
+                  <p>{service.text}</p>
+                  <p className="service-specific">{service.detail}</p>
                   <a
-                    href={whatsappFor(it.title)}
-                    target="_blank"
-                    rel="noopener"
-                    className="mt-8 inline-flex items-center gap-2 font-semibold after:absolute after:inset-0 after:content-['']"
+                    className="text-link"
+                    href="#prepara-messaggio"
+                    onClick={() =>
+                      window.dispatchEvent(
+                        new CustomEvent("leini-topic", { detail: service.id }),
+                      )
+                    }
                   >
-                    {it.cta}
-                    <IconArrow className="transition-transform duration-500 group-hover:translate-x-1.5" />
+                    Prepara una domanda <Arrow />
                   </a>
                 </div>
-              </article>
-            );
-          })}
-        </Reveal>
+              </div>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
   );
