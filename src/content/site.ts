@@ -109,7 +109,7 @@ export const copy = {
 
   proof: {
     eyebrow: "Cosa raccontano le persone",
-    title: "La chiarezza si vede da chi torna.",
+    title: "La chiarezza si *vede da chi torna.*",
     note: "Sintesi parafrasata delle recensioni pubbliche su Google.",
     items: [
       {
@@ -137,7 +137,7 @@ export const copy = {
 
   cure: {
     eyebrow: "Le cure",
-    title: "Tutto quello che serve, spiegato bene.",
+    title: "Tutto quello che serve, *spiegato bene.*",
     items: [
       {
         key: "visite",
@@ -162,7 +162,7 @@ export const copy = {
 
   visita: {
     eyebrow: "La visita",
-    title: "Che cosa succede, passo dopo passo.",
+    title: "Che cosa succede, *passo dopo passo.*",
     steps: [
       {
         key: "prima",
@@ -194,14 +194,14 @@ export const copy = {
 
   dove: {
     eyebrow: "Dove siamo",
-    title: "Facile da trovare, facile da contattare.",
+    title: "Facile da trovare, *facile da contattare.*",
     mapCta: "Apri indicazioni",
     contactCta: "Chiama lo studio",
   },
 
   faq: {
     eyebrow: "Domande frequenti",
-    title: "Le risposte che cercavi.",
+    title: "Le risposte *che cercavi.*",
     draftNote: "Bozza di testi: da validare con il dottore.",
     items: [
       {
@@ -228,7 +228,7 @@ export const copy = {
   },
 
   closing: {
-    title: "Il tuo animale ha bisogno di risposte?",
+    title: "Il tuo animale ha bisogno *di risposte?*",
     lead: "Cominciamo da una telefonata o da un messaggio.",
     ctaPrimary: "Scrivici su WhatsApp",
     ctaSecondary: "Chiama lo studio",

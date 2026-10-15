@@ -152,6 +152,10 @@ html.lenis body {
   color: var(--hazel-deep);
 }
 
+.on-dark .em {
+  color: var(--hazel-light);
+}
+
 .eyebrow {
   font-size: 0.78rem;
   font-weight: 600;
