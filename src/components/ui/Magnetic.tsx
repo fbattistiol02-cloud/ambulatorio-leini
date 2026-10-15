@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
-import { gsap, useGSAP } from "../motion/gsap";
-import { useMotion } from "../motion/MotionProvider";
+import { useMotionEffect } from "../motion/useMotionEffect";
 
 /**
  * Attrae leggermente l'elemento verso il cursore. Solo con puntatore
@@ -18,14 +17,12 @@ export function Magnetic({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const { ready, reduced } = useMotion();
 
-  useGSAP(
-    () => {
+  useMotionEffect(
+    ({ gsap }) => {
       const el = ref.current;
-      if (!ready || reduced || !el) return;
-      if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches)
-        return;
+      if (!el) return;
+      if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
       const xTo = gsap.quickTo(el, "x", { duration: 0.6, ease: "power3.out" });
       const yTo = gsap.quickTo(el, "y", { duration: 0.6, ease: "power3.out" });
@@ -47,7 +44,8 @@ export function Magnetic({
         gsap.set(el, { x: 0, y: 0 });
       };
     },
-    { scope: ref, dependencies: [ready, reduced, strength] },
+    ref,
+    [strength],
   );
 
   return (

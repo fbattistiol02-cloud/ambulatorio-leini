@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
-import { gsap, useGSAP } from "./gsap";
-import { useMotion } from "./MotionProvider";
+import { useMotionEffect } from "./useMotionEffect";
 
 /** Sposta il contenuto in verticale mentre scorri (solo transform). */
 export function Parallax({
@@ -17,11 +16,10 @@ export function Parallax({
 }) {
   const wrap = useRef<HTMLDivElement>(null);
   const inner = useRef<HTMLDivElement>(null);
-  const { ready, reduced } = useMotion();
 
-  useGSAP(
-    () => {
-      if (!ready || reduced || !wrap.current || !inner.current) return;
+  useMotionEffect(
+    ({ gsap }) => {
+      if (!wrap.current || !inner.current) return;
       gsap.fromTo(
         inner.current,
         { yPercent: -amount },
@@ -37,7 +35,8 @@ export function Parallax({
         },
       );
     },
-    { scope: wrap, dependencies: [ready, reduced, amount] },
+    wrap,
+    [amount],
   );
 
   return (

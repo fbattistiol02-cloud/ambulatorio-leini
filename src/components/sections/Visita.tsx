@@ -4,20 +4,18 @@ import { useRef } from "react";
 import { copy } from "@/content/site";
 import { images } from "@/content/images";
 import { richTitle } from "@/lib/richTitle";
-import { gsap, ScrollTrigger, useGSAP } from "../motion/gsap";
-import { useMotion } from "../motion/MotionProvider";
+import { useMotionEffect } from "../motion/useMotionEffect";
 import { Parallax } from "../motion/Parallax";
 import { SplitHeading } from "../motion/SplitHeading";
 import { Photo } from "../ui/Photo";
 
 export function Visita() {
   const root = useRef<HTMLElement>(null);
-  const { ready, reduced } = useMotion();
   const { visita } = copy;
 
-  useGSAP(
-    () => {
-      if (!ready || reduced || !root.current) return;
+  useMotionEffect(
+    ({ gsap, ScrollTrigger }) => {
+      if (!root.current) return;
       const list = root.current.querySelector("[data-list]");
       const line = root.current.querySelector("[data-line]");
       const steps = gsap.utils.toArray<HTMLElement>("[data-step]", root.current);
@@ -67,7 +65,7 @@ export function Visita() {
         });
       });
     },
-    { scope: root, dependencies: [ready, reduced] },
+    root,
   );
 
   return (

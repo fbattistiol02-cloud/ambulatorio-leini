@@ -45,19 +45,24 @@ npm run build && npm start  # produzione
   **o** con l'interruttore "Riduci le animazioni" (footer; salvato nel browser).
   Con il movimento ridotto la pagina è completa: nessun blur, nessun pin.
 - Hero animato solo con CSS: il contenuto non dipende da JavaScript.
+- Per scrivere una nuova animazione usa l'hook `useMotionEffect` (`src/components/motion/useMotionEffect.ts`): riceve gsap, ScrollTrigger, SplitText e pulisce da solo.
 - La scena "Dalla preoccupazione alla chiarezza" è la sezione pinnata
   (`FocusScene.tsx`): durata dello scroll e ritmo sono nel timeline in cima al file.
 
-## Misure (build di produzione, Lighthouse)
+## Misure (sito pubblico, Lighthouse)
 
 | | Performance | Accessibilità | Best practices | SEO |
 |---|---|---|---|---|
-| Desktop | 99 | 100 | 100 | 63* |
-| Mobile (simulato, CPU ×4) | 82 | 100 | 100 | 63* |
-| Mobile (throttling reale) | ~89 | — | — | — |
+| Desktop | 100 | 100 | 100 | 63* |
+| Mobile (simulato, mediana di 5) | 95 | 100 | 100 | 63* |
 
 \* Il SEO è basso solo per il `noindex` voluto sulla demo. In produzione vera:
 togliere `robots` da `src/app/layout.tsx`.
+
+Cosa tiene il sito leggero: le librerie di animazione (GSAP, ScrollTrigger,
+SplitText, Lenis) si caricano a parte e a browser libero (`src/components/motion/loader.ts`);
+l'hero si anima solo con CSS; i font sono limitati agli assi che servono
+(Fraunces con la sola dimensione ottica `opsz`).
 
 ## Note
 

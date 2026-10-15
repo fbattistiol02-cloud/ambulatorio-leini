@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef, type ElementType, type ReactNode } from "react";
-import { gsap, useGSAP } from "./gsap";
-import { useMotion } from "./MotionProvider";
+import { useMotionEffect } from "./useMotionEffect";
 
 type RevealProps = {
   children: ReactNode;
@@ -27,27 +26,23 @@ export function Reveal({
   stagger,
 }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
-  const { ready, reduced } = useMotion();
 
-  useGSAP(
-    () => {
-      if (!ready || reduced || !ref.current) return;
-      const targets = stagger ? Array.from(ref.current.children) : ref.current;
-      gsap.from(targets, {
+  useMotionEffect(
+    ({ gsap }) => {
+      const el = ref.current;
+      if (!el) return;
+      gsap.from(stagger ? Array.from(el.children) : el, {
         autoAlpha: 0,
         y,
         duration: 1.1,
         delay,
         stagger: stagger ?? 0,
         ease: "expo.out",
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 88%",
-          once: true,
-        },
+        scrollTrigger: { trigger: el, start: "top 88%", once: true },
       });
     },
-    { scope: ref, dependencies: [ready, reduced] },
+    ref,
+    [stagger, y, delay],
   );
 
   return (

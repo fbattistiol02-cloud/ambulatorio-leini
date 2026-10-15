@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef, type ElementType, type ReactNode } from "react";
-import { gsap, SplitText, useGSAP } from "./gsap";
-import { useMotion } from "./MotionProvider";
+import { useMotionEffect } from "./useMotionEffect";
 
 type SplitHeadingProps = {
   children: ReactNode;
@@ -22,12 +21,12 @@ export function SplitHeading({
   delay = 0,
 }: SplitHeadingProps) {
   const ref = useRef<HTMLElement>(null);
-  const { ready, reduced } = useMotion();
 
-  useGSAP(
-    () => {
-      if (!ready || reduced || !ref.current) return;
-      SplitText.create(ref.current, {
+  useMotionEffect(
+    ({ gsap, SplitText }) => {
+      const el = ref.current;
+      if (!el) return;
+      SplitText.create(el, {
         type: "lines",
         mask: "lines",
         autoSplit: true,
@@ -39,15 +38,12 @@ export function SplitHeading({
             delay,
             stagger: 0.1,
             ease: "expo.out",
-            scrollTrigger: {
-              trigger: ref.current,
-              start: "top 88%",
-              once: true,
-            },
+            scrollTrigger: { trigger: el, start: "top 88%", once: true },
           }),
       });
     },
-    { scope: ref, dependencies: [ready, reduced] },
+    ref,
+    [delay],
   );
 
   return (

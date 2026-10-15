@@ -2,8 +2,7 @@
 
 import { useRef } from "react";
 import { copy } from "@/content/site";
-import { gsap, useGSAP } from "../motion/gsap";
-import { useMotion } from "../motion/MotionProvider";
+import { useMotionEffect } from "../motion/useMotionEffect";
 
 /**
  * SCENA FIRMA — "dalla preoccupazione alla chiarezza".
@@ -13,12 +12,11 @@ import { useMotion } from "../motion/MotionProvider";
  */
 export function FocusScene() {
   const root = useRef<HTMLElement>(null);
-  const { ready, reduced } = useMotion();
   const { focus } = copy;
 
-  useGSAP(
-    () => {
-      if (!ready || reduced || !root.current) return;
+  useMotionEffect(
+    ({ gsap }) => {
+      if (!root.current) return;
       const mm = gsap.matchMedia();
 
       mm.add(
@@ -84,7 +82,7 @@ export function FocusScene() {
 
       return () => mm.revert();
     },
-    { scope: root, dependencies: [ready, reduced] },
+    root,
   );
 
   return (

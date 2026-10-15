@@ -9,8 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import Lenis from "lenis";
-import { gsap, ScrollTrigger } from "./gsap";
+import { loadMotion } from "./loader";
 
 type MotionState = {
   /** true quando la preferenza (sistema o interruttore) è stata letta */
@@ -97,23 +96,34 @@ export function MotionProvider({ children }: { children: ReactNode }) {
     document.documentElement.dataset.motion = reduced ? "reduced" : "full";
   }, [ready, reduced]);
 
-  // 3) scroll fluido + ancore
+  // 3) scroll fluido (librerie caricate a parte) + ancore
   useEffect(() => {
     if (!ready) return;
 
-    let lenis: Lenis | null = null;
+    let dead = false;
+    let lenis: { scrollTo: (t: HTMLElement, o: object) => void; destroy: () => void } | null = null;
     let tick: ((time: number) => void) | null = null;
+    let removeTick: (() => void) | null = null;
+
+    const refresh = () => {
+      loadMotion().then((m) => m.ScrollTrigger.refresh());
+    };
 
     if (!reduced) {
-      lenis = new Lenis({
-        duration: 1.15,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
+      loadMotion().then((m) => {
+        if (dead) return;
+        const instance = new m.Lenis({
+          duration: 1.15,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+        });
+        instance.on("scroll", m.ScrollTrigger.update);
+        tick = (time: number) => instance.raf(time * 1000);
+        m.gsap.ticker.add(tick);
+        m.gsap.ticker.lagSmoothing(0);
+        removeTick = () => m.gsap.ticker.remove(tick!);
+        lenis = instance;
       });
-      lenis.on("scroll", ScrollTrigger.update);
-      tick = (time) => lenis!.raf(time * 1000);
-      gsap.ticker.add(tick);
-      gsap.ticker.lagSmoothing(0);
     }
 
     const onClick = (e: MouseEvent) => {
@@ -136,15 +146,17 @@ export function MotionProvider({ children }: { children: ReactNode }) {
     document.addEventListener("click", onClick);
 
     // Ricalcola i trigger quando font e immagini hanno finito di caricare
-    const refresh = () => ScrollTrigger.refresh();
     window.addEventListener("load", refresh);
-    document.fonts?.ready.then(refresh);
+    document.fonts?.ready.then(() => {
+      if (!dead) refresh();
+    });
 
     return () => {
+      dead = true;
       document.removeEventListener("click", onClick);
       window.removeEventListener("load", refresh);
-      if (tick) gsap.ticker.remove(tick);
-      lenis?.destroy();
+      removeTick?.();
+      (lenis as { destroy: () => void } | null)?.destroy();
     };
   }, [ready, reduced]);
 

@@ -2,17 +2,15 @@
 
 import { useRef } from "react";
 import { site } from "@/content/site";
-import { gsap, useGSAP } from "../motion/gsap";
-import { useMotion } from "../motion/MotionProvider";
+import { useMotionEffect } from "../motion/useMotionEffect";
 
 /** Mappa schematica (non in scala): strade che si disegnano e un segnaposto. */
 export function SchematicMap() {
   const ref = useRef<SVGSVGElement>(null);
-  const { ready, reduced } = useMotion();
 
-  useGSAP(
-    () => {
-      if (!ready || reduced || !ref.current) return;
+  useMotionEffect(
+    ({ gsap }) => {
+      if (!ref.current) return;
       const paths = gsap.utils.toArray<SVGPathElement>(".road", ref.current);
       paths.forEach((p) => {
         const len = p.getTotalLength();
@@ -34,7 +32,7 @@ export function SchematicMap() {
         scrollTrigger: { trigger: ref.current, start: "top 80%", once: true },
       });
     },
-    { scope: ref, dependencies: [ready, reduced] },
+    ref,
   );
 
   return (

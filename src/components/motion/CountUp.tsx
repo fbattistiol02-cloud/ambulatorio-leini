@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { gsap, useGSAP } from "./gsap";
-import { useMotion } from "./MotionProvider";
+import { useMotionEffect } from "./useMotionEffect";
 
 const fmt = (v: number, decimals: number) =>
   v.toLocaleString("it-IT", {
@@ -21,12 +20,11 @@ export function CountUp({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const { ready, reduced } = useMotion();
 
-  useGSAP(
-    () => {
+  useMotionEffect(
+    ({ gsap }) => {
       const el = ref.current;
-      if (!ready || reduced || !el) return;
+      if (!el) return;
       const o = { v: 0 };
       el.textContent = fmt(0, decimals);
       gsap.to(o, {
@@ -42,7 +40,8 @@ export function CountUp({
         el.textContent = fmt(to, decimals);
       };
     },
-    { scope: ref, dependencies: [ready, reduced, to, decimals] },
+    ref,
+    [to, decimals],
   );
 
   return (
