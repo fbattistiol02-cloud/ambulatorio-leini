@@ -1,3 +1,4 @@
+import { Logo } from "../ui/Logo";
 import { MotionToggle } from "../ui/MotionToggle";
 export function Footer() {
   return (
@@ -5,7 +6,7 @@ export function Footer() {
       <div className="wrap">
         <div className="footer-top">
           <a href="#top" className="footer-brand">
-            Leinì<span>.</span>
+            <Logo />
           </a>
           <p>
             Un nuovo sguardo sulla cura.

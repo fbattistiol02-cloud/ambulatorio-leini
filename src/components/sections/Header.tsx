@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Arrow } from "../ui/Sketch";
 import { MotionToggle } from "../ui/MotionToggle";
 import { CallLink } from "../ui/CallLink";
+import { Logo } from "../ui/Logo";
 const links = [
   ["#chiarezza", "L’approccio"],
   ["#cure", "Le cure"],
@@ -18,15 +19,7 @@ export function Header() {
     <header className="site-header">
       <div className="wrap header-inner">
         <a href="#top" className="brand">
-          <span className="brand-symbol" aria-hidden="true">
-            l<span>·</span>
-          </span>
-          <span>
-            <small>AMBULATORIO VETERINARIO</small>
-            <strong>
-              Leinì<span className="brand-dot">.</span>
-            </strong>
-          </span>
+          <Logo />
         </a>
         <nav className="desktop-nav" aria-label="Principale">
           {links.map(([href, label]) => (

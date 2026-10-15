@@ -219,41 +219,55 @@ section {
   gap: 26px;
 }
 .brand {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+  display: inline-flex;
   flex-shrink: 0;
+  color: var(--ink);
 }
-.brand-symbol {
+/* Logo "il tratto": cresce con il font-size del contenitore */
+.logo {
+  --logo-accent: var(--hazel-deep);
+  --logo-swash: var(--hazel-light);
+  display: inline-grid;
+  justify-items: start;
+  font-size: 40px;
+  line-height: 1;
+}
+.logo-word {
   font:
-    italic 46px/0.9 var(--font-fraunces),
+    350 1em/1 var(--font-fraunces),
     serif;
-  border: 1px solid #9b9f91;
-  border-radius: 50%;
-  width: 46px;
-  height: 53px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--olive);
+  letter-spacing: -0.045em;
 }
-.brand-symbol span {
-  color: var(--hazel-deep);
-  font-size: 30px;
+.logo-dot {
+  color: var(--logo-accent);
 }
-.brand small {
-  font-size: 8px;
-  letter-spacing: 0.16em;
-  display: block;
+.logo-swash {
+  /* non detta la larghezza della colonna: segue la scritta */
+  width: 0;
+  min-width: 100%;
+  height: auto;
+  aspect-ratio: 20 / 1;
+  margin-top: 0.02em;
+  color: var(--logo-swash);
+  overflow: visible;
 }
-.brand strong {
+.logo-swash path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: logo-draw 1.1s 0.5s var(--ease-out) forwards;
+}
+@keyframes logo-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.logo-caps {
+  margin-top: 0.12em;
   font:
-    400 33px/1.15 var(--font-fraunces),
-    serif;
-  letter-spacing: -0.05em;
-}
-.brand-dot {
-  color: var(--hazel-deep);
+    500 max(8px, 0.14em) / 1 var(--font-hanken),
+    sans-serif;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
 }
 .desktop-nav {
   display: flex;
@@ -1170,13 +1184,12 @@ td {
   gap: 30px;
 }
 .footer-brand {
-  font:
-    400 65px var(--font-fraunces),
-    serif;
-  letter-spacing: -0.06em;
+  display: inline-flex;
 }
-.footer-brand span {
-  color: #cfb694;
+.footer-brand .logo {
+  --logo-accent: #cfb694;
+  --logo-swash: #cfb694;
+  font-size: 64px;
 }
 .footer-top p {
   font-size: 13px;
@@ -1365,16 +1378,8 @@ td {
   .header-inner {
     height: 76px;
   }
-  .brand-symbol {
-    width: 35px;
-    height: 43px;
-    font-size: 36px;
-  }
-  .brand strong {
-    font-size: 28px;
-  }
-  .brand small {
-    font-size: 6.5px;
+  .logo {
+    font-size: 32px;
   }
   .desktop-nav,
   .header-cta {
@@ -1663,7 +1668,7 @@ td {
     flex-wrap: wrap;
     gap: 20px;
   }
-  .footer-brand {
+  .footer-brand .logo {
     font-size: 50px;
   }
   .footer-top > p {
