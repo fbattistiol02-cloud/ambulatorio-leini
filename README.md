@@ -63,4 +63,4 @@ togliere `robots` da `src/app/layout.tsx`.
 
 - Foto di repertorio Unsplash, vedi `CREDITS.md`. Non ritraggono animali o persone dello studio.
 - Il modulo di contatto è dimostrativo: non invia nulla.
-- Pubblicazione: Vercel (vedi gate G2 nel piano).
+- Pubblicata su Vercel: https://ambulatorio-leini.vercel.app (`noindex`). Ripubblicare: `npx vercel deploy --prod --yes`.
