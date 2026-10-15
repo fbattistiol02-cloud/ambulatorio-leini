@@ -1,26 +1,384 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────────────────────────
+   Design system "Nebbia e Nocciola"
+   Contrasti verificati con scripts/contrast.mjs (WCAG AA/AAA)
+   ────────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f3eee5; /* crema calda: sfondo */
+  --paper-2: #eae3d6; /* crema più profonda: superfici */
+  --mist: #dde1df; /* nebbia: sezioni fredde */
+  --ink: #1b222b; /* inchiostro blu-notte: testo */
+  --ink-soft: #4a535c; /* testo secondario (AA su paper) */
+  --hazel: #a06a3f; /* nocciola: solo decorazioni e testo grande */
+  --hazel-deep: #7a4b26; /* nocciola scuro: testo e pulsanti (AA/AAA) */
+  --hazel-light: #d9a877; /* nocciola chiaro: su fondo scuro */
+  --barolo: #5e2631; /* accento raro */
+  --night: #141a21; /* sezioni scure */
+  --line: rgb(27 34 43 / 0.14);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --gutter: 1rem;
+  --maxw: 80rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gutter: 2rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-mist: var(--mist);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-hazel: var(--hazel);
+  --color-hazel-deep: var(--hazel-deep);
+  --color-hazel-light: var(--hazel-light);
+  --color-barolo: var(--barolo);
+  --color-night: var(--night);
+  --color-line: var(--line);
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+}
+
+/* ───────────── Base ───────────── */
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--hazel-deep);
+    color: #fff;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--hazel-deep);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ───────────── Layout ───────────── */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: clamp(4.5rem, 10vw, 9rem);
+}
+
+/* ───────────── Tipografia ───────────── */
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 40;
+}
+
+.display-xl {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 40;
+  font-weight: 350;
+  font-size: clamp(2.6rem, 7.4vw, 6.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+.display-lg {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 40;
+  font-weight: 350;
+  font-size: clamp(2.1rem, 5vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.display-md {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 40;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+}
+
+.em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--hazel-deep);
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hazel-deep);
+}
+
+.lead {
+  font-size: clamp(1.08rem, 1.5vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 38rem;
+}
+
+/* ───────────── Pulsanti ───────────── */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.005em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.35s var(--ease-out),
+    color 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
+    transform 0.35s var(--ease-out);
+  will-change: transform;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-primary:hover {
+  background: var(--hazel-deep);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-light {
+  background: var(--paper);
+  color: var(--ink);
+}
+.btn-light:hover {
+  background: var(--hazel-light);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--paper);
+  border-color: rgb(243 238 229 / 0.5);
+}
+.btn-outline-light:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Link con sottolineatura animata */
+.link-u {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  transition: background-size 0.45s var(--ease-out);
+}
+.link-u:hover {
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+}
+
+/* ───────────── Texture ───────────── */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .8 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ───────────── Movimento ridotto ─────────────
+   Attivo con la preferenza di sistema o con l'interruttore del sito
+   (attributo data-motion="reduced" su <html>). Il contenuto resta
+   sempre visibile e completo. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html[data-motion="reduced"] *,
+html[data-motion="reduced"] *::before,
+html[data-motion="reduced"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Skip link */
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  transition: top 0.2s var(--ease-out);
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ───────────── Coreografia di apertura (solo CSS: nessun JS necessario) ───────────── */
+@keyframes rise {
+  from { transform: translateY(108%); }
+  to { transform: none; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes focus-in {
+  from { filter: blur(28px) saturate(0.7); transform: scale(1.16); }
+  to { filter: none; transform: none; }
+}
+@keyframes iris {
+  from { clip-path: circle(0% at 50% 50%); }
+  to { clip-path: circle(72% at 50% 50%); }
+}
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(46 125 78 / 0.45); }
+  50% { box-shadow: 0 0 0 7px rgb(46 125 78 / 0); }
+}
+@keyframes scroll-cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.hero-line {
+  display: block;
+  animation: rise 1.2s var(--ease-out) both;
+  animation-delay: calc(0.3s + var(--i, 0) * 0.12s);
+}
+.hero-in {
+  animation: fade-up 1.1s var(--ease-out) both;
+  animation-delay: calc(0.2s + var(--i, 0) * 0.1s);
+}
+.hero-iris {
+  animation: iris 1.5s var(--ease-in-out) both;
+  animation-delay: 0.15s;
+}
+.hero-focus {
+  animation: focus-in 2s var(--ease-out) both;
+  animation-delay: 0.15s;
+}
+.draw-line {
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  animation: draw 1.3s var(--ease-in-out) 1.55s forwards;
+}
+.spin-slow {
+  animation: spin-slow 90s linear infinite;
+}
+
+/* Segnaposto immagini (finché non arrivano le foto approvate) */
+.photo-ph {
+  background:
+    radial-gradient(60% 50% at 30% 28%, #ecd9bd 0%, transparent 70%),
+    radial-gradient(70% 60% at 75% 80%, #8a5a34 0%, transparent 75%),
+    linear-gradient(160deg, #cfa77a, #9b6b43);
+}
+
+/* Spegne anche i ritardi quando il movimento è ridotto */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-delay: 0ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+html[data-motion="reduced"] *,
+html[data-motion="reduced"] *::before,
+html[data-motion="reduced"] *::after {
+  animation-delay: 0ms !important;
+  transition-delay: 0ms !important;
 }

@@ -78,12 +78,8 @@ export const copy = {
 
   hero: {
     eyebrow: "Ambulatorio veterinario · Leinì (TO)",
-    titleLines: [
-      "Quando il tuo animale",
-      "non sta bene,",
-      "meriti risposte chiare.",
-    ],
-    emphasis: "risposte chiare.",
+    // L'ultima riga è l'enfasi (corsivo + tratto disegnato a mano)
+    titleLines: ["Quando il tuo animale", "non sta bene, meriti", "risposte chiare."],
     lead: "Cani, gatti e piccoli animali visitati con calma, ascolto e parole semplici. Così sai sempre cosa succede e quale sarà il prossimo passo.",
     ctaPrimary: "Scrivici su WhatsApp",
     ctaSecondary: "Chiama lo studio",
