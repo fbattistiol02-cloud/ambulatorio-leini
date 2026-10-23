@@ -1,0 +1,69 @@
+/* Direzione condivisa dalle sette pagine. I layout di contenuto rimangono specifici. */
+.site-header { background:#faf9f5f5; border-bottom-color:#d8dfe480; }
+.brand img { mix-blend-mode: multiply; }
+.header-inner { min-height:88px; }
+.brand strong { font-family:Georgia,serif; font-size:33px; font-weight:400; letter-spacing:-.055em; }
+.brand-dot { color:var(--blue); }
+.button { border-radius:30px; box-shadow:none; }
+.button:hover { box-shadow:0 5px 15px #183e5615; }
+.desktop-nav { font-size:13px; }
+.eyebrow { letter-spacing:.15em; }
+.page-opening h1, .clinic-story h2, .section-top h2, .professional h2, .service-heading h2, .external-section h2, .lap-detail-editorial h2, .contact-arrival h2, .visit-cta h2, .contact-section h2 { font-family:Georgia,'Times New Roman',serif; font-weight:400; letter-spacing:-.045em; }
+.page-opening h1 em { color:var(--blue); }
+.page-opening { padding-block:52px 58px; }
+.page-opening h1 { font-size:clamp(45px,5.6vw,80px); }
+.page-opening-photo { align-items:center; }
+.page-opening-image { border-radius:100px 3px 3px 3px; }
+.page-opening-lead { font-size:16px; max-width:560px; }
+.professional-list { padding-bottom:60px; }
+.professional { align-items:center; }
+.professional .portrait-photo { border-radius:110px 3px 3px 3px; }
+.profile-2 .portrait-photo { border-radius:3px 110px 3px 3px; }
+.profile-index { font-size:10px; letter-spacing:.08em; }
+.professional h2 { max-width:420px; }
+.service-feature { background:#eaf1f4; color:var(--ink); border-radius:3px 3px 70px 3px; border:1px solid var(--line); }
+.service-feature .eyebrow, .service-feature .text-link { color:var(--blue); }
+.service-feature .section-counter, .service-feature .service-heading > p:not(.eyebrow) { color:var(--muted); }
+.service-feature .text-link:hover { color:var(--blue-deep); }
+.service-feature a:focus-visible { outline-color:var(--blue); }
+.service-index { border-radius:0; }
+.service-row .service-photo { border-radius:3px 35px 3px 3px; }
+.spaces-grid > .photo-slot:first-child { border-radius:3px 70px 3px 3px; }
+.story-photo { border-radius:3px 3px 60px 3px; }
+.visit-cta { background:#eaf1f4; }
+.visit-cta h2 { font-size:43px; }
+.contact-section { background:#e5edf1; color:var(--ink); border-top:1px solid #c8d5df; }
+.contact-section h2 { font-size:64px; }
+.contact-section .eyebrow { color:var(--blue); }
+.contact-section .contact-intro, .contact-section .contact-caption, .contact-section .phone-links > a:last-child, .contact-section .email-link, .contact-section .hours-block > p { color:var(--muted); }
+.contact-section .contact-details .text-link { color:var(--blue); }
+.contact-section .contact-details .text-link:hover { color:var(--blue-deep); }
+.contact-section a:focus-visible, .contact-section summary:focus-visible { outline-color:var(--blue); }
+.contact-section .hours-block { border-top-color:#bdccd6; }
+.contact-section .status-tag { color:var(--ink); background:#d4e1e9; border-color:#8ba3b3; }
+.contact-section .phone-links > a:first-child { font-family:Georgia,serif; font-size:42px; }
+.site-footer { background:var(--paper); border-top:1px solid var(--line); }
+@media(max-width:850px) {
+ .header-inner { min-height:76px; }
+ .page-opening h1 { font-size:55px; }
+ .page-opening-lead { font-size:14px; }
+ .professional h2 { font-size:40px; }
+}
+@media(max-width:640px) {
+ .header-inner { min-height:70px; }
+ .brand strong { font-size:29px; }
+ .page-opening { padding-block:32px 38px; }
+ .page-opening h1 { font-size:44px; }
+ .page-opening-image { border-top-left-radius:65px; }
+ .page-opening-lead { font-size:14px; }
+ .photo-reserved { padding:18px; }
+ .photo-reserved > span { font-size:11px; }
+ .photo-reserved > svg { width:35px; height:35px; }
+ .professional .portrait-photo { border-top-left-radius:70px; }
+ .profile-2 .portrait-photo { border-top-left-radius:3px; border-top-right-radius:70px; }
+ .professional h2 { font-size:37px; }
+ .visit-cta h2 { font-size:34px; }
+ .contact-section h2 { font-size:48px; }
+ .contact-section .phone-links > a:first-child { font-size:35px; }
+ .service-feature { border-bottom-right-radius:40px; }
+}

@@ -1,0 +1,719 @@
+{
+  "states": [
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 523,
+      "selection": "01Ingresso",
+      "width": 375
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 505,
+      "selection": "02Accoglienza",
+      "width": 375
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 505,
+      "selection": "03La visita",
+      "width": 375
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 523,
+      "selection": "04Strumenti e attività",
+      "width": 375
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 511,
+      "people": [
+        "Dott. Davide Boasso",
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Medicina interna↗",
+      "width": 375
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 511,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Chirurgia laparoscopica↗",
+      "width": 375
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 511,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Chirurgia dei tessuti molli↗",
+      "width": 375
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 511,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Oftalmologia↗",
+      "width": 375
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 511,
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Dermatologia↗",
+      "width": 375
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 511,
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Citologia↗",
+      "width": 375
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 509,
+      "selection": "01Ingresso",
+      "width": 390
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 509,
+      "selection": "02Accoglienza",
+      "width": 390
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 509,
+      "selection": "03La visita",
+      "width": 390
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 527,
+      "selection": "04Strumenti e attività",
+      "width": 390
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 520,
+      "people": [
+        "Dott. Davide Boasso",
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Medicina interna↗",
+      "width": 390
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 520,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Chirurgia laparoscopica↗",
+      "width": 390
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 520,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Chirurgia dei tessuti molli↗",
+      "width": 390
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 520,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Oftalmologia↗",
+      "width": 390
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 520,
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Dermatologia↗",
+      "width": 390
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 520,
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Citologia↗",
+      "width": 390
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 400,
+      "selection": "01Ingresso",
+      "width": 768
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 400,
+      "selection": "02Accoglienza",
+      "width": 768
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 400,
+      "selection": "03La visita",
+      "width": 768
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 400,
+      "selection": "04Strumenti e attività",
+      "width": 768
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 545,
+      "people": [
+        "Dott. Davide Boasso",
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Medicina interna↗",
+      "width": 768
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 545,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Chirurgia laparoscopica↗",
+      "width": 768
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 545,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Chirurgia dei tessuti molli↗",
+      "width": 768
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 545,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Oftalmologia↗",
+      "width": 768
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 545,
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Dermatologia↗",
+      "width": 768
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 545,
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Citologia↗",
+      "width": 768
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 483,
+      "selection": "01Ingresso",
+      "width": 1440
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 483,
+      "selection": "02Accoglienza",
+      "width": 1440
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 483,
+      "selection": "03La visita",
+      "width": 1440
+    },
+    {
+      "imageOverlap": false,
+      "kind": "tour",
+      "overflow": false,
+      "panelHeight": 483,
+      "selection": "04Strumenti e attività",
+      "width": 1440
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 578,
+      "people": [
+        "Dott. Davide Boasso",
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Medicina interna↗",
+      "width": 1440
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 578,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Chirurgia laparoscopica↗",
+      "width": 1440
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 578,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Chirurgia dei tessuti molli↗",
+      "width": 1440
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 578,
+      "people": [
+        "Dott. Davide Boasso"
+      ],
+      "selection": "Oftalmologia↗",
+      "width": 1440
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 578,
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Dermatologia↗",
+      "width": 1440
+    },
+    {
+      "kind": "area",
+      "overflow": false,
+      "panelHeight": 578,
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ],
+      "selection": "Citologia↗",
+      "width": 1440
+    }
+  ],
+  "pages": [
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/ambulatorio",
+      "width": 375
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/prestazioni",
+      "width": 375
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/equipe",
+      "width": 375
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/chirurgia-laparoscopica",
+      "width": 375
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/contatti",
+      "width": 375
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/privacy",
+      "width": 375
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/ambulatorio",
+      "width": 390
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/prestazioni",
+      "width": 390
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/equipe",
+      "width": 390
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/chirurgia-laparoscopica",
+      "width": 390
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/contatti",
+      "width": 390
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/privacy",
+      "width": 390
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/ambulatorio",
+      "width": 768
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/prestazioni",
+      "width": 768
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/equipe",
+      "width": 768
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/chirurgia-laparoscopica",
+      "width": 768
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/contatti",
+      "width": 768
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/privacy",
+      "width": 768
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/ambulatorio",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/prestazioni",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/equipe",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/chirurgia-laparoscopica",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/contatti",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "path": "/privacy",
+      "width": 1440
+    }
+  ],
+  "constrainedTour": [
+    {
+      "overflow": false,
+      "panelHeight": 525,
+      "photoFits": true,
+      "width": 375
+    },
+    {
+      "overflow": false,
+      "panelHeight": 525,
+      "photoFits": true,
+      "width": 375
+    },
+    {
+      "overflow": false,
+      "panelHeight": 525,
+      "photoFits": true,
+      "width": 375
+    },
+    {
+      "overflow": false,
+      "panelHeight": 525,
+      "photoFits": true,
+      "width": 375
+    },
+    {
+      "overflow": false,
+      "panelHeight": 529,
+      "photoFits": true,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "panelHeight": 529,
+      "photoFits": true,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "panelHeight": 529,
+      "photoFits": true,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "panelHeight": 529,
+      "photoFits": true,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "panelHeight": 390,
+      "photoFits": true,
+      "width": 641
+    },
+    {
+      "overflow": false,
+      "panelHeight": 390,
+      "photoFits": true,
+      "width": 641
+    },
+    {
+      "overflow": false,
+      "panelHeight": 390,
+      "photoFits": true,
+      "width": 641
+    },
+    {
+      "overflow": false,
+      "panelHeight": 390,
+      "photoFits": true,
+      "width": 641
+    },
+    {
+      "overflow": false,
+      "panelHeight": 400,
+      "photoFits": true,
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "panelHeight": 400,
+      "photoFits": true,
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "panelHeight": 400,
+      "photoFits": true,
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "panelHeight": 400,
+      "photoFits": true,
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "panelHeight": 483,
+      "photoFits": true,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "panelHeight": 483,
+      "photoFits": true,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "panelHeight": 483,
+      "photoFits": true,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "panelHeight": 483,
+      "photoFits": true,
+      "width": 1440
+    }
+  ],
+  "tour": [
+    {
+      "heading": "La visita comincia da qui.",
+      "link": "/contatti",
+      "overflow": false,
+      "previousDisabled": true,
+      "selected": "01Ingresso"
+    },
+    {
+      "heading": "Prima, ci conosciamo.",
+      "link": "/contatti",
+      "overflow": false,
+      "previousDisabled": false,
+      "selected": "02Accoglienza"
+    },
+    {
+      "heading": "Le persone, al centro.",
+      "link": "/equipe",
+      "overflow": false,
+      "previousDisabled": false,
+      "selected": "03La visita"
+    },
+    {
+      "heading": "Dalla visita agli approfondimenti.",
+      "link": "/prestazioni",
+      "overflow": false,
+      "previousDisabled": false,
+      "selected": "04Strumenti e attività"
+    }
+  ],
+  "areas": [
+    {
+      "area": "Medicina interna↗",
+      "link": "/equipe",
+      "people": [
+        "Dott. Davide Boasso",
+        "Dott.ssa Erika Valieri"
+      ]
+    },
+    {
+      "area": "Chirurgia laparoscopica↗",
+      "link": "/chirurgia-laparoscopica",
+      "people": [
+        "Dott. Davide Boasso"
+      ]
+    },
+    {
+      "area": "Chirurgia dei tessuti molli↗",
+      "link": "/prestazioni#chirurgia",
+      "people": [
+        "Dott. Davide Boasso"
+      ]
+    },
+    {
+      "area": "Oftalmologia↗",
+      "link": "/prestazioni#medicina",
+      "people": [
+        "Dott. Davide Boasso"
+      ]
+    },
+    {
+      "area": "Dermatologia↗",
+      "link": "/prestazioni#medicina",
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ]
+    },
+    {
+      "area": "Citologia↗",
+      "link": "/equipe#erika-valieri",
+      "people": [
+        "Dott.ssa Erika Valieri"
+      ]
+    }
+  ]
+}

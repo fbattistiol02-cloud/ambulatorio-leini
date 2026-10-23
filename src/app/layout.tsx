@@ -1,76 +1,90 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { site } from "@/content/site";
-import { MotionProvider } from "@/components/motion/MotionProvider";
+import { Footer, Header, MobileBar } from "@/components/clinic/Shell";
 import "./globals.css";
-import "./experience.css";
+import "./editorial.css";
 
-const fraunces = localFont({
-  src: [
-    {
-      path: "./fonts/fraunces-latin.woff2",
-      weight: "100 900",
-      style: "normal",
-    },
-    {
-      path: "./fonts/fraunces-italic-latin.woff2",
-      weight: "100 900",
-      style: "italic",
-    },
-  ],
-  variable: "--font-fraunces",
-  display: "swap",
-});
 const hanken = localFont({
   src: "./fonts/hanken-latin.woff2",
   weight: "100 900",
   variable: "--font-hanken",
   display: "swap",
 });
-
-const title = `${site.name} · Concept dimostrativo`;
+const fraunces = localFont({
+  src: "./fonts/fraunces-italic-latin.woff2",
+  weight: "100 900",
+  style: "italic",
+  variable: "--font-display",
+  display: "swap",
+});
 const description =
-  "Lui si fida di te. Tu meriti risposte chiare. Una proposta di esperienza per l’Ambulatorio Veterinario Leinì.";
-
+  "Ambulatorio Veterinario Leinì: visite, diagnostica e chirurgia laparoscopica. Via San Francesco al Campo 24. Appuntamenti al numero 011 998 1469.";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ambulatorio-leini.vercel.app"),
-  title,
+  metadataBase: new URL(site.previewUrl),
+  title: {
+    default: `${site.name} | Dott. Davide Boasso`,
+    template: `%s | ${site.name}`,
+  },
   description,
-  // Demo: non deve comparire sui motori di ricerca finché non è un sito vero.
   robots: { index: false, follow: false },
   openGraph: {
-    title,
+    title: site.name,
     description,
     locale: "it_IT",
     type: "website",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Leinì · Lui si fida di te. Concept dimostrativo.",
-      },
-    ],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title,
+    title: site.name,
     description,
     images: ["/og.jpg"],
   },
 };
-
 export const viewport: Viewport = {
-  themeColor: "#f3eee5",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  name: site.name,
+  telephone: site.phone.tel,
+  email: site.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.street,
+    postalCode: site.address.postalCode,
+    addressLocality: site.address.city,
+    addressRegion: site.address.province,
+    addressCountry: "IT",
+  },
+  // Nessun orario, rating o servizio H24 non confermato.
+};
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="it" className={`${fraunces.variable} ${hanken.variable}`}>
+    <html lang="it" className={`${hanken.variable} ${fraunces.variable}`}>
       <body>
-        <MotionProvider>{children}</MotionProvider>
+        <a href="#contenuto" className="skip-link">
+          Vai al contenuto
+        </a>
+        <Header />
+        <main id="contenuto">{children}</main>
+        <Footer />
+        <MobileBar />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
       </body>
     </html>
   );

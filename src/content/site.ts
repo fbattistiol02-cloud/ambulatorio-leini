@@ -1,265 +1,195 @@
-/**
- * Fonte unica di dati e testi della demo.
- *
- * REGOLE (vedi IMPLEMENTATION_PLAN0.MD §2):
- * - qui dentro solo dati pubblici verificati, sintesi parafrasate di recensioni
- *   o testi proposti dichiarati come tali;
- * - ogni dato non confermato dallo studio ha `confirm: true` e viene
- *   segnalato nel footer;
- * - vietato inventare: biografie, titoli, anni di attività, prezzi,
- *   urgenze H24, visite a domicilio, numero di collaboratori.
- */
-
-export type Slot = readonly [open: string, close: string];
-
-export type OpeningDay = {
-  /** 0 = domenica … 6 = sabato (come Date.getDay) */
-  day: number;
-  label: string;
-  slots: readonly Slot[];
-};
-
-const weekday: readonly Slot[] = [
-  ["09:30", "12:30"],
-  ["16:00", "19:30"],
-];
-
+/** Fonte unica: brief del cliente del 22 ottobre 2026. Vedi docs/REVISIONE_CLIENTE.md. */
 export const site = {
   name: "Ambulatorio Veterinario Leinì",
-  doctor: {
-    name: "Dott. Davide Boasso",
-    role: "Titolare e direttore sanitario",
-  },
+  previewUrl: "https://ambulatorio-leini.vercel.app",
   address: {
     street: "Via San Francesco al Campo 24",
     postalCode: "10040",
     city: "Leinì",
     province: "TO",
   },
-  /** Numeri da directory pubbliche (Pagine Bianche/Gialle). */
-  phone: { display: "011 998 1469", tel: "+390119981469", confirm: true },
-  mobile: { display: "347 640 1966", tel: "+393476401966", confirm: true },
+  phone: { display: "011 998 1469", tel: "+390119981469" },
+  mobile: { display: "347 640 1966", tel: "+393476401966" },
   email: "av.leini@libero.it",
-  species: "Cani, gatti e piccoli animali",
-  rating: {
-    /** Da verificare su Google Maps prima della consegna. */
-    label: "4,6 su Google",
-    reviews: "oltre 60 recensioni",
-    value: 4.6,
-    confirm: true,
-  },
   hours: {
-    confirm: true,
-    days: [
-      { day: 1, label: "Lunedì", slots: weekday },
-      { day: 2, label: "Martedì", slots: weekday },
-      { day: 3, label: "Mercoledì", slots: weekday },
-      { day: 4, label: "Giovedì", slots: weekday },
-      { day: 5, label: "Venerdì", slots: weekday },
-      { day: 6, label: "Sabato", slots: [["09:30", "12:30"]] },
-      { day: 0, label: "Domenica", slots: [] },
-    ] satisfies readonly OpeningDay[],
+    weekday: "9:30–12:30",
+    saturday: "9:30–12:30",
+    provisional: true,
+    note: "Orari provvisori: chiama per confermare. La fascia pomeridiana è in attesa di verifica.",
+  },
+  social: {
+    instagram: { handle: "@ambu.vet.leini", url: null as string | null },
+    doctorInstagram: null as string | null,
   },
 } as const;
 
-export const whatsappMessage =
-  "Buongiorno, vorrei fissare una visita per il mio animale.";
+export const navigation = [
+  { href: "/ambulatorio", label: "L’ambulatorio" },
+  { href: "/prestazioni", label: "Prestazioni" },
+  { href: "/equipe", label: "Équipe" },
+  { href: "/contatti", label: "Contatti" },
+] as const;
 
-/* ───────────────────────────── Copy ───────────────────────────── */
+export const serviceCategories = [
+  {
+    id: "laparoscopia",
+    title: "Chirurgia laparoscopica",
+    icon: "surgery",
+    text: "Una delle principali aree di interesse del Dott. Boasso.",
+    services: ["Chirurgia laparoscopica"],
+    featured: true,
+  },
+  {
+    id: "medicina",
+    title: "Visite e medicina",
+    icon: "visit",
+    text: "Per cani, gatti e animali non convenzionali, su appuntamento.",
+    services: [
+      "Visite cliniche per cani, gatti e animali non convenzionali",
+      "Applicazione microchip e registrazione in anagrafe",
+      "Visite oculistiche",
+      "Visite dermatologiche specialistiche",
+    ],
+    featured: false,
+  },
+  {
+    id: "diagnostica",
+    title: "Diagnostica",
+    icon: "imaging",
+    text: "Esami del sangue, radiologia diretta ed ecografia.",
+    services: [
+      "Laboratorio interno per esami del sangue",
+      "Radiologia diretta",
+      "Ecografia",
+    ],
+    featured: false,
+  },
+  {
+    id: "chirurgia",
+    title: "Chirurgia e day hospital",
+    icon: "care",
+    text: "Chirurgia tradizionale e terapie giornaliere o post-chirurgiche.",
+    services: [
+      "Chirurgia tradizionale",
+      "Day hospital per terapie giornaliere o post-chirurgiche",
+    ],
+    featured: false,
+  },
+] as const;
 
-export const copy = {
-  nav: [
-    { href: "#chiarezza", label: "Il metodo" },
-    { href: "#cure", label: "Le cure" },
-    { href: "#visita", label: "La visita" },
-    { href: "#dove", label: "Dove siamo" },
-    { href: "#domande", label: "Domande" },
-  ],
+export const externalServices = [
+  "Ecografie addominali",
+  "Ecocardiografie",
+  "Chirurgia ortopedica",
+  "Endoscopie",
+  "Neurologia",
+];
 
+export const professionals = [
+  {
+    name: "Dott. Davide Boasso",
+    role: "Direttore sanitario",
+    degree: "Laureato in Medicina veterinaria nel 2007.",
+    bio: "Gestisce l’ambulatorio dal gennaio 2009. Si interessa principalmente di medicina interna, chirurgia dei tessuti molli, chirurgia laparoscopica e oftalmologia.",
+    interests: "Medicina interna · Chirurgia · Oftalmologia",
+    qualification: null,
+    photo: null as string | null,
+  },
+  {
+    name: "Dott.ssa Erika Valieri",
+    role: "Medico veterinario",
+    degree: "Laureata in Medicina veterinaria nel 2015.",
+    bio: "Le sue aree di interesse sono citologia, dermatologia, pronto soccorso e medicina interna.",
+    interests: "Citologia · Dermatologia · Medicina interna",
+    qualification: "GPCert Derm",
+    photo: null as string | null,
+  },
+] as const;
+
+export const faqs = [
+  {
+    question: "Come fisso una visita?",
+    answer:
+      "Gli appuntamenti si concordano esclusivamente per telefono. Chiama lo 011 998 1469 oppure il 347 640 1966.",
+  },
+  {
+    question: "Quali animali visitate?",
+    answer:
+      "Visitiamo cani, gatti e animali non convenzionali. Quando chiami per l’appuntamento, indicaci la specie del tuo animale.",
+  },
+  {
+    question: "Posso scrivere per informazioni o ricette?",
+    answer:
+      "Sì, per informazioni e richieste di ricette puoi scrivere a av.leini@libero.it. Per fissare una visita, chiamaci.",
+  },
+  {
+    question: "Dove si trova l’ambulatorio?",
+    answer:
+      "Siamo in Via San Francesco al Campo 24, 10040 Leinì (TO). Il pulsante Indicazioni apre Google Maps.",
+  },
+] as const;
+
+/** Aggiungere solo immagini autentiche con autorizzazione documentata. Nessun modulo di invio. */
+export type PatientPhoto = {
+  src: string;
+  alt: string;
+  name: string;
+  authorized: boolean;
+};
+export const patientPhotos: PatientPhoto[] = [];
+
+export const campaign = {
   hero: {
-    eyebrow: "Ambulatorio veterinario · Leinì (TO)",
-    // L'ultima riga è l'enfasi (corsivo + tratto disegnato a mano)
-    titleLines: ["Quando il tuo animale", "non sta bene, meriti", "risposte chiare."],
-    lead: "Cani, gatti e piccoli animali visitati con calma, ascolto e parole semplici. Così sai sempre cosa succede e quale sarà il prossimo passo.",
-    ctaPrimary: "Scrivici su WhatsApp",
-    ctaSecondary: "Chiama lo studio",
+    exteriorImage: null as string | null,
+    subtitle: "Medicina, diagnostica e chirurgia.",
+    doctors: "Dott. Davide Boasso · Dott.ssa Erika Valieri",
   },
-
-  focus: {
-    eyebrow: "Il nostro modo di lavorare",
-    title: "Dalla preoccupazione alla chiarezza.",
-    steps: [
+  services: {
+    title: "Le cure, da vicino.",
+    lap: "Chirurgia laparoscopica",
+    lapDescription: "In ambulatorio, con il Dott. Davide Boasso.",
+    categories: [
       {
-        question: "Cos’ha?",
-        answer:
-          "Ti spieghiamo cosa abbiamo trovato, in parole semplici e senza gergo.",
+        id: "medicina",
+        title: "Visite e medicina",
+        text: "Cani, gatti e animali non convenzionali.",
+        icon: "visit",
       },
       {
-        question: "È grave?",
-        answer:
-          "Ti diciamo con sincerità quanto è seria la situazione, cosa è urgente e cosa può aspettare.",
+        id: "diagnostica",
+        title: "Diagnostica",
+        text: "Laboratorio, radiologia ed ecografia.",
+        icon: "imaging",
       },
       {
-        question: "E adesso cosa facciamo?",
-        answer:
-          "Ti lasciamo un piano chiaro: cure, tempi e controlli. Sai sempre qual è il prossimo passo.",
+        id: "chirurgia",
+        title: "Chirurgia e day hospital",
+        text: "Interventi e terapie giornaliere.",
+        icon: "care",
       },
     ],
   },
-
-  proof: {
-    eyebrow: "Cosa raccontano le persone",
-    title: "La chiarezza si *vede da chi torna.*",
-    note: "Sintesi parafrasata delle recensioni pubbliche su Google.",
-    items: [
-      {
-        key: "chiarezza",
-        title: "Spiegazioni che si capiscono",
-        text: "Chi ci ha scelto parla di una veterinaria e di un team che spiegano con calma e rispondono a ogni domanda.",
-      },
-      {
-        key: "casi",
-        title: "Competenza sui casi difficili",
-        text: "Problemi difficili da diagnosticare, affrontati con metodo e preparazione, anche nelle cure più lunghe.",
-      },
-      {
-        key: "continuita",
-        title: "Un riferimento nel tempo",
-        text: "C’è chi affida qui il proprio gatto da oltre dieci anni: la fiducia si costruisce visita dopo visita.",
-      },
-      {
-        key: "disponibilita",
-        title: "Persone sempre disponibili",
-        text: "Un team giovane, aggiornato e raggiungibile quando serve un parere.",
-      },
+  team: {
+    title: "Conosci i tuoi veterinari.",
+    specialties: [
+      "Direttore sanitario · Chirurgia laparoscopica",
+      "Medico veterinario · Dermatologia · GPCert Derm",
     ],
   },
-
-  cure: {
-    eyebrow: "Le cure",
-    title: "Tutto quello che serve, *spiegato bene.*",
-    items: [
-      {
-        key: "visite",
-        title: "Visite e medicina generale",
-        text: "Visite di controllo, valutazione clinica e prevenzione per cani, gatti e piccoli animali.",
-        cta: "Chiedi informazioni",
-      },
-      {
-        key: "chirurgia",
-        title: "Chirurgia",
-        text: "Interventi chirurgici affrontati con calma: prima ti spieghiamo cosa succede, poi come sarà il decorso.",
-        cta: "Chiedi informazioni",
-      },
-      {
-        key: "diagnostica",
-        title: "Diagnostica per immagini",
-        text: "Esami per arrivare a una diagnosi più precisa e a una cura mirata.",
-        cta: "Chiedi informazioni",
-      },
-    ],
-  },
-
-  visita: {
-    eyebrow: "La visita",
-    title: "Che cosa succede, *passo dopo passo.*",
-    steps: [
-      {
-        key: "prima",
-        label: "Prima",
-        title: "Ci racconti cosa succede",
-        text: "Chiami o scrivi su WhatsApp: ascoltiamo la situazione e fissiamo insieme giorno e ora.",
-      },
-      {
-        key: "durante",
-        label: "Durante",
-        title: "Visitiamo con calma",
-        text: "Ti spieghiamo ciò che vediamo mentre lo vediamo, così non resti con dubbi.",
-      },
-      {
-        key: "dopo",
-        label: "Dopo",
-        title: "Esci con un piano chiaro",
-        text: "Cosa fare a casa, quando tornare e come contattarci se hai bisogno di un chiarimento.",
-      },
-    ],
-  },
-
-  medico: {
-    eyebrow: "Il medico",
-    placeholderTitle: "Il tuo profilo, scritto con te.",
-    placeholderText:
-      "Formazione, esperienze e filosofia di cura del dottore: la parte più umana del sito, da completare insieme con le sue parole.",
-  },
-
-  dove: {
-    eyebrow: "Dove siamo",
-    title: "Facile da trovare, *facile da contattare.*",
-    mapCta: "Apri indicazioni",
-    contactCta: "Chiama lo studio",
-  },
-
-  faq: {
-    eyebrow: "Domande frequenti",
-    title: "Le risposte *che cercavi.*",
-    draftNote: "Bozza di testi: da validare con il dottore.",
-    items: [
-      {
-        q: "Come prendo un appuntamento?",
-        a: "Chiama lo studio o scrivi su WhatsApp: ti rispondiamo per fissare giorno e ora della visita.",
-      },
-      {
-        q: "Cosa devo portare alla prima visita?",
-        a: "Il libretto sanitario o i documenti dell’animale, gli esami già fatti e l’elenco di eventuali farmaci. Se non hai nulla di tutto questo, vieni lo stesso: partiamo da ciò che c’è.",
-      },
-      {
-        q: "Quali animali visitate?",
-        a: "Cani, gatti e piccoli animali.",
-      },
-      {
-        q: "Quali sono gli orari?",
-        a: "Dal lunedì al venerdì 9:30–12:30 e 16:00–19:30, il sabato 9:30–12:30. La domenica lo studio è chiuso.",
-      },
-      {
-        q: "E se è un’urgenza?",
-        a: "Se il tuo animale sta molto male, chiama subito lo studio negli orari di apertura. Fuori orario rivolgiti al pronto soccorso veterinario più vicino.",
-      },
-    ],
-  },
-
-  closing: {
-    title: "Il tuo animale ha bisogno *di risposte?*",
-    lead: "Cominciamo da una telefonata o da un messaggio.",
-    ctaPrimary: "Scrivici su WhatsApp",
-    ctaSecondary: "Chiama lo studio",
-  },
-
-  form: {
-    title: "Preferisci che ti ricontattiamo noi?",
-    note: "Modulo dimostrativo: in questa anteprima non invia nessuna richiesta.",
-    fields: {
-      name: "Il tuo nome",
-      phone: "Telefono",
-      animal: "Il tuo animale (cane, gatto…)",
-      message: "Raccontaci in breve cosa succede",
+  faqs: [
+    {
+      question: "Come prendo appuntamento?",
+      answer:
+        "Chiama lo 011 998 1469 o il 347 640 1966. Gli appuntamenti si fissano per telefono.",
     },
-    submit: "Richiedi un appuntamento",
-    success:
-      "Grazie! In una versione attiva, ti ricontatteremmo al più presto. Questa è un’anteprima dimostrativa.",
-  },
-
-  footer: {
-    demo: "Anteprima dimostrativa",
-    confirm:
-      "Dati, orari e testi da confermare con lo studio. Il punteggio e le recensioni sono una sintesi di fonti pubbliche.",
-    images: "Le immagini sono di repertorio e non ritraggono animali o persone dello studio.",
-  },
+    {
+      question: "Quali animali visitate?",
+      answer:
+        "Cani, gatti e animali non convenzionali. Indicaci la specie quando chiami.",
+    },
+    {
+      question: "Per cosa posso usare l’email?",
+      answer: "Per informazioni e richieste di ricette: av.leini@libero.it.",
+    },
+  ],
 } as const;
-
-/** Elenco dei dati ancora da confermare, mostrato nel footer. */
-export const toConfirm = [
-  site.phone.confirm && "telefono",
-  site.mobile.confirm && "cellulare/WhatsApp",
-  site.hours.confirm && "orari",
-  site.rating.confirm && "punteggio Google",
-].filter(Boolean) as string[];

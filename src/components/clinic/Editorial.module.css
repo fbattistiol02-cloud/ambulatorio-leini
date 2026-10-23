@@ -1,0 +1,192 @@
+.hero { padding: 66px 0 0; overflow: clip; }
+.heroGrid { display: grid; grid-template-columns: 1fr 1.12fr; gap: 64px; align-items: center; }
+.heroCopy { padding-bottom: 32px; animation: editorial-arrive .7s ease both; }
+.heroCopy h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(64px, 7.5vw, 108px); font-weight: 400; letter-spacing: -.065em; line-height: .98; }
+.heroCopy h1 em { display: inline-block; color: var(--blue); font-family: var(--font-display), Georgia, serif; font-size: 1.06em; }
+.heroCopy .motto { font-family: Georgia, serif; font-size: 29px; margin-top: 30px; letter-spacing: -.025em; }
+.lead { max-width: 345px; margin-top: 14px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.actions { display: flex; align-items: center; gap: 18px 25px; flex-wrap: wrap; margin-top: 29px; }
+.actions :global(.button) { border-radius: 30px; min-height: 52px; padding-inline: 22px; font-size: 13px; }
+.actions :global(.text-link) { font-size: 12px; }
+.appointment { margin-top: 18px; font-size: 11px; color: var(--muted); }
+.heroVisual { position: relative; padding: 0 0 64px 38px; min-width: 0; animation: editorial-arrive .9s ease both; }
+.marginNote { position: absolute; top: 10px; left: 5px; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 10px; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); }
+.heroVisual .exterior { aspect-ratio: 1.12; border-radius: 150px 3px 3px 3px; box-shadow: 18px 18px 0 #e3edf0; min-height: 0; }
+.heroVisual .exterior :global(.photo-reserved) { padding: 35px; }
+.heroVisual .exterior :global(.photo-reserved) > span { margin-left:auto; max-width:53%; }
+.heroVisual .exterior :global(.photo-reserved) > svg { width: 70px; height: 70px; }
+.detailFrame { position: absolute; width: 43%; left: -12px; bottom: 32px; border: 7px solid var(--paper); box-shadow: 0 12px 30px #183e5614; transform: rotate(-5deg); }
+.detailFrame .detailPhoto { aspect-ratio: 1.25; border-radius: 0; }
+.detailPhoto :global(.photo-reserved) { padding: 14px; }
+.detailPhoto :global(.photo-reserved) > svg { width: 33px; height: 33px; }
+.detailPhoto :global(.photo-reserved) span { font-size: 11px; }
+.detailPhoto :global(.photo-reserved) small { font-size: 9px; }
+.photoFoot { display: flex; justify-content: flex-end; padding-top: 25px; gap: 22px; font-size: 10px; }
+.photoFoot > span { color: var(--muted); }
+.photoFoot a { display: flex; align-items: center; gap: 8px; }
+.photoFoot svg { width: 15px; height: 15px; }
+.locationStrip { padding: 25px 0; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; margin-top: 28px; }
+.locationStrip a { display: flex; gap: 12px; align-items: center; }
+.locationStrip a svg { width: 17px; height: 17px; }
+.locationStrip a span { color: var(--muted); }
+.locationStrip p { color: var(--muted); }
+.locationStrip p span { color: var(--ink); font-weight: 650; margin-right: 8px; }
+.laparoscopy { margin-top: 30px; background: #eaf1f4; position: relative; overflow: clip; }
+.laparoscopy:before { content: ''; position: absolute; width: 85%; height: 120%; border: 1px solid #bbcdd966; border-radius: 50%; left: -42%; top: -20%; pointer-events: none; }
+.lapGrid { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 65px; padding-block: 60px; }
+.instrument { position: relative; min-width: 0; }
+.instrument > svg { display: block; width: 100%; height: auto; transition: transform .8s; }
+.instrument:hover > svg { transform: rotate(-2deg); }
+.drawingLabel { display: block; font-family: var(--font-display), Georgia, serif; font-style: italic; color: #3b6179; font-size: 25px; transform: rotate(-4deg); margin-left: 25px; }
+.drawingCaption { display: block; text-align: center; font-size: 10px; color: var(--muted); letter-spacing: .04em; }
+.lapCopy h2 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(39px,4.2vw,61px); letter-spacing: -.045em; line-height: 1.08; }
+.lapCopy h2 em { color: var(--blue); }
+.lapCopy > p:not(:global(.eyebrow)) { max-width: 375px; font-size: 15px; line-height: 1.75; color: var(--muted); margin: 22px 0; }
+.lapCopy > :global(.text-link) { font-size: 13px; }
+.lapDetail { border-top: 1px solid #c1d0d9; margin-top: 30px; padding-top: 23px; display: grid; grid-template-columns: 145px 1fr; gap: 25px; align-items: center; }
+.lapDetail > :global(.photo-slot) { aspect-ratio: 1.4; }
+.lapDetail :global(.photo-reserved) { padding: 10px; }
+.lapDetail :global(.photo-reserved) > svg { display: none; }
+.lapDetail :global(.photo-reserved) span { font-size: 10px; }
+.lapDetail :global(.photo-reserved) small { font-size: 9px; }
+.lapDetail > p { font-size: 12px; line-height: 1.8; }
+.lapDetail > p em { font-family: Georgia, serif; color: #416278; font-size: 15px; }
+.services { padding-block: 90px 80px; }
+.sectionHead { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+.sectionHead h2, .teamIntro h2, .faq h2 { font-family: Georgia, serif; font-size: clamp(38px,4.1vw,58px); font-weight: 400; letter-spacing: -.04em; }
+.sectionHead h2 em, .teamIntro h2 em, .faq h2 em { color: var(--blue); }
+.sectionHead > a { margin-bottom: 8px; }
+.servicesGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.service { padding: 24px 30px 30px; border: 1px solid var(--line); background: #f1f4f3; border-radius: 4px 4px 45px 4px; transition: background .25s, transform .25s, box-shadow .25s; }
+.service:nth-child(2) { background: #eaf1f4; }
+.service:nth-child(3) { background: #f4eee5; }
+.service:hover { transform: translateY(-5px); box-shadow: 0 12px 25px #183e560b; }
+.serviceKicker { display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: var(--muted); }
+.serviceKicker svg { width: 20px; height: 20px; }
+.service > svg { width: 100%; height: 155px; color: #3f6277; display: block; margin: 5px 0 20px; }
+.service h3 { font-family: Georgia, serif; font-size: 26px; letter-spacing: -.035em; font-weight: 400; }
+.service p { font-size: 13px; color: var(--muted); margin-top: 12px; max-width: 240px; }
+.team { border-top: 1px solid var(--line); display: grid; grid-template-columns: .85fr 1.4fr; gap: 70px; padding-block: 75px 85px; align-items: center; }
+.teamIntro > p:not(:global(.eyebrow)) { max-width: 300px; color: var(--muted); font-size: 15px; margin: 24px 0; }
+.portraits { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.person:nth-child(2) { padding-top: 48px; }
+.portrait { aspect-ratio: .86; border-radius: 90px 3px 3px 3px; }
+.person:nth-child(2) .portrait { border-radius: 3px 90px 3px 3px; }
+.portrait :global(.photo-reserved) { padding: 20px; }
+.personRole { font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); margin: 20px 0 8px; }
+.person h3 { font-family: Georgia, serif; font-size: 24px; line-height: 1.2; font-weight: 400; letter-spacing: -.03em; }
+.personInterests { font-size: 11px; color: var(--muted); margin-top: 10px; }
+.faq { display: grid; grid-template-columns: .85fr 1.4fr; gap: 70px; border-top: 1px solid var(--line); padding-block: 60px 80px; }
+.faq :global(.faq-list) { align-self: center; }
+.faq :global(.faq-list summary) { font-size: 15px; }
+@keyframes editorial-arrive { from { opacity:.4; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+@media(min-width:1600px) { .hero { padding-top:85px; } .heroVisual .exterior { aspect-ratio:1.18; } }
+@media(max-width:1100px) {
+  .heroGrid { gap: 30px; grid-template-columns: 1fr 1fr; }
+  .heroCopy h1 { font-size: 76px; }
+  .heroVisual { padding-left: 24px; }
+  .marginNote { left: 0; }
+  .heroVisual .exterior { aspect-ratio: .9; }
+  .photoFoot > span { display: none; }
+  .lapGrid { gap: 30px; }
+  .lapCopy h2 { font-size: 43px; }
+  .team, .faq { gap: 35px; }
+  .service { padding: 20px; }
+  .service h3 { font-size: 23px; }
+}
+@media(max-width:850px) {
+  .hero { padding-top: 45px; }
+  .heroGrid { gap: 24px; }
+  .heroCopy h1 { font-size: 62px; }
+  .heroCopy .motto { font-size: 24px; margin-top: 25px; }
+  .lead { font-size: 14px; }
+  .heroVisual .exterior { aspect-ratio: .76; border-top-left-radius: 85px; }
+  .heroVisual .exterior :global(.photo-reserved) { padding: 22px; }
+  .detailFrame { width: 56%; }
+  .photoFoot a { font-size: 9px; }
+  .actions { gap: 14px; }
+  .locationStrip { align-items: flex-start; font-size: 11px; }
+  .locationStrip a { flex-wrap: wrap; gap: 8px; max-width: 60%; }
+  .locationStrip a span { display: none; }
+  .lapGrid { gap: 20px; padding-block: 50px; }
+  .lapCopy h2 { font-size: 35px; }
+  .lapCopy > p:not(:global(.eyebrow)) { font-size: 13px; }
+  .lapDetail { grid-template-columns: 110px 1fr; gap: 15px; }
+  .lapDetail > p { font-size: 10px; }
+  .lapDetail > p em { font-size: 13px; }
+  .drawingLabel { font-size: 21px; }
+  .services { padding-block: 65px; }
+  .service > svg { height: 125px; }
+  .service h3 { font-size: 21px; }
+  .service p { font-size: 12px; }
+  .team { grid-template-columns: 1fr 1.5fr; gap: 28px; }
+  .portraits { gap: 15px; }
+  .person h3 { font-size: 21px; }
+  .portrait :global(.photo-reserved) { padding: 12px; }
+  .portrait :global(.photo-reserved) span { font-size: 10px; }
+  .teamIntro h2 { font-size: 39px; }
+}
+@media(max-width:640px) {
+  .hero { padding-top: 32px; }
+  .heroGrid { grid-template-columns: 1fr; gap: 28px; }
+  .heroCopy { padding: 0; }
+  .heroCopy :global(.eyebrow) { font-size: 9px; margin-bottom: 18px; }
+  .heroCopy h1 { font-size: clamp(61px,17vw,83px); }
+  .heroCopy .motto { font-size: 24px; margin-top: 20px; }
+  .lead { font-size: 14px; max-width: 340px; margin-top: 10px; }
+  .actions { margin-top: 23px; gap: 16px; }
+  .actions :global(.button) { min-height: 48px; font-size: 12px; padding-inline: 18px; }
+  .actions :global(.text-link) { font-size: 11px; gap: 5px; }
+  .actions :global(.text-link) svg { width: 14px; }
+  .appointment { font-size: 10px; margin-top: 12px; }
+  .heroVisual { padding: 0 7px 40px 22px; }
+  .heroVisual .exterior { aspect-ratio: 1.4; border-top-left-radius: 70px; box-shadow: 8px 8px 0 #e3edf0; }
+  .heroVisual .exterior :global(.photo-reserved) { padding: 22px; }
+  .heroVisual .exterior :global(.photo-reserved) > svg { width: 43px; height: 43px; }
+  .heroVisual .exterior :global(.photo-reserved) > span { font-size: 11px; max-width: 170px; margin-left: auto; }
+  .marginNote { font-size: 8px; letter-spacing: .12em; }
+  .detailFrame { width: 37%; bottom: 32px; left: 0; border-width: 5px; }
+  .detailPhoto :global(.photo-reserved) { padding: 8px; }
+  .detailPhoto :global(.photo-reserved) > svg { width: 22px; height: 22px; }
+  .detailPhoto :global(.photo-reserved) span { font-size: 9px; }
+  .detailPhoto :global(.photo-reserved) small { font-size: 8px; }
+  .photoFoot { padding-top: 17px; }
+  .photoFoot a { font-size: 10px; }
+  .locationStrip { display: block; margin-top: 6px; padding: 20px 0; }
+  .locationStrip a { max-width: none; font-size: 11px; }
+  .locationStrip p { margin-top: 10px; padding-left: 25px; font-size: 10px; }
+  .laparoscopy { margin-top: 14px; }
+  .lapGrid { grid-template-columns: 1fr; gap: 26px; padding-block: 38px; }
+  .instrument { order: 2; }
+  .instrument > svg { max-height: 290px; }
+  .drawingLabel { font-size: 20px; margin-left: 0; }
+  .drawingCaption { font-size: 9px; }
+  .lapCopy h2 { font-size: clamp(37px,10.3vw,54px); }
+  .lapCopy > p:not(:global(.eyebrow)) { font-size: 14px; margin: 18px 0; }
+  .lapDetail { margin-top: 23px; padding-top: 18px; grid-template-columns: 125px 1fr; gap: 25px; }
+  .lapDetail > p { font-size: 12px; }
+  .services { padding-block: 45px; }
+  .sectionHead { display: block; margin-bottom: 25px; }
+  .sectionHead h2, .teamIntro h2, .faq h2 { font-size: 40px; }
+  .sectionHead > a { margin-top: 20px; }
+  .servicesGrid { grid-template-columns: 1fr; gap: 12px; }
+  .service { display: grid; grid-template-columns: 90px 1fr; gap: 0 18px; padding: 22px; position: relative; border-radius: 3px 3px 30px 3px; }
+  .serviceKicker { position: absolute; top: 14px; right: 14px; }
+  .serviceKicker > svg { margin-left: 8px; width: 15px; height: 15px; }
+  .service > svg { grid-column: 1; grid-row: 1/3; height: 90px; width: 105px; margin: 0 0 0 -8px; align-self: center; }
+  .service h3 { grid-column: 2; font-size: 23px; margin-top: 16px; }
+  .service p { grid-column: 2; font-size: 12px; margin-top: 8px; }
+  .team { display: block; padding-block: 45px; }
+  .teamIntro > p:not(:global(.eyebrow)) { max-width: 340px; margin: 20px 0; font-size: 14px; }
+  .portraits { margin-top: 30px; gap: 16px; }
+  .person:nth-child(2) { padding-top: 25px; }
+  .portrait { border-top-left-radius: 60px; aspect-ratio: .8; }
+  .person:nth-child(2) .portrait { border-top-right-radius: 60px; }
+  .personRole { font-size: 8px; min-height: 25px; margin-top: 14px; }
+  .person h3 { font-size: 21px; }
+  .personInterests { font-size: 10px; }
+  .faq { grid-template-columns: 1fr; gap: 25px; padding-block: 40px 50px; }
+  .faq h2 br { display: none; }
+  .faq :global(.faq-list summary) { font-size: 14px; }
+}
+@media(prefers-reduced-motion:reduce) { .heroCopy, .heroVisual { animation:none; } .instrument > svg, .service { transition:none; } .instrument:hover > svg, .service:hover { transform:none; } }

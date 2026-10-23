@@ -1,0 +1,341 @@
+{
+  "matrix": [
+    {
+      "activeNav": [],
+      "h1": 1,
+      "height": 4121,
+      "overflow": false,
+      "path": "/",
+      "photoOverlaps": [],
+      "w": 375
+    },
+    {
+      "activeNav": [
+        "L’ambulatorio"
+      ],
+      "h1": 1,
+      "height": 3261,
+      "overflow": false,
+      "path": "/ambulatorio",
+      "photoOverlaps": [],
+      "w": 375
+    },
+    {
+      "activeNav": [
+        "Prestazioni"
+      ],
+      "h1": 1,
+      "height": 3904,
+      "overflow": false,
+      "path": "/prestazioni",
+      "photoOverlaps": [],
+      "w": 375
+    },
+    {
+      "activeNav": [
+        "Équipe"
+      ],
+      "h1": 1,
+      "height": 2304,
+      "overflow": false,
+      "path": "/equipe",
+      "photoOverlaps": [],
+      "w": 375
+    },
+    {
+      "activeNav": [
+        "Prestazioni"
+      ],
+      "h1": 1,
+      "height": 2100,
+      "overflow": false,
+      "path": "/chirurgia-laparoscopica",
+      "photoOverlaps": [],
+      "w": 375
+    },
+    {
+      "activeNav": [
+        "Contatti"
+      ],
+      "h1": 1,
+      "height": 2093,
+      "overflow": false,
+      "path": "/contatti",
+      "photoOverlaps": [],
+      "w": 375
+    },
+    {
+      "activeNav": [],
+      "h1": 1,
+      "height": 1731,
+      "overflow": false,
+      "path": "/privacy",
+      "photoOverlaps": [],
+      "w": 375
+    },
+    {
+      "activeNav": [],
+      "h1": 1,
+      "height": 4139,
+      "overflow": false,
+      "path": "/",
+      "photoOverlaps": [],
+      "w": 390
+    },
+    {
+      "activeNav": [
+        "L’ambulatorio"
+      ],
+      "h1": 1,
+      "height": 3314,
+      "overflow": false,
+      "path": "/ambulatorio",
+      "photoOverlaps": [],
+      "w": 390
+    },
+    {
+      "activeNav": [
+        "Prestazioni"
+      ],
+      "h1": 1,
+      "height": 3921,
+      "overflow": false,
+      "path": "/prestazioni",
+      "photoOverlaps": [],
+      "w": 390
+    },
+    {
+      "activeNav": [
+        "Équipe"
+      ],
+      "h1": 1,
+      "height": 2330,
+      "overflow": false,
+      "path": "/equipe",
+      "photoOverlaps": [],
+      "w": 390
+    },
+    {
+      "activeNav": [
+        "Prestazioni"
+      ],
+      "h1": 1,
+      "height": 2122,
+      "overflow": false,
+      "path": "/chirurgia-laparoscopica",
+      "photoOverlaps": [],
+      "w": 390
+    },
+    {
+      "activeNav": [
+        "Contatti"
+      ],
+      "h1": 1,
+      "height": 2104,
+      "overflow": false,
+      "path": "/contatti",
+      "photoOverlaps": [],
+      "w": 390
+    },
+    {
+      "activeNav": [],
+      "h1": 1,
+      "height": 1660,
+      "overflow": false,
+      "path": "/privacy",
+      "photoOverlaps": [],
+      "w": 390
+    },
+    {
+      "activeNav": [],
+      "h1": 1,
+      "height": 3532,
+      "overflow": false,
+      "path": "/",
+      "photoOverlaps": [],
+      "w": 768
+    },
+    {
+      "activeNav": [
+        "L’ambulatorio"
+      ],
+      "h1": 1,
+      "height": 2619,
+      "overflow": false,
+      "path": "/ambulatorio",
+      "photoOverlaps": [],
+      "w": 768
+    },
+    {
+      "activeNav": [
+        "Prestazioni"
+      ],
+      "h1": 1,
+      "height": 3043,
+      "overflow": false,
+      "path": "/prestazioni",
+      "photoOverlaps": [],
+      "w": 768
+    },
+    {
+      "activeNav": [
+        "Équipe"
+      ],
+      "h1": 1,
+      "height": 1954,
+      "overflow": false,
+      "path": "/equipe",
+      "photoOverlaps": [],
+      "w": 768
+    },
+    {
+      "activeNav": [
+        "Prestazioni"
+      ],
+      "h1": 1,
+      "height": 1679,
+      "overflow": false,
+      "path": "/chirurgia-laparoscopica",
+      "photoOverlaps": [],
+      "w": 768,
+      "verifiedAfterCorrection": true
+    },
+    {
+      "activeNav": [
+        "Contatti"
+      ],
+      "h1": 1,
+      "height": 1548,
+      "overflow": false,
+      "path": "/contatti",
+      "photoOverlaps": [],
+      "w": 768
+    },
+    {
+      "activeNav": [],
+      "h1": 1,
+      "height": 1426,
+      "overflow": false,
+      "path": "/privacy",
+      "photoOverlaps": [],
+      "w": 768
+    },
+    {
+      "activeNav": [],
+      "h1": 1,
+      "height": 3602,
+      "overflow": false,
+      "path": "/",
+      "photoOverlaps": [],
+      "w": 1440
+    },
+    {
+      "activeNav": [
+        "L’ambulatorio"
+      ],
+      "h1": 1,
+      "height": 3028,
+      "overflow": false,
+      "path": "/ambulatorio",
+      "photoOverlaps": [],
+      "w": 1440
+    },
+    {
+      "activeNav": [
+        "Prestazioni"
+      ],
+      "h1": 1,
+      "height": 3161,
+      "overflow": false,
+      "path": "/prestazioni",
+      "photoOverlaps": [],
+      "w": 1440
+    },
+    {
+      "activeNav": [
+        "Équipe"
+      ],
+      "h1": 1,
+      "height": 2126,
+      "overflow": false,
+      "path": "/equipe",
+      "photoOverlaps": [],
+      "w": 1440
+    },
+    {
+      "activeNav": [
+        "Prestazioni"
+      ],
+      "h1": 1,
+      "height": 1788,
+      "overflow": false,
+      "path": "/chirurgia-laparoscopica",
+      "photoOverlaps": [],
+      "w": 1440
+    },
+    {
+      "activeNav": [
+        "Contatti"
+      ],
+      "h1": 1,
+      "height": 1710,
+      "overflow": false,
+      "path": "/contatti",
+      "photoOverlaps": [],
+      "w": 1440
+    },
+    {
+      "activeNav": [],
+      "h1": 1,
+      "height": 1341,
+      "overflow": false,
+      "path": "/privacy",
+      "photoOverlaps": [],
+      "w": 1440
+    }
+  ],
+  "tabletCorrection": [
+    {
+      "overflow": false,
+      "photos": [
+        {
+          "height": 270,
+          "width": 321
+        },
+        {
+          "height": 270,
+          "width": 247
+        }
+      ],
+      "w": 641
+    },
+    {
+      "overflow": false,
+      "photos": [
+        {
+          "height": 270,
+          "width": 393
+        },
+        {
+          "height": 270,
+          "width": 302
+        }
+      ],
+      "w": 768
+    },
+    {
+      "overflow": false,
+      "photos": [
+        {
+          "height": 270,
+          "width": 439
+        },
+        {
+          "height": 270,
+          "width": 338
+        }
+      ],
+      "w": 850
+    }
+  ]
+}

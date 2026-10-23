@@ -1,77 +1,113 @@
-export const services = [
+import type { ClinicPhotoKey } from "./media";
+/** Percorso editoriale: non rappresenta la pianta o l’ordine fisico dei locali. */
+export const visitChapters = [
   {
-    id: "visita",
-    title: "Visite e prevenzione",
-    subtitle: "Conoscersi, prima di tutto.",
-    text: "Un incontro dedicato al tuo animale e alle domande che vuoi fare. Il punto di partenza per parlare del suo benessere.",
-    detail:
-      "Nel percorso proposto: ascolto delle tue osservazioni, visita e spiegazione dei passi successivi.",
-    topic: "visite e prevenzione",
-    icon: "listen",
+    id: "ingresso",
+    label: "Ingresso",
+    title: "La visita comincia da qui.",
+    description:
+      "Via San Francesco al Campo 24, a Leinì. Conosci l’ambulatorio, i suoi spazi e le attività prima di venirci a trovare.",
+    photo: "exterior",
+    next: "Entra nell’ambulatorio",
+    link: "/contatti",
+    linkLabel: "Indirizzo e indicazioni",
   },
   {
-    id: "diagnostica",
-    title: "Diagnostica",
-    subtitle: "Capire, un passo alla volta.",
-    text: "Quando servono approfondimenti, poter comprendere il motivo di un esame aiuta ad affrontarlo con maggiore consapevolezza.",
-    detail:
-      "Gli esami disponibili e le modalità di esecuzione saranno confermati con lo studio.",
-    topic: "diagnostica",
-    icon: "clarity",
+    id: "accoglienza",
+    label: "Accoglienza",
+    title: "Prima, ci conosciamo.",
+    description:
+      "Cani, gatti e animali non convenzionali. Le visite si concordano per telefono: indicaci la specie del tuo animale quando chiami.",
+    photo: "reception",
+    next: "Passa alla visita",
+    link: "/contatti",
+    linkLabel: "Come fissare un appuntamento",
+  },
+  {
+    id: "visita",
+    label: "La visita",
+    title: "Le persone, al centro.",
+    description:
+      "Il Dott. Davide Boasso e la Dott.ssa Erika Valieri seguono l’attività dell’ambulatorio. Conosci i loro percorsi e le rispettive aree di interesse.",
+    photo: "visit",
+    next: "Scopri gli strumenti",
+    link: "/equipe",
+    linkLabel: "Conosci i due medici",
+  },
+  {
+    id: "strumenti",
+    label: "Strumenti e attività",
+    title: "Dalla visita agli approfondimenti.",
+    description:
+      "Laboratorio interno, radiologia diretta, ecografia e chirurgia. Nella pagina delle prestazioni trovi tutte le attività e le collaborazioni con specialisti esterni.",
+    photo: "imaging",
+    next: "Torna all’ingresso",
+    link: "/prestazioni",
+    linkLabel: "Esplora tutte le prestazioni",
+  },
+] as const satisfies readonly {
+  id: string;
+  label: string;
+  title: string;
+  description: string;
+  photo: ClinicPhotoKey;
+  next: string;
+  link: string;
+  linkLabel: string;
+}[];
+export const expertiseAreas = [
+  {
+    id: "interna",
+    label: "Medicina interna",
+    people: [0, 1],
+    description:
+      "Un’area di interesse condivisa dal Dott. Davide Boasso e dalla Dott.ssa Erika Valieri.",
+    href: "/equipe",
+    link: "I percorsi dei due medici",
+  },
+  {
+    id: "laparoscopia",
+    label: "Chirurgia laparoscopica",
+    people: [0],
+    description:
+      "Una delle principali aree di interesse del Dott. Boasso e una prestazione disponibile nell’ambulatorio.",
+    href: "/chirurgia-laparoscopica",
+    link: "La chirurgia laparoscopica",
   },
   {
     id: "chirurgia",
-    title: "Percorsi chirurgici",
-    subtitle: "Ogni domanda ha il suo spazio.",
-    text: "Preparazione, intervento e ritorno a casa: un percorso da conoscere e discutere con il veterinario.",
-    detail:
-      "Prestazioni, preparazione e controlli dipendono dal caso e devono essere concordati con il medico.",
-    topic: "percorsi chirurgici",
-    icon: "path",
-  },
-] as const;
-export const visitSteps = [
-  {
-    label: "Prima",
-    title: "Si comincia ascoltando.",
-    text: "Un primo contatto per raccontare chi è il tuo animale e chiedere come organizzare la visita.",
-    note: "Le tue domande sono un buon punto di partenza.",
-    icon: "listen",
+    label: "Chirurgia dei tessuti molli",
+    people: [0],
+    description:
+      "Tra gli interessi professionali del Dott. Boasso, insieme alla medicina interna, alla laparoscopia e all’oftalmologia.",
+    href: "/prestazioni#chirurgia",
+    link: "Chirurgia e day hospital",
   },
   {
-    label: "Durante",
-    title: "Spazio per capire.",
-    text: "Un incontro in cui osservazioni e spiegazioni aiutano a comprendere il percorso proposto dal veterinario.",
-    note: "Parole semplici, attenzione ai dettagli.",
-    icon: "clarity",
+    id: "oftalmologia",
+    label: "Oftalmologia",
+    people: [0],
+    description:
+      "Un’area di interesse del Dott. Boasso. Le visite oculistiche sono tra le prestazioni dell’ambulatorio.",
+    href: "/prestazioni#medicina",
+    link: "Visite e medicina",
   },
   {
-    label: "Dopo",
-    title: "Un prossimo passo chiaro.",
-    text: "Indicazioni e controlli da concordare con il medico, per sapere come proseguire dopo la visita.",
-    note: "La chiarezza continua anche fuori dallo studio.",
-    icon: "path",
+    id: "dermatologia",
+    label: "Dermatologia",
+    people: [1],
+    description:
+      "Tra le aree di interesse della Dott.ssa Erika Valieri, che ha conseguito la qualifica GPCert Derm.",
+    href: "/prestazioni#medicina",
+    link: "Le visite dermatologiche",
   },
-] as const;
-export const questions = [
-  [
-    "Come posso preparare un primo contatto?",
-    "Puoi chiamare lo studio con il pulsante dedicato. Se preferisci scrivere, il percorso guidato ti aiuta a comporre un messaggio da modificare e copiare: questa demo non lo invia e non prenota appuntamenti.",
-  ],
-  [
-    "Posso già prenotare da questo sito?",
-    "Il pulsante Chiama lo studio apre l’app per telefonare al recapito riportato, ancora da confermare con lo studio. Il sito è una demo: il modulo non invia richieste e non conferma prenotazioni. Modalità e disponibilità vanno concordate direttamente con lo studio.",
-  ],
-  [
-    "Quali animali e servizi comprende la proposta?",
-    "Cani e gatti guidano il racconto visivo. Le specie trattate e i servizi effettivamente disponibili devono essere confermati dallo studio. Per altri animali, il percorso prepara una richiesta di informazioni.",
-  ],
-  [
-    "Gli orari sono già confermati?",
-    "No. Gli orari riportati sono indicativi e da verificare con lo studio. Non indicano la disponibilità di appuntamenti.",
-  ],
-  [
-    "Le fotografie ritraggono lo studio?",
-    "No. Sono immagini illustrative generate per questo concept e non rappresentano ambienti, professionisti o pazienti dello studio.",
-  ],
+  {
+    id: "citologia",
+    label: "Citologia",
+    people: [1],
+    description:
+      "Tra gli interessi professionali della Dott.ssa Erika Valieri, insieme alla dermatologia e alla medicina interna.",
+    href: "/equipe#erika-valieri",
+    link: "Il profilo di Erika Valieri",
+  },
 ] as const;
