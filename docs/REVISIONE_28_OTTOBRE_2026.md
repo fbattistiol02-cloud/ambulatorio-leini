@@ -2,7 +2,7 @@
 
 ## Modifiche realizzate
 
-La revisione mantiene il sito Next.js multipagina, il logo originale e lo sfondo approvato. Non ricostruisce il progetto e non introduce nuove dipendenze.
+La revisione mantiene il sito Next.js multipagina, il logo originale e lo sfondo approvato. Non ricostruisce il progetto. Le funzionalità richieste non introducono nuove dipendenze.
 
 - Intestazione: denominazione più leggibile e compatta su mobile; logo originale mantenuto.
 - Homepage: messaggio «Il tuo veterinario di fiducia a Leinì dal 2009», descrizione generale e orari completi prima delle fotografie su smartphone. Chiamata diretta a entrambi i numeri, email per informazioni/ricette e Maps.
@@ -45,6 +45,6 @@ Per aggiungere foto: salvare file ottimizzati in public/media, compilare src/alt
 
 ## CMS e problemi tecnici
 
-Nessun CMS, Sanity, pannello, account, pagamento, prenotazione online o raccolta di dati sanitari. package.json e package-lock.json non modificati.
+Nessun CMS, Sanity, pannello, account, pagamento, prenotazione online o raccolta di dati sanitari. Conservati Vercel Web Analytics e Speed Insights, già aggiunti su GitHub tramite PR #1 e #2 prima di questa revisione. Integrati i relativi aggiornamenti di package.json e lockfile, senza aggiungere altri servizi o abbonamenti. La nota privacy è stata aggiornata per rifletterne la presenza.
 
 Il compilatore SWC nativo mancava nell’installazione locale: ripristinato dal pacchetto ufficiale già previsto, versione 16.4.1. Build successiva completata. Nessun problema tecnico bloccante residuo nelle funzionalità implementate.

@@ -27,3 +27,5 @@ La produzione non viene modificata prima delle verifiche finali. Le fotografie c
 - Prima verifica responsive: 7 pagine × 4 larghezze (375, 390, 768, 1440 px), nessun overflow e un solo H1 per pagina. Menu e FAQ utilizzabili da tastiera. Galleria provata con loghi come fixture locali: apertura, cambio immagine, didascalia facoltativa, Escape, ritorno del focus e ripristino scroll corretti. Route temporanea rimossa prima della build finale.
 
 - Build finale, TypeScript, lint, verifica HTML e 26 controlli di contrasto superati. Rapporto: docs/REVISIONE_28_OTTOBRE_2026.md.
+
+- Prima del push sono emersi quattro commit remoti già presenti (PR #1 e #2: Analytics e Speed Insights). Integrati senza sovrascrittura; nota privacy aggiornata e verifica finale ripetuta sulla versione integrata.

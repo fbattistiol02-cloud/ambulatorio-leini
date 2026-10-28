@@ -22,8 +22,10 @@ export default function Privacy() {
       <h2>Come funziona questa anteprima</h2>
       <p>
         Il sito presenta l’ambulatorio e i suoi recapiti. Non contiene moduli di
-        raccolta dati, sistemi di prenotazione, account, strumenti di analisi o
-        pubblicità aggiunti dall’applicazione. I caratteri e le immagini
+        raccolta dati, sistemi di prenotazione, account o pubblicità.
+        Sono presenti le integrazioni Vercel Web Analytics e Speed Insights;
+        la loro configurazione deve essere considerata nell’informativa definitiva.
+        I caratteri e le immagini
         utilizzati sono serviti dal sito.
       </p>
       <h2>Chiamate, email e collegamenti esterni</h2>
