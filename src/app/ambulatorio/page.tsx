@@ -16,9 +16,7 @@ export default function Ambulatorio() {
         eyebrow="L’ambulatorio"
         title={
           <>
-            Un ambulatorio.
-            <br />
-            Qui, a <em>Leinì.</em>
+            Il tuo veterinario di fiducia a <em>Leinì</em> dal 2009
           </>
         }
         description="In Via San Francesco al Campo 24, un ambulatorio per cani, gatti e animali non convenzionali. Il Dott. Davide Boasso gestisce la struttura dal gennaio 2009."
@@ -32,7 +30,7 @@ export default function Ambulatorio() {
             <p>
               Le visite cliniche si svolgono su appuntamento. All’attività di
               medicina si affiancano il laboratorio interno per gli esami del
-              sangue, la radiologia diretta, l’ecografia e la chirurgia.
+              sangue, la radiologia digitale diretta, l’ecografia e la chirurgia.
             </p>
             <p>
               Il day hospital è dedicato alle terapie giornaliere o
@@ -67,7 +65,7 @@ export default function Ambulatorio() {
           <PhotoSlot photo="team" className="story-photo" />
           <div>
             <p className="eyebrow">I professionisti</p>
-            <h2>Davide Boasso ed Erika Valieri.</h2>
+            <h2>La nostra équipe</h2>
             <p>
               Il direttore sanitario Dott. Davide Boasso e la Dott.ssa Erika
               Valieri seguono l’attività dell’ambulatorio, con aree di interesse

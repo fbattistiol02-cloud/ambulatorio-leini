@@ -48,3 +48,7 @@ Nuova scena illustrata 3D con cane e gatto (non pazienti reali), palette blu/lim
 ## Stato attuale — revisione visiva del 23 ottobre 2026
 
 Questa sezione supera le descrizioni storiche delle direzioni precedenti. La demo ha sette pagine, segnaposto per undici soggetti autentici, apertura con ingresso/esterno, palette bianco caldo/blu/blu profondo senza lime e due font locali. La homepage evidenzia attività dal 2009, persone e competenze; tutti i servizi rimangono nelle pagine complete. Pubblicazione della demo tecnica su Vercel già approvata esplicitamente dall’utente. Restano da confermare i materiali e i dati per il sito ufficiale indicati sopra; nessuna fotografia reale è stata ancora fornita.
+
+## Revisione cliente — 28 ottobre 2026
+
+Per lo stato corrente prevale [il rapporto del 28 ottobre](REVISIONE_28_OTTOBRE_2026.md): orari confermati anche nel pomeriggio, Instagram verificato, sette FAQ, nuove biografie e galleria con ingrandimento predisposta. Le indicazioni storiche sopra sugli orari provvisori e sul social in attesa sono superate.

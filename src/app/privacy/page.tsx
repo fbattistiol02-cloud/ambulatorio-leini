@@ -57,8 +57,7 @@ export default function Privacy() {
       <p>
         Occorre confermare il soggetto titolare e i dati fiscali, i riferimenti
         professionali e autorizzativi da pubblicare, l’informativa privacy e la
-        configurazione effettiva di cookie, hosting e servizi esterni. Gli orari
-        di visita sono provvisori e devono essere verificati con l’ambulatorio.
+        configurazione effettiva di cookie, hosting e servizi esterni. Gli appuntamenti si concordano telefonicamente con l’ambulatorio.
       </p>
     </article>
   );

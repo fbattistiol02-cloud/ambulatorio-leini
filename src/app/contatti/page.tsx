@@ -26,7 +26,7 @@ export default function Contatti() {
         <PhotoSlot photo="exterior" className="arrival-photo" />
         <div>
           <p className="eyebrow">Prima della visita</p>
-          <h2>Le informazioni pratiche.</h2>
+          <h2>Domande frequenti</h2>
           <div className="faq-list">
             {faqs.map((faq) => (
               <details key={faq.question}>
@@ -40,10 +40,7 @@ export default function Contatti() {
               </details>
             ))}
           </div>
-          <p className="arrival-note">
-            Gli orari sono provvisori: confermali telefonicamente prima di
-            recarti in ambulatorio.
-          </p>
+
         </div>
       </div>
     </>

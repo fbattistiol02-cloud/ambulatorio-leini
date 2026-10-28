@@ -1,3 +1,4 @@
+import { laparoscopyVideo } from "@/content/media";
 import { LaparoscopyFeature } from "@/components/clinic/EditorialHome";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -27,6 +28,12 @@ export default function Laparoscopia() {
       />
       <LaparoscopyFeature standalone />
       <div className="container">
+        {laparoscopyVideo.authorized && laparoscopyVideo.src && laparoscopyVideo.captions && <section className="lap-video" aria-label="Approfondimento video sulla chirurgia laparoscopica">
+          <video controls preload="none" aria-label="La chirurgia laparoscopica in ambulatorio">
+            <source src={laparoscopyVideo.src} />
+            <track kind="captions" src={laparoscopyVideo.captions} srcLang="it" label="Italiano" default />
+          </video>
+        </section>}
         <section className="lap-detail-editorial">
           <div>
             <p className="eyebrow">Il medico</p>

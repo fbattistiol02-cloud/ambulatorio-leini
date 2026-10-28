@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { IconArrowUpRight, IconPhone, IconPin } from "@/components/ui/Icons";
-import { mapsHref, telHref } from "@/lib/links";
+import { mapsHref, telHref, mobileTelHref } from "@/lib/links";
 import { campaign, site } from "@/content/site";
+import { OpeningHours } from "./OpeningHours";
 import { PhotoSlot } from "./PhotoSlot";
 import styles from "./Editorial.module.css";
 export function Hero() {
@@ -10,14 +11,15 @@ export function Hero() {
       <div className={`container ${styles.heroGrid}`}>
         <div className={styles.heroCopy}>
           <p className="eyebrow">Ambulatorio Veterinario Leinì</p>
-          <h1>Veterinario<br />a <em>Leinì.</em></h1>
-          <p className={styles.motto}>La cura, da vicino.</p>
+          <h1>Il tuo veterinario di fiducia a <em>Leinì</em> dal 2009</h1>
+
           <p className={styles.lead}>Medicina, diagnostica e chirurgia per cani, gatti e animali non convenzionali.</p>
           <div className={styles.actions}>
             <a href={telHref} className="button"><IconPhone />Chiama per una visita</a>
             <a href={mapsHref} className="text-link" target="_blank" rel="noopener noreferrer">Come raggiungerci<IconArrowUpRight /></a>
           </div>
-          <p className={styles.appointment}>Ci incontriamo su appuntamento telefonico.</p>
+          <p className={styles.appointment}>Appuntamenti telefonici: <a href={telHref}>{site.phone.display}</a> · <a href={mobileTelHref}>{site.mobile.display}</a></p>
+          <OpeningHours compact />
         </div>
         <div className={styles.heroVisual}>
           <span className={styles.marginNote}>Il tuo ambulatorio, a Leinì</span>

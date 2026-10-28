@@ -190,3 +190,18 @@
   .faq :global(.faq-list summary) { font-size: 14px; }
 }
 @media(prefers-reduced-motion:reduce) { .heroCopy, .heroVisual { animation:none; } .instrument > svg, .service { transition:none; } .instrument:hover > svg, .service:hover { transform:none; } }
+
+/* Revisione cliente: gerarchia generale, prima le informazioni utili. */
+.heroCopy h1 { font-size:clamp(45px,4.5vw,65px); line-height:1.07; letter-spacing:-.045em; max-width:530px; }
+.appointment { font-size:12px; line-height:1.7; }
+.appointment a { white-space:nowrap; text-decoration:underline; text-underline-offset:3px; }
+.service { background:var(--medicine-tint); }
+.service:nth-child(2) { background:var(--diagnostic-tint); }
+.service:nth-child(3) { background:var(--surgery-tint); }
+.laparoscopy { background:var(--laparoscopy-tint); }
+.portraits { grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr)); }
+@media(max-width:640px) {
+ .heroCopy h1 { font-size:clamp(40px,10.8vw,58px); }
+ .portraits { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .heroVisual { margin-top:8px; }
+}

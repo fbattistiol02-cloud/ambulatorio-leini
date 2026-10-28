@@ -88,3 +88,10 @@ export const clinicPhotos = {
   },
 } satisfies Record<string, ClinicPhoto>;
 export type ClinicPhotoKey = keyof typeof clinicPhotos;
+
+/** Attivare solo con video autentico autorizzato e sottotitoli italiani verificati. */
+export const laparoscopyVideo: {
+  src: string | null;
+  captions: string | null;
+  authorized: boolean;
+} = { src: null, captions: null, authorized: false };

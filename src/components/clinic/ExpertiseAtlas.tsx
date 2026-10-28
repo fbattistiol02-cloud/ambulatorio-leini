@@ -33,7 +33,7 @@ export function ExpertiseAtlas() {
           <div>
             <p className="eyebrow">Boasso & Valieri / Le aree di interesse</p>
             <h2>
-              Due sguardi.
+              La nostra équipe.
               <br />
               Un’unica <em>équipe.</em>
             </h2>
@@ -119,7 +119,7 @@ export function ExpertiseAtlas() {
                     />
                   </Link>
                   <p className={styles.doctorRole}>
-                    {person.qualification || person.role}
+                    {person.role}
                   </p>
                   <h3>
                     <Link

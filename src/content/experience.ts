@@ -32,7 +32,7 @@ export const visitChapters = [
     photo: "visit",
     next: "Scopri gli strumenti",
     link: "/equipe",
-    linkLabel: "Conosci i due medici",
+    linkLabel: "Conosci la nostra équipe",
   },
   {
     id: "strumenti",
@@ -63,7 +63,7 @@ export const expertiseAreas = [
     description:
       "Un’area di interesse condivisa dal Dott. Davide Boasso e dalla Dott.ssa Erika Valieri.",
     href: "/equipe",
-    link: "I percorsi dei due medici",
+    link: "I percorsi della nostra équipe",
   },
   {
     id: "laparoscopia",
@@ -90,7 +90,7 @@ export const expertiseAreas = [
     description:
       "Un’area di interesse del Dott. Boasso. Le visite oculistiche sono tra le prestazioni dell’ambulatorio.",
     href: "/prestazioni#medicina",
-    link: "Visite e medicina",
+    link: "Visita e medicina",
   },
   {
     id: "dermatologia",

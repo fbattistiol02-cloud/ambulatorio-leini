@@ -19,7 +19,7 @@ const fraunces = localFont({
   display: "swap",
 });
 const description =
-  "Ambulatorio Veterinario Leinì: visite, diagnostica e chirurgia laparoscopica. Via San Francesco al Campo 24. Appuntamenti al numero 011 998 1469.";
+  "Ambulatorio Veterinario Leinì: visite, diagnostica, chirurgia e ricovero. Via San Francesco al Campo 24. Appuntamenti al numero 011 9981469.";
 export const metadata: Metadata = {
   metadataBase: new URL(site.previewUrl),
   title: {
@@ -62,7 +62,16 @@ const structuredData = {
     addressRegion: site.address.province,
     addressCountry: "IT",
   },
-  // Nessun orario, rating o servizio H24 non confermato.
+  url: site.previewUrl,
+  contactPoint: [site.phone, site.mobile].map(phone => ({ "@type": "ContactPoint", telephone: phone.tel, contactType: "customer service" })),
+  openingHoursSpecification: [
+    ...[site.hours.weekday, site.hours.afternoon].map(time => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: time.split("–")[0], closes: time.split("–")[1],
+    })),
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: site.hours.saturday.split("–")[0], closes: site.hours.saturday.split("–")[1] },
+  ],
 };
 export default function RootLayout({
   children,

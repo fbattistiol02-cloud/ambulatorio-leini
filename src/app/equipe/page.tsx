@@ -16,9 +16,7 @@ export default function Equipe() {
         eyebrow="L’équipe"
         title={
           <>
-            Due medici.
-            <br />
-            Un’unica <em>équipe.</em>
+            La nostra <em>équipe</em>
           </>
         }
         description="Il Dott. Davide Boasso e la Dott.ssa Erika Valieri: conosci i medici veterinari, la loro formazione e le rispettive aree di interesse."
@@ -28,11 +26,11 @@ export default function Equipe() {
           {professionals.map((person, index) => (
             <article
               className={`professional profile-with-portrait profile-${index + 1}`}
-              id={index === 0 ? "davide-boasso" : "erika-valieri"}
+              id={person.id}
               key={person.name}
             >
               <PhotoSlot
-                photo={index === 0 ? "boasso" : "valieri"}
+                photo={person.photoKey}
                 srcOverride={person.photo}
                 className="portrait-photo"
               />
@@ -42,13 +40,14 @@ export default function Equipe() {
                 </span>
                 <p className="eyebrow">{person.role}</p>
                 <h2>{person.name}</h2>
-                {person.qualification && (
-                  <span className="qualification">{person.qualification}</span>
-                )}
+
                 <p className="degree">{person.degree}</p>
                 <p>{person.bio}</p>
-                <p className="interests">{person.interests}</p>
-                {person.name === professionals[0].name &&
+                <h3>Aree di interesse</h3>
+                <ul className="profile-areas">{person.areas.map(area => <li key={area}>{area}</li>)}</ul>
+                <h3>Formazione e aggiornamento</h3><p>{person.training}</p>
+                <h3>Fuori dall’ambulatorio</h3><p>{person.personal}</p>
+                {person.id === "davide-boasso" &&
                   site.social.doctorInstagram && (
                     <a
                       href={site.social.doctorInstagram}

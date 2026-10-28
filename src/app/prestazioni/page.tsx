@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { externalServices, serviceCategories } from "@/content/site";
+import { ExternalCollaborations } from "@/components/clinic/ExternalCollaborations";
+import { serviceCategories } from "@/content/site";
 import { VisitCta } from "@/components/clinic/VisitCta";
 import { PageIntro } from "@/components/clinic/PageIntro";
 import { PhotoSlot } from "@/components/clinic/PhotoSlot";
@@ -37,7 +38,7 @@ export default function Prestazioni() {
             <section
               id={service.id}
               key={service.id}
-              className={service.featured ? "service-feature" : "service-row"}
+              className={`${service.featured ? "service-feature" : "service-row"} service-${service.id}`}
             >
               <div className="service-heading">
                 <span className="section-counter">0{i + 1}</span>
@@ -46,7 +47,7 @@ export default function Prestazioni() {
                 <p>{service.text}</p>
                 {service.featured && (
                   <Link href="/chirurgia-laparoscopica" className="text-link">
-                    Approfondisci la laparoscopia
+                    Scopri la chirurgia laparoscopica
                     <IconArrowUpRight />
                   </Link>
                 )}
@@ -73,25 +74,7 @@ export default function Prestazioni() {
             </section>
           ))}
         </div>
-        <section className="external-section">
-          <div>
-            <p className="eyebrow">Con specialisti esterni</p>
-            <h2>
-              Altre competenze.
-              <br />
-              In <em>collaborazione.</em>
-            </h2>
-            <p>
-              Prestazioni disponibili con il contributo di specialisti esterni.
-              Per informazioni e appuntamenti, chiama l’ambulatorio.
-            </p>
-          </div>
-          <ul>
-            {externalServices.map((service) => (
-              <li key={service}>{service}</li>
-            ))}
-          </ul>
-        </section>
+        <ExternalCollaborations />
       </div>
       <VisitCta />
     </>

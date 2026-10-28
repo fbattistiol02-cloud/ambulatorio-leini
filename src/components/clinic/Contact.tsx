@@ -1,3 +1,4 @@
+import { OpeningHours } from "./OpeningHours";
 import Link from "next/link";
 import { site, campaign } from "@/content/site";
 import { IconArrowUpRight } from "@/components/ui/Icons";
@@ -51,24 +52,7 @@ export function Contact({
               Apri Google Maps
               <IconArrowUpRight />
             </a>
-            {!compact && (
-              <div className="hours-block">
-                <h3>
-                  Orari <span className="status-tag">Provvisori</span>
-                </h3>
-                <dl>
-                  <div>
-                    <dt>Lun–Ven</dt>
-                    <dd>{site.hours.weekday}</dd>
-                  </div>
-                  <div>
-                    <dt>Sabato</dt>
-                    <dd>{site.hours.saturday}</dd>
-                  </div>
-                </dl>
-                <p>{site.hours.note}</p>
-              </div>
-            )}
+            <OpeningHours />
             {compact && (
               <Link href="/contatti" className="text-link contact-all">
                 Contatti, orari e informazioni

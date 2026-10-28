@@ -9,9 +9,9 @@ import { mapsHref, telHref } from "@/lib/links";
 export function Brand() {
   return (
     <Link href="/" className="brand" aria-label={`${site.name} — Home`}>
-      <Image src="/media/brand/simbolo.png" alt="" width={58} height={51} />
+      <Image src="/media/brand/simbolo.png" alt="" loading="eager" width={58} height={51} />
       <span>
-        Ambulatorio Veterinario
+        <span className="brand-descriptor">Ambulatorio Veterinario</span>
         <strong>
           Leinì<span className="brand-dot">.</span>
         </strong>
