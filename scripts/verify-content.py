@@ -37,7 +37,7 @@ for route,p in pages.items():
     assert not p.forms,route
     assert all('alt' in i for i in p.images),route
     text=' '.join(p.text)
-    assert not re.search(r'provvisor|due medici|due veterinari|Altre competenze|Prenota online',text,re.I),route
+    assert not re.search(r'provvisor|due medici|due veterinari|2 medici|Altre competenze|Prenota online|Fotografia da inserire|radiologico digitale|sistema radiologico digitale|Assistenza e ricovero postoperatorio',text,re.I),route
     assert 'tel:+390119981469' in p.links,route
     for link in p.links:
         parsed=urlsplit(link)
@@ -54,11 +54,15 @@ homehead=[h[1].strip('.') for h in home.headings]
 assert [homehead.index(x) for x in expected]==sorted(homehead.index(x) for x in expected)
 for route in ['/','/contatti']:
  p=pages[route];text=' '.join(p.text)
- assert p.summary==7
+ assert p.summary==(5 if route=='/' else 8),(route,p.summary)
  assert all(x in text for x in ['09:30–12:30','16:00–19:30','Sabato'])
  assert 'tel:+393476401966' in p.links and 'mailto:av.leini@libero.it' in p.links
  assert any('google.com/maps/search/?api=1&query=' in x and '10040' in x for x in p.links)
-assert 'patients-title' not in home.ids
+assert 'patients-title' in home.ids and 'curiosita-title' in home.ids
+assert 'Equipe' not in ' '.join(team.text)[:0] and not re.search(r'Davide Boasso ed Erika|Boasso e Erika',raw['/equipe'].split('</title>')[0][-300:])
+assert 'Quattro' not in ' '.join(home.text)
+assert all(x in ' '.join(home.text) for x in ['Medicina interna','Pronto soccorso','Citologia','Dermatologia'])
+assert 'sameAs' in raw['/']
 assert 'https://www.instagram.com/ambu.vet.leini/' in home.links
 text=' '.join(team.text)
 assert all(x in text for x in ['2007','2015','gennaio 2009','GPCert in oftalmologia','GPCert Derm','Cáceres','ciclismo','trekking'])
@@ -73,4 +77,4 @@ for text in raw.values():
  assert data['address']['postalCode']=='10040'
 assert not Path('.next/server/app/qa-gallery.html').exists()
 assert not re.search(r'<video\b',raw['/chirurgia-laparoscopica'])
-print('PASS headline, service order, 7 FAQs, confirmed hours/schema, contacts, biographies, Instagram, hidden gallery/video and no QA route')
+print('PASS headline, service order, FAQs (5 home / 8 contacts), patients+curiosita placeholders, confirmed hours/schema, contacts, biographies, Instagram, hidden video and no QA route')

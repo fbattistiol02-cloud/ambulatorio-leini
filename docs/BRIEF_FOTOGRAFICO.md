@@ -33,3 +33,13 @@ Configurazione unica: `src/content/media.ts`. Per ogni soggetto inserire il perc
 | dayHospital | Ambiente per terapie giornaliere | Ambulatorio, Laparoscopia |
 
 Il precedente campo `campaign.hero.exteriorImage` e le foto nei profili restano compatibili; preferire la nuova configurazione centralizzata. Inserire soltanto foto autorizzate anche in quei campi. I segnaposto descrivono cosa fotografare e non simulano ambienti reali.
+
+## Revisione V2 (29 ottobre 2026): segnaposto e flusso di consegna
+
+I riquadri "La foto … arriverà qui" sono segnaposto progettati, colorati per area e dichiarati: non simulano fotografie reali.
+
+Flusso: 1) il dottore invia le foto via WhatsApp (meglio in alta qualità); 2) si salvano fuori dal repository; 3) `node scripts/optimize-images.mjs`; 4) si copiano in `public/media/…`; 5) si compila `src/content/media.ts` (`src`, `alt`, `authorized: true` solo dopo consenso); 6) per i pazienti si aggiunge una voce a `patientPhotos` in `src/content/site.ts`.
+
+Scatti da chiedere: ingresso/esterno (orizzontale), sala visita, laboratorio, radiologico/ecografo, day hospital, ritratto del Dott. Boasso, ritratto della Dott.ssa Valieri (verticali, luce naturale), foto dell'équipe, 4–6 foto curiose di pazienti con liberatoria dei proprietari. Nessun nome completo né dato clinico nelle didascalie.
+
+Video laparoscopia: solo con sottotitoli italiani; impostare `laparoscopyVideo` in `src/content/media.ts` (`src`, `captions`, `poster`, `authorized`).

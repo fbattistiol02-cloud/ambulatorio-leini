@@ -1,5 +1,5 @@
 /** Illustrazioni editoriali originali. Non rappresentano strumenti specifici della struttura. */
-export function MedicalDrawing({ kind = "optics" }: { kind?: "optics" | "visit" | "lab" | "care" }) {
+export function MedicalDrawing({ kind = "optics" }: { kind?: "optics" | "visit" | "lab" | "care" | "lap" }) {
   if (kind !== "optics") return (
     <svg viewBox="0 0 240 180" fill="none" aria-hidden="true" className="medical-drawing">
       <g stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -12,6 +12,12 @@ export function MedicalDrawing({ kind = "optics" }: { kind?: "optics" | "visit" 
           <path d="M67 35h28v86a14 14 0 0 1-28 0ZM63 35h36M117 35h28v86a14 14 0 0 1-28 0ZM113 35h36M75 72h12M125 83h12M57 95v49h98V95M49 144h114" />
           <path d="M68 83h26v38a13 13 0 0 1-26 0ZM118 97h26v24a13 13 0 0 1-26 0Z" fill="currentColor" fillOpacity=".08" />
           <circle cx="182" cy="62" r="22" opacity=".3" /><path d="M175 62h14m-7-7v14" />
+        </> : kind === "lap" ? <>
+          <path d="M40 140 168 50M47 148 175 58" />
+          <path d="M168 50l16-11 12 17-16 11ZM190 36l12-8 6 9-12 8" fill="currentColor" fillOpacity=".08" />
+          <path d="M34 134l-9 7 7 9 9-7" />
+          <circle cx="198" cy="116" r="22" opacity=".35" /><circle cx="198" cy="116" r="11" opacity=".6" />
+          <path d="M60 36c18 4 30 16 34 34" opacity=".35" />
         </> : <>
           <path d="M55 63h130v78H55ZM97 63V43h46v20M48 141h144M55 84h130" />
           <path d="M113 97h14v12h12v14h-12v12h-14v-12h-12v-14h12Z" fill="currentColor" fillOpacity=".08" />

@@ -8,7 +8,7 @@ import { mapsHref, telHref } from "@/lib/links";
 
 export function Brand() {
   return (
-    <Link href="/" className="brand" aria-label={`${site.name} — Home`}>
+    <Link href="/" className="brand">
       <Image src="/media/brand/simbolo.png" alt="" loading="eager" width={58} height={51} />
       <span>
         <span className="brand-descriptor">Ambulatorio Veterinario</span>

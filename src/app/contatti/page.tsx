@@ -22,7 +22,7 @@ export default function Contatti() {
         description="Per un appuntamento, chiamaci. Per informazioni e richieste di ricette puoi usare l’email. Qui trovi tutti i recapiti e le indicazioni per raggiungerci."
       />
       <Contact />
-      <div className="container contact-arrival">
+      <div className="container contact-arrival" id="domande">
         <PhotoSlot photo="exterior" className="arrival-photo" />
         <div>
           <p className="eyebrow">Prima della visita</p>

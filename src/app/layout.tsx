@@ -6,6 +6,7 @@ import { site } from "@/content/site";
 import { Footer, Header, MobileBar } from "@/components/clinic/Shell";
 import "./globals.css";
 import "./editorial.css";
+import "./v2.css";
 
 const hanken = localFont({
   src: "./fonts/hanken-latin.woff2",
@@ -65,6 +66,7 @@ const structuredData = {
     addressCountry: "IT",
   },
   url: site.previewUrl,
+  sameAs: [site.social.instagram.url],
   contactPoint: [site.phone, site.mobile].map(phone => ({ "@type": "ContactPoint", telephone: phone.tel, contactType: "customer service" })),
   openingHoursSpecification: [
     ...[site.hours.weekday, site.hours.afternoon].map(time => ({

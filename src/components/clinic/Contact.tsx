@@ -1,7 +1,9 @@
 import { OpeningHours } from "./OpeningHours";
 import Link from "next/link";
 import { site, campaign } from "@/content/site";
-import { IconArrowUpRight } from "@/components/ui/Icons";
+import { IconArrowUpRight, IconWhatsApp } from "@/components/ui/Icons";
+import { OpenNow } from "./OpenNow";
+import { MapEmbed } from "./MapEmbed";
 import { mailHref, mapsHref, mobileTelHref, telHref } from "@/lib/links";
 export function Contact({
   withFaq = false,
@@ -29,6 +31,7 @@ export function Contact({
                 <IconArrowUpRight />
               </a>
             </div>
+            {site.whatsapp.enabled && <a className="text-link" href={`https://wa.me/${site.whatsapp.tel}`} target="_blank" rel="noopener noreferrer"><IconWhatsApp />Scrivici su WhatsApp</a>}
             <a className="email-link" href={mailHref}>
               {site.email}
             </a>
@@ -52,7 +55,9 @@ export function Contact({
               Apri Google Maps
               <IconArrowUpRight />
             </a>
+            <OpenNow />
             <OpeningHours />
+            {!compact && <MapEmbed />}
             {compact && (
               <Link href="/contatti" className="text-link contact-all">
                 Contatti, orari e informazioni

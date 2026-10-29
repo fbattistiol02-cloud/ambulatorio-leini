@@ -32,9 +32,10 @@ export default function Privacy() {
       <p>
         I pulsanti telefonici e l’indirizzo email aprono le applicazioni del
         dispositivo. Le richieste vengono gestite direttamente dall’ambulatorio.
-        Google Maps si apre solo selezionando il relativo collegamento: non è
-        presente una mappa incorporata. I servizi esterni applicano le proprie
-        informative.
+        La mappa della pagina Contatti si carica solo dopo aver premuto
+        «Mostra la mappa»: fino a quel momento il sito non contatta Google.
+        Anche il collegamento a Google Maps si apre solo se selezionato. I
+        servizi esterni applicano le proprie informative.
       </p>
       <h2>Dati tecnici dell’hosting</h2>
       <p>

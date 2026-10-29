@@ -27,8 +27,8 @@ export default function Prestazioni() {
       <div className="container">
         <nav className="service-index" aria-label="Indice delle prestazioni">
           {serviceCategories.map((service) => (
-            <a href={`#${service.id}`} key={service.id}>
-              {service.title}
+            <a href={`#${service.id}`} key={service.id} data-area={service.area}>
+              <i className="v2-dot" aria-hidden="true" />{service.title}
               <IconArrow />
             </a>
           ))}
@@ -37,6 +37,7 @@ export default function Prestazioni() {
           {serviceCategories.map((service, i) => (
             <section
               id={service.id}
+              data-area={service.area}
               key={service.id}
               className={`${service.featured ? "service-feature" : "service-row"} service-${service.id}`}
             >

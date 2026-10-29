@@ -67,10 +67,10 @@ export default function Ambulatorio() {
             <p className="eyebrow">I professionisti</p>
             <h2>La nostra équipe</h2>
             <p>
-              Il direttore sanitario Dott. Davide Boasso e la Dott.ssa Erika
-              Valieri seguono l’attività dell’ambulatorio, con aree di interesse
-              che comprendono medicina interna, chirurgia, oftalmologia,
-              citologia e dermatologia.
+              L’attività dell’ambulatorio è seguita dal direttore sanitario
+              Dott. Davide Boasso insieme ai medici veterinari dell’équipe, con
+              aree di interesse che comprendono medicina interna, chirurgia,
+              oftalmologia, citologia e dermatologia.
             </p>
             <p>
               Per alcune prestazioni l’ambulatorio si avvale di specialisti

@@ -93,5 +93,6 @@ export type ClinicPhotoKey = keyof typeof clinicPhotos;
 export const laparoscopyVideo: {
   src: string | null;
   captions: string | null;
+  poster: string | null;
   authorized: boolean;
-} = { src: null, captions: null, authorized: false };
+} = { src: null, captions: null, poster: null, authorized: false };

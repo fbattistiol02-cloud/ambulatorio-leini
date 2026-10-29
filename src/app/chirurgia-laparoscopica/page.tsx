@@ -28,12 +28,27 @@ export default function Laparoscopia() {
       />
       <LaparoscopyFeature standalone />
       <div className="container">
-        {laparoscopyVideo.authorized && laparoscopyVideo.src && laparoscopyVideo.captions && <section className="lap-video" aria-label="Approfondimento video sulla chirurgia laparoscopica">
-          <video controls preload="none" aria-label="La chirurgia laparoscopica in ambulatorio">
-            <source src={laparoscopyVideo.src} />
-            <track kind="captions" src={laparoscopyVideo.captions} srcLang="it" label="Italiano" default />
-          </video>
-        </section>}
+        <section className="lap-video v2-video" aria-labelledby="video-title">
+          <div className="v2-head"><div><p className="eyebrow">Approfondimento</p><h2 id="video-title">La laparoscopia, <em>da vicino</em></h2></div></div>
+          {laparoscopyVideo.authorized && laparoscopyVideo.src && laparoscopyVideo.captions
+            ? <video controls preload="none" aria-label="La chirurgia laparoscopica in ambulatorio" poster={laparoscopyVideo.poster ?? undefined}>
+                <source src={laparoscopyVideo.src} />
+                <track kind="captions" src={laparoscopyVideo.captions} srcLang="it" label="Italiano" default />
+              </video>
+            : <div className="v2-video-soon" data-area="laparoscopia">
+                <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="32" cy="32" r="26" /><path d="M26 22v20l17-10Z" fill="currentColor" fillOpacity=".15" /></svg>
+                <p><strong>Il video della chirurgia laparoscopica arriverà qui.</strong><br />Insieme a foto e spiegazioni del Dott. Boasso, quando saranno pronti.</p>
+              </div>}
+        </section>
+        <section className="v2-steps" aria-labelledby="steps-title">
+          <p className="eyebrow">Come si procede</p>
+          <h2 id="steps-title">Dalla telefonata <em>alla visita</em></h2>
+          <ol>
+            <li><span>1</span><p>Chiami l’ambulatorio e fissi una visita.</p></li>
+            <li><span>2</span><p>Il Dott. Boasso valuta il caso.</p></li>
+            <li><span>3</span><p>Se la laparoscopia è indicata, ti spiega come procedere.</p></li>
+          </ol>
+        </section>
         <section className="lap-detail-editorial">
           <div>
             <p className="eyebrow">Il medico</p>

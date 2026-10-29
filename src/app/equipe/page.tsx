@@ -5,9 +5,9 @@ import { professionals, site } from "@/content/site";
 import { VisitCta } from "@/components/clinic/VisitCta";
 
 export const metadata: Metadata = {
-  title: "Équipe: Davide Boasso ed Erika Valieri",
+  title: "L’équipe dell’ambulatorio veterinario",
   description:
-    "Conosci il Dott. Davide Boasso, direttore sanitario dell’Ambulatorio Veterinario Leinì, e la Dott.ssa Erika Valieri, GPCert Derm.",
+    "Conosci i medici veterinari dell’Ambulatorio Veterinario Leinì: formazione, aree di interesse e passioni, a partire dal direttore sanitario Dott. Davide Boasso.",
 };
 export default function Equipe() {
   return (
@@ -19,7 +19,7 @@ export default function Equipe() {
             La nostra <em>équipe</em>
           </>
         }
-        description="Il Dott. Davide Boasso e la Dott.ssa Erika Valieri: conosci i medici veterinari, la loro formazione e le rispettive aree di interesse."
+        description="Conosci i medici veterinari dell’ambulatorio, la loro formazione e le rispettive aree di interesse."
       />
       <div className="container">
         <div className="professional-list">
