@@ -71,7 +71,7 @@
 .v2-hero h1 em { color: var(--diagnostica); }
 .v2-hero > div:first-child { align-items: center; }
 .v2-hero .v2-hero-visual { padding: 0 0 8px 0; }
-.v2-hero .v2-hero-visual .photo-slot { aspect-ratio: 1.75; border-radius: 120px 4px 4px 4px; box-shadow: 14px 14px 0 var(--visita-tint); }
+.v2-hero .v2-hero-visual .photo-slot { aspect-ratio: 1.2; border-radius: 120px 4px 4px 4px; box-shadow: 14px 14px 0 var(--visita-tint); }
 .v2-hero .v2-hero-visual > div:last-child { padding-top: 18px; }
 .v2-hero .hours-quick { margin-top: 14px; padding-top: 12px; }
 
@@ -210,7 +210,7 @@
 }
 @media (max-width: 640px) {
   .v2-hero { padding-top: 24px; }
-  .v2-hero .v2-hero-visual .photo-slot { aspect-ratio: 1.7; border-top-left-radius: 70px; box-shadow: 8px 8px 0 var(--visita-tint); }
+  .v2-hero .v2-hero-visual .photo-slot { aspect-ratio: 1.2; border-top-left-radius: 70px; box-shadow: 8px 8px 0 var(--visita-tint); }
   .v2-services { padding-block: 34px 20px; }
   .v2-head { margin-bottom: 18px; }
   .v2-head h2, .v2-team h2, .v2-faq h2, .v2-steps h2 { font-size: 33px; }
