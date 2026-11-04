@@ -54,7 +54,7 @@ homehead=[h[1].strip('.') for h in home.headings]
 assert [homehead.index(x) for x in expected]==sorted(homehead.index(x) for x in expected)
 for route in ['/','/contatti']:
  p=pages[route];text=' '.join(p.text)
- assert p.summary==(5 if route=='/' else 8),(route,p.summary)
+ assert p.summary==(5 if route=='/' else 9),(route,p.summary)
  assert all(x in text for x in ['09:30–12:30','16:00–19:30','Sabato'])
  assert 'tel:+393476401966' in p.links and 'mailto:av.leini@libero.it' in p.links
  assert any('google.com/maps/search/?api=1&query=' in x and '10040' in x for x in p.links)
@@ -77,4 +77,4 @@ for text in raw.values():
  assert data['address']['postalCode']=='10040'
 assert not Path('.next/server/app/qa-gallery.html').exists()
 assert not re.search(r'<video\b',raw['/chirurgia-laparoscopica'])
-print('PASS headline, service order, FAQs (5 home / 8 contacts), patients+curiosita placeholders, confirmed hours/schema, contacts, biographies, Instagram, hidden video and no QA route')
+print('PASS headline, service order, FAQs (5 home / 9 contacts), patients+curiosita placeholders, confirmed hours/schema, contacts, biographies, Instagram, hidden video and no QA route')

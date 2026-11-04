@@ -20,7 +20,7 @@ export function LaparoscopyFeature({ standalone = false }: { standalone?: boolea
           <h2 id="laparoscopia-title">Chirurgia<br /><em>laparoscopica.</em></h2>
           <p>Una tecnica che consente di eseguire determinati interventi attraverso piccole incisioni. Disponibile nel nostro ambulatorio.</p>
           <Link href={standalone ? "/equipe#davide-boasso" : "/chirurgia-laparoscopica"} className="text-link">{standalone ? "Conosci il medico" : "Scopri la chirurgia laparoscopica"}<IconArrowUpRight /></Link>
-          <div className={styles.lapDetail}><PhotoSlot photo="laparoscopy" /><p>Gli strumenti.<br />Le persone.<br /><em>Il lavoro quotidiano.</em></p></div>
+          <div className={styles.lapDetail}><PhotoSlot photo="laparoscopyDetail" /><p>Gli strumenti.<br />Le persone.<br /><em>Il lavoro quotidiano.</em></p></div>
         </div>
       </div>
     </section>

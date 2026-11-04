@@ -42,7 +42,7 @@ export default function Ambulatorio() {
               <IconArrowUpRight />
             </Link>
           </div>
-          <PhotoSlot photo="visit" className="story-photo" />
+          <PhotoSlot photo="exterior" className="story-photo" />
         </section>
         <section className="spaces-section">
           <div className="section-top">

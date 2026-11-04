@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalCollaborations } from "@/components/clinic/ExternalCollaborations";
 import { serviceCategories } from "@/content/site";
+import { radiographs } from "@/content/media";
+import { PatientLightbox } from "@/components/clinic/PatientLightbox";
 import { VisitCta } from "@/components/clinic/VisitCta";
 import { PageIntro } from "@/components/clinic/PageIntro";
 import { PhotoSlot } from "@/components/clinic/PhotoSlot";
@@ -67,11 +69,22 @@ export default function Prestazioni() {
                     : service.id === "medicina"
                       ? "visit"
                       : service.id === "diagnostica"
-                        ? "laboratory"
-                        : "surgery"
+                        ? "imaging"
+                        : "dayHospital"
                 }
                 className="service-photo"
               />
+              {service.id === "diagnostica" && (
+                <div className="v2-diag-media">
+                  <PhotoSlot photo="laboratory" className="v2-lab" />
+                  <div className="v2-rx">
+                    <p className="eyebrow">Radiologia</p>
+                    <h3>Alcune radiografie</h3>
+                    <p>Cranio, bacino e torace. Tocca un’immagine per ingrandirla.</p>
+                    <PatientLightbox photos={radiographs} variant="rx" />
+                  </div>
+                </div>
+              )}
             </section>
           ))}
         </div>

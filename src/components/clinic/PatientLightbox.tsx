@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { PatientPhoto } from "@/content/site";
 
-export function PatientLightbox({ photos }: { photos: PatientPhoto[] }) {
+export function PatientLightbox({ photos, variant }: { photos: PatientPhoto[]; variant?: "rx" }) {
   const [selected, setSelected] = useState<number | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
@@ -19,7 +19,7 @@ export function PatientLightbox({ photos }: { photos: PatientPhoto[] }) {
     setSelected(index => index === null ? null : (index + direction + photos.length) % photos.length);
   }
   return <>
-    <div className="patient-grid">{photos.map((item, index) => <figure key={item.src}>
+    <div className={`patient-grid${variant ? ` patient-grid-${variant}` : ""}`}>{photos.map((item, index) => <figure key={item.src}>
       <button type="button" className="patient-thumbnail" aria-label={`Ingrandisci: ${item.alt}`} onClick={event => { trigger.current = event.currentTarget; setSelected(index); }}>
         <Image src={item.src} alt={item.alt} width={600} height={480} sizes="(max-width: 640px) 90vw, (max-width: 1000px) 45vw, 30vw" />
       </button>{item.name && <figcaption>{item.name}</figcaption>}

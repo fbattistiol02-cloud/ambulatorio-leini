@@ -301,3 +301,38 @@
 @media (max-width: 640px) {
   .v2-head .eyebrow, .v2-team-intro .eyebrow, .v2-collab .eyebrow, .v2-faq .eyebrow, .v2-curiosita .eyebrow { display: none; }
 }
+
+/* ===== Foto reali del dottore (novembre) ===== */
+.photo-slot.has-photo img { object-fit: cover; }
+.service-diagnostica .service-photo, .service-laparoscopia .service-photo { aspect-ratio: .82; }
+.service-chirurgia .service-photo { aspect-ratio: 1; }
+.v2-diag-media { grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: start; margin-top: 18px; }
+.v2-diag-media .v2-lab { aspect-ratio: 1.9; border-radius: 3px 40px 3px 3px; }
+.v2-rx h3 { font-size: 22px; margin: 4px 0 6px; }
+.v2-rx > p:not(.eyebrow) { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+.patient-grid-rx { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.patient-grid-rx .patient-thumbnail { background: #0d2433; }
+.patient-grid-rx .patient-thumbnail img { aspect-ratio: 1; }
+.patient-grid-rx figcaption { font-size: 12px; margin-top: 6px; text-align: center; }
+.v2-mini { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px 48px; align-items: start; margin-block: 56px; }
+.v2-mini-copy h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; margin: 6px 0 18px; }
+.v2-mini-copy p:not(.eyebrow) { font-size: 17px; line-height: 1.65; margin-bottom: 14px; max-width: 58ch; }
+.v2-mini-photo { grid-column: 2; grid-row: 1 / 3; aspect-ratio: .78; border-radius: 120px 3px 3px 3px; box-shadow: 14px 14px 0 var(--a-tint); }
+.v2-benefits { grid-column: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.v2-benefits article { background: var(--a-tint); color: var(--a-ink); padding: 20px; border-radius: 4px 4px 28px 4px; }
+.v2-benefits span { font-size: 12px; font-weight: 700; color: var(--a); }
+.v2-benefits h3 { font-size: 19px; margin: 6px 0; }
+.v2-benefits p { font-size: 14px; }
+.v2-outcome { grid-column: 1 / -1; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; background: var(--a-tint); color: var(--a-ink); border-radius: 4px 60px 4px 4px; padding: 32px; }
+.v2-outcome h3 { font-size: 26px; margin-bottom: 14px; }
+.v2-outcome ul { list-style: none; padding: 0; display: grid; gap: 12px; font-size: 16px; line-height: 1.5; }
+.v2-outcome li { padding-left: 26px; position: relative; }
+.v2-outcome li::before { content: ''; position: absolute; left: 0; top: .5em; width: 12px; height: 12px; border-radius: 50%; background: var(--a); }
+.v2-outcome-photo { aspect-ratio: 1.1; border-radius: 3px 40px 3px 3px; }
+@media (max-width: 900px) {
+  .v2-diag-media, .v2-mini, .v2-outcome { grid-template-columns: 1fr; }
+  .v2-mini-photo { grid-column: 1; grid-row: auto; aspect-ratio: 1; border-top-left-radius: 70px; box-shadow: 8px 8px 0 var(--a-tint); }
+  .v2-benefits { grid-column: 1; grid-template-columns: 1fr; }
+  .v2-outcome { padding: 22px; }
+  .service-diagnostica .service-photo, .service-laparoscopia .service-photo { aspect-ratio: 1; }
+}

@@ -113,6 +113,7 @@ export const faqs = [
   { question: "Quali sono gli orari dell’ambulatorio?", answer: `Dal lunedì al venerdì: ${site.hours.weekday} e ${site.hours.afternoon}. Il sabato: ${site.hours.saturday}. Le visite si concordano per telefono.` },
   { question: "È presente un laboratorio per gli esami del sangue?", answer: "Sì, l’ambulatorio dispone di un laboratorio interno per effettuare in tempi rapidi i principali esami del sangue." },
   { question: "Effettuate interventi di chirurgia laparoscopica?", answer: "Sì, è una delle prestazioni disponibili in ambulatorio. Per informazioni puoi chiamarci e concordare una visita." },
+  { question: "Quali sono i vantaggi della chirurgia mininvasiva?", answer: "Le incisioni sono ridotte rispetto alle tecniche chirurgiche tradizionali e gli organi vengono manipolati meno. Ne derivano una degenza post-operatoria più breve e un recupero più veloce: gli animali tornano rapidamente alla loro normale routine perché provano meno dolore, con un minore utilizzo di farmaci." },
   { question: "Applicate il microchip?", answer: "Sì, in ambulatorio si applica il microchip e si effettua la registrazione in anagrafe." },
   { question: "Dove si trova l’ambulatorio?", answer: `Siamo in ${site.address.street}, ${site.address.postalCode} ${site.address.city} (${site.address.province}). Il collegamento a Google Maps apre le indicazioni.` },
   { question: "Come posso richiedere informazioni?", answer: `Puoi chiamare entrambi i nostri numeri oppure scrivere a ${site.email}, anche per richieste di ricette. Gli appuntamenti si prendono telefonicamente.` },
@@ -136,7 +137,12 @@ export type PatientPhoto = {
   name?: string;
   authorized: boolean;
 };
-export const patientPhotos: PatientPhoto[] = [];
+export const patientPhotos: PatientPhoto[] = [
+  { src: "/media/pazienti/gufo.webp", alt: "Un gufo avvolto in un asciugamano riceve un liquido con una siringa", authorized: true },
+  { src: "/media/pazienti/gatto-bianco-arancio.webp", alt: "Primo piano di un gatto bianco e arancio che si lecca il naso", authorized: true },
+  // Da confermare con il dottore (paziente reale e consenso del proprietario): resta nascosta finché authorized è false.
+  { src: "/media/pazienti/gattino-grigio.webp", alt: "Un gattino grigio sembra ridere", authorized: false },
+];
 
 export const campaign = {
   hero: {
