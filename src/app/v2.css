@@ -336,3 +336,7 @@
   .v2-outcome { padding: 22px; }
   .service-diagnostica .service-photo, .service-laparoscopia .service-photo { aspect-ratio: 1; }
 }
+
+/* Ritratti: niente didascalia sopra il volto (il nome è già scritto accanto alla foto). */
+.v2-person-photo .photo-slot figcaption,
+.portrait-photo figcaption { display: none !important; }
