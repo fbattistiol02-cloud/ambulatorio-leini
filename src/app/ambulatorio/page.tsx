@@ -33,9 +33,11 @@ export default function Ambulatorio() {
               sangue, la radiologia digitale diretta, l’ecografia e la chirurgia.
             </p>
             <p>
-              Il day hospital è dedicato alle terapie giornaliere o
-              post-chirurgiche. La chirurgia laparoscopica è una delle
-              principali aree di interesse del Dott. Boasso.
+              Durante gli interventi di chirurgia dei tessuti molli è presente
+              in sede un’anestesista dedicata. Il day hospital accoglie i
+              pazienti operati o in terapia farmacologica. La chirurgia
+              laparoscopica è una delle principali aree di interesse del Dott.
+              Boasso.
             </p>
             <Link className="text-link" href="/prestazioni">
               Esplora le prestazioni

@@ -41,7 +41,7 @@ export default function Prestazioni() {
               id={service.id}
               data-area={service.area}
               key={service.id}
-              className={`${service.featured ? "service-feature" : "service-row"} service-${service.id}`}
+              className={`${service.featured ? "service-feature" : "service-row"} service-${service.id}${service.services.length === 0 && !service.featured ? " no-items" : ""}`}
             >
               <div className="service-heading">
                 <span className="section-counter">0{i + 1}</span>
@@ -55,7 +55,7 @@ export default function Prestazioni() {
                   </Link>
                 )}
               </div>
-              {!service.featured && (
+              {!service.featured && service.services.length > 0 && (
                 <ul className="service-items">
                   {service.services.map((item) => (
                     <li key={item}>{item}</li>

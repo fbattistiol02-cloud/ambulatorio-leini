@@ -66,9 +66,8 @@ export function ServicesPreview() {
               <em>laparoscopica.</em>
             </h2>
             <p>
-              Tra le prestazioni dell’ambulatorio, insieme alla chirurgia
-              tradizionale e al day hospital per le terapie giornaliere o
-              post-chirurgiche.
+              Tra le prestazioni dell’ambulatorio, insieme alla chirurgia dei
+              tessuti molli e al day hospital per i pazienti operati o in terapia.
             </p>
             <Link href="/chirurgia-laparoscopica" className="text-link">
               Conosci la prestazione

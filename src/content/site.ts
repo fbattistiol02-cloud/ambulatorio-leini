@@ -66,8 +66,8 @@ export const serviceCategories = [
   },
   {
     id: "chirurgia", area: "chirurgia", title: "Chirurgia e ricovero", icon: "care",
-    text: "Presso la nostra struttura viene eseguita tutta la parte della chirurgia dei tessuti molli. Da qualche anno c’è inoltre la possibilità della chirurgia laparoscopica.",
-    services: ["Chirurgia tradizionale", "Day hospital per terapie giornaliere o post-chirurgiche"],
+    text: "Presso la nostra struttura viene eseguita tutta la parte della chirurgia relativa ai tessuti molli, dalle chirurgie di base a quelle più specialistiche. Durante tutte le manovre è presente in sede un’anestesista dedicata. Da qualche anno, su alcune tipologie di interventi, c’è la possibilità di avvalersi della chirurgia laparoscopica direttamente in sede. È inoltre possibile tenere ricoverati in day hospital i pazienti sottoposti a una chirurgia o per effettuare delle terapie farmacologiche.",
+    services: [],
     featured: false,
   },
   {
@@ -127,7 +127,7 @@ export const curiosita = [
   { title: "Il microchip si applica qui", text: "In ambulatorio si applica il microchip e si registra l’animale all’anagrafe." },
   { title: "Esami del sangue in tempi rapidi", text: "Il laboratorio interno permette di eseguire sul posto i principali esami del sangue." },
   { title: "Non solo cani e gatti", text: "Si visitano su appuntamento anche gli animali non convenzionali." },
-  { title: "Day hospital", text: "È possibile il day hospital per le terapie giornaliere o dopo un intervento chirurgico." },
+  { title: "Day hospital", text: "È possibile il ricovero in day hospital dopo una chirurgia o per effettuare terapie farmacologiche." },
 ] as const;
 
 /** Foto autentiche con autorizzazione documentata dei proprietari. Nessun nome completo né dato clinico. */
@@ -154,7 +154,7 @@ export const campaign = {
     categories: [
       { id: "medicina", area: "medicina", title: "Visita e medicina", text: "Cani, gatti e animali non convenzionali.", icon: "visit" },
       { id: "diagnostica", area: "diagnostica", title: "Diagnostica", text: "Laboratorio, radiologico ed ecografo.", icon: "imaging" },
-      { id: "chirurgia", area: "chirurgia", title: "Chirurgia e ricovero", text: "Interventi e terapie giornaliere.", icon: "care" },
+      { id: "chirurgia", area: "chirurgia", title: "Chirurgia e ricovero", text: "Chirurgia dei tessuti molli, anestesista dedicata e day hospital.", icon: "care" },
       { id: "laparoscopia", area: "laparoscopia", title: "Chirurgia laparoscopica", text: "Piccole incisioni, in ambulatorio.", icon: "surgery" },
     ],
   },
