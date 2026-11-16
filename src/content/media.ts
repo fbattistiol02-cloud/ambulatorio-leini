@@ -41,7 +41,7 @@ export const clinicPhotos = {
     alt: "Dott. Davide Boasso e Dott.ssa Erika Valieri nell’ambulatorio",
   },
   boasso: {
-    src: "/media/equipe/davide-boasso.webp",
+    src: "/media/equipe/davide-boasso-ritratto.webp",
     focus: "50% 30%",
     authorized: true,
     title: "Dott. Davide Boasso",
