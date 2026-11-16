@@ -10,7 +10,7 @@ import { telHref } from "@/lib/links";
 export const metadata: Metadata = {
   title: "Chirurgia laparoscopica e mininvasiva a Leinì",
   description:
-    "Chirurgia mininvasiva veterinaria a Leinì: incisioni ridotte, minor trauma ai tessuti, degenza più breve e recupero più veloce. Una prestazione del Dott. Davide Boasso.",
+    "Chirurgia mininvasiva veterinaria a Leinì: come funziona e quali vantaggi può offrire negli interventi per cui è indicata. Una prestazione del Dott. Davide Boasso.",
 };
 export default function Laparoscopia() {
   return (
@@ -31,39 +31,32 @@ export default function Laparoscopia() {
         <div className="v2-mini-copy">
           <p className="eyebrow">Chirurgia mininvasiva</p>
           <h2 id="mini-title">Cosa rappresenta la chirurgia mininvasiva <em>veterinaria?</em></h2>
-          <p>Rappresenta un progresso tecnologico nella cura e nella chirurgia degli animali.</p>
-          <p>Questo approccio minimizza il trauma ai tessuti interessati e permette al tempo stesso una visualizzazione ad alta precisione, consentendo al chirurgo di operare con estrema accuratezza e riducendo al minimo l’impatto sul paziente.</p>
+          <p>La laparoscopia è un’evoluzione della chirurgia veterinaria.</p>
+          <p>Attraverso piccole incisioni e con l’aiuto di una telecamera, il chirurgo osserva in dettaglio l’area di intervento e può lavorare con precisione.</p>
         </div>
         <PhotoSlot photo="laparoscopy" className="v2-mini-photo" preload />
         <div className="v2-benefits">
-          <article><span aria-hidden="true">01</span><h3>Incisioni ridotte</h3><p>rispetto alle tecniche chirurgiche tradizionali</p></article>
-          <article><span aria-hidden="true">02</span><h3>Minor manipolazione degli organi</h3><p>meno impatto sul paziente</p></article>
+          <article><span aria-hidden="true">01</span><h3>Incisioni ridotte</h3><p>Negli interventi per cui è indicata, la laparoscopia permette di operare attraverso incisioni più piccole.</p></article>
+          <article><span aria-hidden="true">02</span><h3>Visualizzazione dettagliata</h3><p>L’immagine sul monitor aiuta a distinguere le strutture e, in alcuni interventi, a limitare la manipolazione degli organi</p></article>
         </div>
         <div className="v2-outcome">
           <div>
-            <h3>Cosa si ottiene?</h3>
-            <ul>
-              <li><strong>Degenza post-operatoria più breve</strong> rispetto alla chirurgia tradizionale.</li>
-              <li><strong>Recupero più veloce:</strong> i pazienti tornano rapidamente alla loro normale routine.</li>
-              <li><strong>Meno dolore</strong> e, di conseguenza, un minore utilizzo di farmaci.</li>
-            </ul>
+            <h3>Recupero e comfort</h3>
+            <p>Quando la tecnica è adatta, può contribuire a ridurre il dolore postoperatorio e favorire una degenza più breve e un recupero più rapido. La gestione del dolore dipende dall’intervento e dalle condizioni dell’animale.</p>
           </div>
-          <PhotoSlot photo="dayHospital" className="v2-outcome-photo" />
+          <PhotoSlot photo="laparoscopyDetail" className="v2-outcome-photo" />
         </div>
       </section>
       <div className="container">
-        <section className="lap-video v2-video" aria-labelledby="video-title">
-          <div className="v2-head"><div><p className="eyebrow">Approfondimento</p><h2 id="video-title">La laparoscopia, <em>da vicino</em></h2></div></div>
-          {laparoscopyVideo.authorized && laparoscopyVideo.src && laparoscopyVideo.captions
-            ? <video controls preload="none" aria-label="La chirurgia laparoscopica in ambulatorio" poster={laparoscopyVideo.poster ?? undefined}>
-                <source src={laparoscopyVideo.src} />
-                <track kind="captions" src={laparoscopyVideo.captions} srcLang="it" label="Italiano" default />
-              </video>
-            : <div className="v2-video-soon" data-area="laparoscopia">
-                <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="32" cy="32" r="26" /><path d="M26 22v20l17-10Z" fill="currentColor" fillOpacity=".15" /></svg>
-                <p><strong>Il video di un intervento laparoscopico arriverà qui.</strong><br />Appena il Dott. Boasso lo avrà disponibile.</p>
-              </div>}
-        </section>
+        {laparoscopyVideo.authorized && laparoscopyVideo.src && (
+          <section className="lap-video v2-video" aria-labelledby="video-title">
+            <h2 id="video-title">La laparoscopia, da vicino</h2>
+            <video controls playsInline preload="none" aria-labelledby="video-title" poster={laparoscopyVideo.poster ?? undefined}>
+              <source src={laparoscopyVideo.src} />
+              {laparoscopyVideo.captions && <track kind="captions" src={laparoscopyVideo.captions} srcLang="it" label="Italiano" default />}
+            </video>
+          </section>
+        )}
         <section className="v2-steps" aria-labelledby="steps-title">
           <p className="eyebrow">Come si procede</p>
           <h2 id="steps-title">Dalla telefonata <em>alla visita</em></h2>
@@ -98,7 +91,7 @@ export default function Laparoscopia() {
             </p>
             <a href={telHref} className="button">
               <IconPhone />
-              Chiama l’ambulatorio
+              Chiama per informazioni
             </a>
           </div>
         </section>

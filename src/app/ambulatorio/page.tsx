@@ -63,7 +63,7 @@ export default function Ambulatorio() {
             <PhotoSlot photo="dayHospital" />
           </div>
         </section>
-        <section className="clinic-story story-reverse">
+        <section className="clinic-story clinic-team-summary">
           <PhotoSlot photo="team" className="story-photo" />
           <div>
             <p className="eyebrow">I professionisti</p>

@@ -138,10 +138,10 @@ export type PatientPhoto = {
   authorized: boolean;
 };
 export const patientPhotos: PatientPhoto[] = [
+  { src: "/media/pazienti/gatto-coperta.webp", alt: "Gatto tigrato avvolto in una coperta rossa", authorized: true },
   { src: "/media/pazienti/gufo.webp", alt: "Un gufo avvolto in un asciugamano riceve un liquido con una siringa", authorized: true },
   { src: "/media/pazienti/gatto-bianco-arancio.webp", alt: "Primo piano di un gatto bianco e arancio che si lecca il naso", authorized: true },
-  // Da confermare con il dottore (paziente reale e consenso del proprietario): resta nascosta finché authorized è false.
-  { src: "/media/pazienti/gattino-grigio.webp", alt: "Un gattino grigio sembra ridere", authorized: false },
+  { src: "/media/pazienti/gattino-grigio.webp", alt: "Gattino grigio su sfondo arancione", authorized: true },
 ];
 
 export const campaign = {

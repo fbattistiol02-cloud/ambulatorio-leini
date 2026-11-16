@@ -348,3 +348,11 @@
   .service-row.no-items .service-photo { grid-column: 2; grid-row: 1; }
   .service-row.no-items .service-heading > p:not(.eyebrow) { max-width: 62ch; }
 }
+
+.clinic-story.clinic-team-summary { grid-template-columns: 1fr; }
+.v2-patients .patient-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.v2-patients .patient-thumbnail img { aspect-ratio: 4 / 5; }
+.v2-outcome p { line-height: 1.65; }
+@media (max-width: 850px) {
+  .v2-patients .patient-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}

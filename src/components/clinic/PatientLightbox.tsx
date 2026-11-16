@@ -8,13 +8,14 @@ export function PatientLightbox({ photos, variant }: { photos: PatientPhoto[]; v
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
   const photo = selected === null ? null : photos[selected];
+  const open = selected !== null;
   useEffect(() => {
-    if (selected === null) return;
+    if (!open) return;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     dialog.current?.showModal();
     return () => { document.body.style.overflow = previous; };
-  }, [selected]);
+  }, [open]);
   function move(direction: number) {
     setSelected(index => index === null ? null : (index + direction + photos.length) % photos.length);
   }
@@ -31,7 +32,7 @@ export function PatientLightbox({ photos, variant }: { photos: PatientPhoto[]; v
       <div className="lightbox-content">
         <button type="button" autoFocus className="lightbox-close" onClick={() => dialog.current?.close()}>Chiudi ×</button>
         {photo && <><div className="lightbox-image"><Image src={photo.src} alt={photo.alt} fill sizes="90vw" /></div>{photo.name && <p>{photo.name}</p>}</>}
-        {photos.length > 1 && <div className="lightbox-controls"><button type="button" onClick={() => move(-1)}>← Precedente</button><span>{(selected ?? 0) + 1} / {photos.length}</span><button type="button" onClick={() => move(1)}>Successiva →</button></div>}
+        {photos.length > 1 && <div className="lightbox-controls"><button type="button" onClick={() => move(-1)}>← Precedente</button><span aria-live="polite">{(selected ?? 0) + 1} / {photos.length}</span><button type="button" onClick={() => move(1)}>Successiva →</button></div>}
       </div>
     </dialog>
   </>;

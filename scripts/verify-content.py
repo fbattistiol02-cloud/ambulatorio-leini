@@ -59,6 +59,7 @@ for route in ['/','/contatti']:
  assert 'tel:+393476401966' in p.links and 'mailto:av.leini@libero.it' in p.links
  assert any('google.com/maps/search/?api=1&query=' in x and '10040' in x for x in p.links)
 assert 'patients-title' in home.ids and 'curiosita-title' in home.ids
+assert len([im for im in home.images if '/media/pazienti/' in unquote(im.get('src',''))]) == 4
 assert 'Equipe' not in ' '.join(team.text)[:0] and not re.search(r'Davide Boasso ed Erika|Boasso e Erika',raw['/equipe'].split('</title>')[0][-300:])
 assert 'Quattro' not in ' '.join(home.text)
 assert all(x in ' '.join(home.text) for x in ['Medicina interna','Pronto soccorso','Citologia','Dermatologia'])
