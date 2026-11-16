@@ -46,7 +46,7 @@ export default function Ambulatorio() {
           </div>
           <PhotoSlot photo="exterior" className="story-photo" />
         </section>
-        <section className="spaces-section">
+        <section className="spaces-section" id="spazi">
           <div className="section-top">
             <div>
               <p className="eyebrow">Dentro l’ambulatorio</p>

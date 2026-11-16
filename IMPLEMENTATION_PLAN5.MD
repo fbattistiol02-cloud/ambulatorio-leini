@@ -11,3 +11,9 @@
 - [ ] Commit, push e pubblicazione della revisione verificata.
 
 Il cartello degli orari nella foto dell’ingresso non richiede interventi, come indicato dall’utente. Gli orari testuali restano quelli confermati. Nessun CMS o servizio aggiuntivo.
+
+## Correzioni del 16 novembre
+
+- [x] Individuare la causa dei ritagli e identificare la foto della visita.
+- [x] Correggere ritratto, diagnostica e scheda Visita e medicina.
+- [x] Controllare visivamente su desktop e smartphone prima del deploy.

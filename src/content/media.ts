@@ -26,12 +26,12 @@ export const clinicPhotos = {
     alt: "Sala d’attesa dell’ambulatorio con sedie blu, acquario e orme sul pavimento",
   },
   visit: {
-    src: null,
-    authorized: false,
+    src: "/media/ambulatorio/visita-boasso.webp",
+    focus: "50% 48%",
+    authorized: true,
     title: "La visita",
-    description:
-      "Foto di una sala visita o di un momento di lavoro autorizzato",
-    alt: "Ambiente dedicato alle visite veterinarie",
+    description: "Una visita nell’ambulatorio",
+    alt: "Il Dott. Boasso visita un cane sul tavolo dell’ambulatorio",
   },
   team: {
     src: null,
@@ -42,7 +42,7 @@ export const clinicPhotos = {
   },
   boasso: {
     src: "/media/equipe/davide-boasso-ritratto.webp",
-    focus: "50% 30%",
+    focus: "50% 56%",
     authorized: true,
     title: "Dott. Davide Boasso",
     description: "Ritratto professionale del direttore sanitario",
@@ -66,7 +66,7 @@ export const clinicPhotos = {
   },
   imaging: {
     src: "/media/diagnostica/radiologia-sala.webp",
-    focus: "50% 40%",
+    focus: "50% 50%",
     authorized: true,
     title: "La diagnostica per immagini",
     description: "Foto delle attrezzature di radiologia o ecografia",

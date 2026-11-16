@@ -1,3 +1,4 @@
+import { telHref } from "@/lib/links";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalCollaborations } from "@/components/clinic/ExternalCollaborations";
@@ -60,6 +61,11 @@ export default function Prestazioni() {
                   {service.services.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
+                  {service.id === "medicina" && (
+                    <li className="service-appointment">
+                      <a className="button" href={telHref}>Chiama per fissare una visita</a>
+                    </li>
+                  )}
                 </ul>
               )}
               <PhotoSlot
