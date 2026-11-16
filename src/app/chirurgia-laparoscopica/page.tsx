@@ -44,7 +44,7 @@ export default function Laparoscopia() {
             <h3>Recupero e comfort</h3>
             <p>Quando la tecnica è adatta, può contribuire a ridurre il dolore postoperatorio e favorire una degenza più breve e un recupero più rapido. La gestione del dolore dipende dall’intervento e dalle condizioni dell’animale.</p>
           </div>
-          <PhotoSlot photo="laparoscopyDetail" className="v2-outcome-photo" />
+          <PhotoSlot photo="laparoscopyInstruments" className="v2-outcome-photo lap-instruments" />
         </div>
       </section>
       <div className="container">

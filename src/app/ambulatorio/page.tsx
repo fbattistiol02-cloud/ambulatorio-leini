@@ -46,6 +46,14 @@ export default function Ambulatorio() {
           </div>
           <PhotoSlot photo="exterior" className="story-photo" />
         </section>
+        <section className="clinic-rooms" id="sale-visita" aria-labelledby="sale-visita-title">
+          <h2 id="sale-visita-title">Le sale visita</h2>
+          <div className="clinic-room-grid">
+            <PhotoSlot photo="mainVisitRoom" />
+            <PhotoSlot photo="secondVisitRoom" />
+            <PhotoSlot photo="equippedRoom" />
+          </div>
+        </section>
         <section className="spaces-section" id="spazi">
           <div className="section-top">
             <div>

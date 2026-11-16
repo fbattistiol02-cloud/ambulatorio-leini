@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { OpeningHours } from "./OpeningHours";
 import Link from "next/link";
 import { site, campaign } from "@/content/site";
@@ -66,6 +67,16 @@ export function Contact({
             )}
           </div>
         </div>
+        {!compact && site.social.instagram.url && (
+          <a id="instagram" className="instagram-card" href={site.social.instagram.url} target="_blank" rel="noopener noreferrer">
+            <Image src="/media/brand/instagram-qr.png" alt="" width={112} height={112} unoptimized />
+            <span>
+              <strong>Seguici su Instagram</strong>
+              <span>{site.social.instagram.handle} <IconArrowUpRight /></span>
+              <small>Scansiona il QR o tocca per aprire il profilo.</small>
+            </span>
+          </a>
+        )}
         {withFaq && (
           <div className="faq-strip">
             <div>

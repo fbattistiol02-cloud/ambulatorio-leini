@@ -64,22 +64,22 @@ export default function Prestazioni() {
                   {service.id === "medicina" && (
                     <li className="service-appointment">
                       <a className="button" href={telHref}>Chiama per fissare una visita</a>
+                      <Link className="text-link" href="/ambulatorio#sale-visita">Guarda le sale visita <IconArrowUpRight /></Link>
                     </li>
                   )}
                 </ul>
               )}
-              <PhotoSlot
-                photo={
-                  service.id === "laparoscopia"
-                    ? "laparoscopy"
-                    : service.id === "medicina"
-                      ? "visit"
-                      : service.id === "diagnostica"
-                        ? "imaging"
-                        : "dayHospital"
-                }
-                className="service-photo"
-              />
+              {service.id === "chirurgia" ? (
+                <div className="service-photo surgery-photos">
+                  <PhotoSlot photo="surgery" />
+                  <PhotoSlot photo="dayHospitalCat" />
+                </div>
+              ) : (
+                <PhotoSlot
+                  photo={service.id === "medicina" ? "visit" : service.id === "diagnostica" ? "imaging" : "laparoscopy"}
+                  className="service-photo"
+                />
+              )}
               {service.id === "diagnostica" && (
                 <div className="v2-diag-media">
                   <PhotoSlot photo="laboratory" className="v2-lab" />

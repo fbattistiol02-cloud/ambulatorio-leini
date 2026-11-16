@@ -142,6 +142,10 @@ export const patientPhotos: PatientPhoto[] = [
   { src: "/media/pazienti/gufo.webp", alt: "Un gufo avvolto in un asciugamano riceve un liquido con una siringa", authorized: true },
   { src: "/media/pazienti/gatto-bianco-arancio.webp", alt: "Primo piano di un gatto bianco e arancio che si lecca il naso", authorized: true },
   { src: "/media/pazienti/gattino-grigio.webp", alt: "Gattino grigio su sfondo arancione", authorized: true },
+  { src: "/media/pazienti/gatto-bianco-nero.webp", alt: "Gatto bianco e nero nell’area di ricovero", authorized: true },
+  { src: "/media/pazienti/cane-bianco-nero.webp", alt: "Cane bianco e nero che guarda verso l’alto", authorized: true },
+  { src: "/media/pazienti/cucciolo-sul-telo.webp", alt: "Cucciolo nero avvolto in un telo rosso", authorized: true },
+  { src: "/media/ambulatorio/visita-boasso.webp", alt: "Un cane sul tavolo da visita con il Dott. Boasso", authorized: true },
 ];
 
 export const campaign = {

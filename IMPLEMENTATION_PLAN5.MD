@@ -17,3 +17,12 @@ Il cartello degli orari nella foto dell’ingresso non richiede interventi, come
 - [x] Individuare la causa dei ritagli e identificare la foto della visita.
 - [x] Correggere ritratto, diagnostica e scheda Visita e medicina.
 - [x] Controllare visivamente su desktop e smartphone prima del deploy.
+
+## Richieste del dottore, 16 novembre
+
+- [x] Verificare le richieste e associare le foto della cartella più recente.
+- [x] Aggiungere i pazienti, le sale visita, la foto di Boasso in chirurgia e lo strumentario.
+- [x] Aggiungere il QR Instagram con collegamento diretto.
+- [x] Verificare la revisione su desktop e mobile.
+
+Il montaggio è gestito separatamente dall’utente. La foto delle incisioni resta nel materiale del montaggio. La foto di gruppo è in attesa.

@@ -427,3 +427,59 @@
 }
 
 .spaces-section { scroll-margin-top: 115px; }
+
+.clinic-rooms { padding-block: 20px 58px; scroll-margin-top: 110px; }
+.clinic-rooms h2 { font: 400 clamp(32px, 4vw, 52px)/1.06 Georgia, serif; letter-spacing: -.04em; margin-bottom: 24px; }
+.clinic-room-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) repeat(2, minmax(0, .49fr));
+  gap: 16px;
+  align-items: start;
+}
+.clinic-room-grid .photo-mainVisitRoom { aspect-ratio: 1500 / 676; }
+.clinic-room-grid .photo-secondVisitRoom { aspect-ratio: 721 / 1600; }
+.clinic-room-grid .photo-equippedRoom { aspect-ratio: 1005 / 1566; }
+.clinic-room-grid .photo-slot.has-photo img,
+.photo-slot.has-photo.lap-instruments img { object-fit: contain; }
+.photo-slot.lap-instruments { aspect-ratio: 1500 / 907; }
+.service-row.no-items .service-photo.surgery-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  aspect-ratio: auto;
+}
+.surgery-photos .photo-slot { aspect-ratio: 3 / 4; }
+.service-appointment .text-link { margin: 14px 0 0 14px; }
+.instagram-card {
+  scroll-margin-top: 110px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 100%;
+  margin-top: 28px;
+  padding: 14px 20px 14px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.instagram-card img { width: 112px; height: 112px; flex: none; border-radius: 4px; }
+.instagram-card > span { display: grid; gap: 4px; }
+.instagram-card strong { font-size: 16px; }
+.instagram-card span > span, .instagram-card small { font-size: 13px; }
+.instagram-card span > span { color: var(--blue-deep); overflow-wrap: anywhere; }
+.instagram-card svg { display: inline-block; width: 14px; height: 14px; vertical-align: middle; }
+@media (min-width: 851px) {
+  .service-row.no-items.service-chirurgia { grid-template-columns: 1.35fr 1fr; }
+}
+@media (max-width: 850px) {
+  .clinic-room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .clinic-room-grid .photo-mainVisitRoom { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .instagram-card { padding: 10px; gap: 12px; }
+  .instagram-card img { width: 96px; height: 96px; }
+  .service-appointment .text-link { margin-left: 0; }
+}
