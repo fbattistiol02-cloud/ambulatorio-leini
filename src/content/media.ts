@@ -143,13 +143,18 @@ export const clinicPhotos = {
 } satisfies Record<string, ClinicPhoto>;
 export type ClinicPhotoKey = keyof typeof clinicPhotos;
 
-/** Attivare solo con video autentico autorizzato e sottotitoli italiani verificati. */
+/** Video fornito dal Dott. Boasso (montaggio con didascalie in italiano incorporate). Sottotitoli separati non disponibili. */
 export const laparoscopyVideo: {
   src: string | null;
   captions: string | null;
   poster: string | null;
   authorized: boolean;
-} = { src: null, captions: null, poster: null, authorized: false };
+} = {
+  src: "/media/laparoscopia/laparoscopia-video.mp4",
+  captions: null,
+  poster: "/media/laparoscopia/laparoscopia-poster.webp",
+  authorized: true,
+};
 
 /** Radiografie fornite dal Dott. Boasso (nessun dato identificativo visibile). */
 export const radiographs = [
