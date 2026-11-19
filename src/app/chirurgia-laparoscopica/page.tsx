@@ -34,7 +34,7 @@ export default function Laparoscopia() {
           <p>La laparoscopia è un’evoluzione della chirurgia veterinaria.</p>
           <p>Attraverso piccole incisioni e con l’aiuto di una telecamera, il chirurgo osserva in dettaglio l’area di intervento e può lavorare con precisione.</p>
         </div>
-        <PhotoSlot photo="laparoscopy" className="v2-mini-photo" preload />
+        <div className="v2-mini-media"><PhotoSlot photo="laparoscopy" className="v2-mini-photo" preload /><p className="v2-photo-note">Lo strumentario per la laparoscopia</p></div>
         <div className="v2-benefits">
           <article><span aria-hidden="true">01</span><h3>Incisioni ridotte</h3><p>Negli interventi per cui è indicata, la laparoscopia permette di operare attraverso incisioni più piccole.</p></article>
           <article><span aria-hidden="true">02</span><h3>Visualizzazione dettagliata</h3><p>L’immagine sul monitor aiuta a distinguere le strutture e, in alcuni interventi, a limitare la manipolazione degli organi</p></article>
