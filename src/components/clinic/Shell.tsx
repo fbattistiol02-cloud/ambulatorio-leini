@@ -62,7 +62,6 @@ export function Footer() {
               <IconArrowUpRight />
             </a>
           )}
-          <span className="preview-label">Anteprima</span>
         </div>
       </div>
     </footer>

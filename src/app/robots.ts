@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
-// Staging: non annunciare la sitemap ai crawler. Noindex anche nei metadata HTML.
+import { site } from "@/content/site";
+export const dynamic = "force-static";
+/** Con NEXT_PUBLIC_INDEXABLE=true (dominio definitivo) i motori di ricerca sono ammessi; altrimenti no. */
 export default function robots(): MetadataRoute.Robots {
-  return { rules: { userAgent: "*", disallow: "/" } };
+  if (!site.indexable) return { rules: { userAgent: "*", disallow: "/" } };
+  return { rules: { userAgent: "*", allow: "/" }, sitemap: `${site.url}/sitemap.xml` };
 }

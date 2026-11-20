@@ -7,9 +7,10 @@
  */
 export const site = {
   name: "Ambulatorio Veterinario Leinì",
-  previewUrl: "https://ambulatorio-leini.vercel.app",
-  /** true finché il sito è un'anteprima: mostra gli spazi esempio per le foto. */
-  demo: true,
+  /** Indirizzo pubblico del sito: impostato in fase di build con NEXT_PUBLIC_SITE_URL. */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ambulatorio-leini.fbattistiol02.workers.dev",
+  /** Indicizzazione consentita solo con NEXT_PUBLIC_INDEXABLE=true (dominio definitivo). */
+  indexable: process.env.NEXT_PUBLIC_INDEXABLE === "true",
   address: {
     street: "Via San Francesco al Campo 24",
     postalCode: "10040",
@@ -121,7 +122,6 @@ export const faqs = [
 
 /**
  * "Lo sapevi?": brevi curiosità ricavate SOLO dalle informazioni date dal dottore.
- * Bozza da validare con lui (M-07): possono essere sostituite da sue curiosità.
  */
 export const curiosita = [
   { title: "Il microchip si applica qui", text: "In ambulatorio si applica il microchip e si registra l’animale all’anagrafe." },

@@ -16,7 +16,7 @@ Gli originali scaricati stanno in `assets-raw/` (esclusa da git).
 
 ## Campagna concept v2 — 15 ottobre 2026
 
-Le immagini della precedente demo (`hero-v2.webp`, `touch-v2.webp`, `rest-v2.webp`), ora non utilizzate, sono state generate con il tool integrato OpenAI ImageGen. Sono illustrative e non rappresentano lo studio, il personale o i pazienti. Prompt e provenienza in `docs/IMAGE_PROMPTS.md`. Le precedenti fotografie di repertorio restano archiviate e non sono utilizzate nella pagina.
+Le immagini della versione precedente (`hero-v2.webp`, `touch-v2.webp`, `rest-v2.webp`), ora non utilizzate, sono state generate con il tool integrato OpenAI ImageGen. Sono illustrative e non rappresentano lo studio, il personale o i pazienti. Prompt e provenienza in `docs/IMAGE_PROMPTS.md`. Le precedenti fotografie di repertorio restano archiviate e non sono utilizzate nella pagina.
 
 Fraunces e Hanken Grotesk: font distribuiti da Google Fonts, ora serviti localmente. Licenze SIL Open Font License incluse in `src/app/fonts/`.
 
@@ -30,11 +30,11 @@ Hero: coppia di cane e gatto generata con ImageGen il 22/10/2026. Illustrazione 
 
 ## Revisione visiva — 23 ottobre 2026
 
-Font attivi: Hanken Grotesk e Fraunces italic, entrambi locali, con licenze già incluse. I segnaposto sono composizioni CSS astratte dichiarate come fotografie da inserire. Nessun animale, persona o ambiente generato/stock è mostrato nelle pagine attive. Logo originale invariato. Aggiornata anche l’anteprima social alla palette attuale.
+Font attivi: Hanken Grotesk e Fraunces italic, entrambi locali, con licenze già incluse. Nessun animale, persona o ambiente generato/stock è mostrato nelle pagine attive. Logo originale invariato. Aggiornata anche l’immagine di condivisione social alla palette attuale.
 
 ## Identità interattiva — 23 ottobre 2026
 
-Il motivo SVG `ClinicTrace` è una composizione originale ispirata ai quattro cuscinetti del simbolo del cliente. È un elemento decorativo del sito e non un nuovo logo. Il marchio originale resta invariato. Le fotografie del percorso e dei professionisti rimangono segnaposto espliciti fino alla ricezione dei materiali autentici.
+Il motivo SVG `ClinicTrace` è una composizione originale ispirata ai quattro cuscinetti del simbolo del cliente. È un elemento decorativo del sito e non un nuovo logo. Il marchio originale resta invariato.
 
 ## Revisione editoriale, 23 ottobre 2026
 Illustrazioni vettoriali di laparoscopio, stetoscopio, laboratorio e day hospital create nel codice per questo progetto. Sono illustrazioni editoriali, non riproduzioni delle attrezzature effettive dell’ambulatorio. Nessun asset del riferimento Leonardo da Vinci copiato. Tipografia dei titoli Georgia di sistema e Fraunces locale; fotografie autentiche ancora da inserire.

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { site } from "@/content/site";
 import { mailHref } from "@/lib/links";
 export const metadata: Metadata = {
-  title: "Privacy e note legali dell’anteprima",
+  title: "Privacy e note legali",
   description:
-    "Informazioni sul funzionamento dell’anteprima dell’Ambulatorio Veterinario Leinì e sui contenuti da validare prima della pubblicazione.",
+    "Informazioni su dati, collegamenti esterni e recapiti del sito dell’Ambulatorio Veterinario Leinì.",
 };
 export default function Privacy() {
   return (
@@ -13,20 +13,14 @@ export default function Privacy() {
       <Link className="back-link" href="/">
         ← Torna alla home
       </Link>
-      <p className="eyebrow">Anteprima per revisione</p>
+      <p className="eyebrow">Informazioni sul sito</p>
       <h1>Privacy e note legali</h1>
-      <p className="legal-notice">
-        Documento preparatorio da completare e validare prima del lancio. Non
-        costituisce l’informativa definitiva del sito ufficiale.
-      </p>
-      <h2>Come funziona questa anteprima</h2>
+      <h2>Come funziona il sito</h2>
       <p>
         Il sito presenta l’ambulatorio e i suoi recapiti. Non contiene moduli di
-        raccolta dati, sistemi di prenotazione, account o pubblicità.
-        Sono presenti le integrazioni Vercel Web Analytics e Speed Insights;
-        la loro configurazione deve essere considerata nell’informativa definitiva.
-        I caratteri e le immagini
-        utilizzati sono serviti dal sito.
+        raccolta dati, sistemi di prenotazione, account o pubblicità, e non
+        utilizza cookie di profilazione né strumenti di analisi del traffico. I
+        caratteri e le immagini utilizzati sono serviti dal sito stesso.
       </p>
       <h2>Chiamate, email e collegamenti esterni</h2>
       <p>
@@ -40,11 +34,10 @@ export default function Privacy() {
       <h2>Dati tecnici dell’hosting</h2>
       <p>
         Il fornitore di hosting può trattare dati tecnici delle richieste, come
-        indirizzo IP e log di accesso. Titolare, responsabili del trattamento,
-        finalità, basi giuridiche, tempi di conservazione, trasferimenti e
-        modalità per esercitare i diritti devono essere verificati e inseriti
-        nell’informativa definitiva in base alla configurazione di
-        pubblicazione.
+        indirizzo IP e log di accesso, necessari al funzionamento e alla
+        sicurezza del sito. Per informazioni sul trattamento dei dati e per
+        esercitare i propri diritti è possibile rivolgersi all’ambulatorio ai
+        recapiti indicati qui sotto.
       </p>
       <h2>Recapiti della struttura</h2>
       <p>
@@ -56,12 +49,7 @@ export default function Privacy() {
         {site.address.province})<br />
         <a href={mailHref}>{site.email}</a>
       </p>
-      <h2>Prima della pubblicazione</h2>
-      <p>
-        Occorre confermare il soggetto titolare e i dati fiscali, i riferimenti
-        professionali e autorizzativi da pubblicare, l’informativa privacy e la
-        configurazione effettiva di cookie, hosting e servizi esterni. Gli appuntamenti si concordano telefonicamente con l’ambulatorio.
-      </p>
+      <p>Gli appuntamenti si concordano telefonicamente con l’ambulatorio.</p>
     </article>
   );
 }

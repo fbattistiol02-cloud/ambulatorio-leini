@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { site } from "@/content/site";
 import { Footer, Header, MobileBar } from "@/components/clinic/Shell";
 import "./globals.css";
@@ -24,13 +22,13 @@ const fraunces = localFont({
 const description =
   "Ambulatorio Veterinario Leinì: visite, diagnostica, chirurgia e ricovero. Via San Francesco al Campo 24. Appuntamenti al numero 011 9981469.";
 export const metadata: Metadata = {
-  metadataBase: new URL(site.previewUrl),
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.name} | Dott. Davide Boasso`,
     template: `%s | ${site.name}`,
   },
   description,
-  robots: { index: false, follow: false },
+  robots: site.indexable ? { index: true, follow: true } : { index: false, follow: false },
   openGraph: {
     title: site.name,
     description,
@@ -65,7 +63,7 @@ const structuredData = {
     addressRegion: site.address.province,
     addressCountry: "IT",
   },
-  url: site.previewUrl,
+  url: site.url,
   sameAs: [site.social.instagram.url],
   contactPoint: [site.phone, site.mobile].map(phone => ({ "@type": "ContactPoint", telephone: phone.tel, contactType: "customer service" })),
   openingHoursSpecification: [
@@ -98,8 +96,6 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
