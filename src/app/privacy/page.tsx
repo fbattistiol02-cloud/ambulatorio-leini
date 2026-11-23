@@ -43,11 +43,15 @@ export default function Privacy() {
       <p>
         {site.name}
         <br />
-        Direttore sanitario: Dott. Davide Boasso
+        Titolare e direttore sanitario: {site.legal.holder}
+        <br />
+        Partita IVA {site.legal.vat}
         <br />
         {site.address.street}, {site.address.postalCode} {site.address.city} (
         {site.address.province})<br />
         <a href={mailHref}>{site.email}</a>
+        <br />
+        PEC: <a href={`mailto:${site.legal.pec}`}>{site.legal.pec}</a>
       </p>
       <p>Gli appuntamenti si concordano telefonicamente con l’ambulatorio.</p>
     </article>

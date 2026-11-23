@@ -22,6 +22,12 @@ export const site = {
   /** Mostrare il pulsante WhatsApp SOLO dopo conferma del dottore (M-03). */
   whatsapp: { enabled: false, tel: "393476401966" },
   email: "av.leini@libero.it",
+  /** Dati del titolare forniti dal dottore (messaggio del 23 novembre). */
+  legal: {
+    holder: "Dott. Davide Boasso",
+    vat: "13214910013",
+    pec: "davide.boasso@pec.veterinaritorino.it",
+  },
   hours: {
     weekday: "09:30–12:30",
     afternoon: "16:00–19:30",

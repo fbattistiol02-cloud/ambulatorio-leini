@@ -44,7 +44,9 @@ export function Footer() {
       <div className="container footer-inner">
         <span>
           © 2026 {site.name}
-          <small>Direttore sanitario: Dott. Davide Boasso</small>
+          <small>
+            Direttore sanitario: Dott. Davide Boasso · P.IVA {site.legal.vat}
+          </small>
         </span>
         <div>
           <Link href="/ambulatorio">L’ambulatorio</Link>
