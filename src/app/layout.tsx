@@ -29,7 +29,10 @@ export const metadata: Metadata = {
   },
   description,
   robots: site.indexable ? { index: true, follow: true } : { index: false, follow: false },
+  /** Indirizzo ufficiale di ogni pagina (relativo alla pagina corrente). */
+  alternates: { canonical: "./" },
   openGraph: {
+    url: "./",
     title: site.name,
     description,
     locale: "it_IT",
